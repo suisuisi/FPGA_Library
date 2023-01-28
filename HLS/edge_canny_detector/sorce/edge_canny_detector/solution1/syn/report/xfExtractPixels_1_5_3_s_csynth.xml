@@ -1,0 +1,92 @@
+<profile>
+
+<ReportVersion>
+<Version>2020.2</Version>
+</ReportVersion>
+
+<UserAssignments>
+<unit>ns</unit>
+<ProductFamily>zynq</ProductFamily>
+<Part>xc7z020-clg400-2</Part>
+<TopModelName>xfExtractPixels_1_5_3_s</TopModelName>
+<TargetClockPeriod>10.00</TargetClockPeriod>
+<ClockUncertainty>2.70</ClockUncertainty>
+<TargetInitiationInterval>4294967295</TargetInitiationInterval>
+<FlowTarget>vivado</FlowTarget>
+</UserAssignments>
+
+<PerformanceEstimates>
+<PipelineType>yes</PipelineType>
+<SummaryOfTimingAnalysis>
+<unit>ns</unit>
+<EstimatedClockPeriod>0.000</EstimatedClockPeriod>
+</SummaryOfTimingAnalysis>
+<SummaryOfOverallLatency>
+<unit>clock cycles</unit>
+<Best-caseLatency>0</Best-caseLatency>
+<Average-caseLatency>0</Average-caseLatency>
+<Worst-caseLatency>0</Worst-caseLatency>
+<Best-caseRealTimeLatency>0 ns</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0 ns</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0 ns</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>1</PipelineInitiationInterval>
+<PipelineDepth>1</PipelineDepth>
+<Interval-min>1</Interval-min>
+<Interval-max>1</Interval-max>
+</SummaryOfOverallLatency>
+</PerformanceEstimates>
+
+<AreaEstimates>
+<Resources>
+<BRAM_18K>0</BRAM_18K>
+<DSP>0</DSP>
+<FF>0</FF>
+<LUT>0</LUT>
+<URAM>0</URAM>
+</Resources>
+<AvailableResources>
+<BRAM_18K>280</BRAM_18K>
+<DSP>220</DSP>
+<FF>106400</FF>
+<LUT>53200</LUT>
+<URAM>0</URAM>
+</AvailableResources>
+</AreaEstimates>
+
+<InterfaceSummary>
+<RtlPorts>
+<name>ap_ready</name>
+<Object>xfExtractPixels&lt;1, 5, 3&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_return</name>
+<Object>xfExtractPixels&lt;1, 5, 3&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>16</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>p_read1</name>
+<Object>p_read1</Object>
+<Type>scalar</Type>
+<Scope></Scope>
+<IOProtocol>ap_none</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>16</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+</InterfaceSummary>
+
+</profile>

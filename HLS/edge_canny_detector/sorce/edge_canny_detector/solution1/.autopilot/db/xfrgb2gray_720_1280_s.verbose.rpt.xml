@@ -1,0 +1,154 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'xfrgb2gray_720_1280_s'" level="0">
+<item name = "Date">Tue Jan 24 22:05:18 2023
+</item>
+<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)</item>
+<item name = "Project">edge_canny_detector</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 5.221 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">921607, 921607, 9.216 ms, 9.216 ms, 921607, 921607, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="call_ret_ExtractPixel_fu_74">ExtractPixel, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_23_1_VITIS_LOOP_25_2">921605, 921605, 7, 1, 1, 921600, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, 3, -, -, -</column>
+<column name="Expression">-, -, 0, 36, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 80, -</column>
+<column name="Register">-, -, 121, 32, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 1, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="call_ret_ExtractPixel_fu_74">ExtractPixel, 0, 0, 0, 0, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+<column name="mac_muladd_8ns_13ns_22ns_22_4_1_U22">mac_muladd_8ns_13ns_22ns_22_4_1, i0 + i1 * i2</column>
+<column name="mac_muladd_8ns_16ns_22ns_23_4_1_U23">mac_muladd_8ns_16ns_22ns_23_4_1, i0 + i1 * i2</column>
+<column name="mul_mul_8ns_15ns_22_4_1_U21">mul_mul_8ns_15ns_22_4_1, i0 * i1</column>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln23_fu_80_p2">+, 0, 0, 20, 20, 1</column>
+<column name="ap_block_state3_pp0_stage0_iter1">and, 0, 0, 1, 1, 1</column>
+<column name="ap_block_state8_pp0_stage0_iter6">and, 0, 0, 1, 1, 1</column>
+<column name="icmp_ln23_fu_86_p2">icmp, 0, 0, 8, 20, 18</column>
+<column name="ap_block_pp0_stage0_01001">or, 0, 0, 1, 1, 1</column>
+<column name="ap_block_state1">or, 0, 0, 1, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">xor, 0, 0, 2, 2, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">17, 4, 1, 4</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter6">9, 2, 1, 2</column>
+<column name="gray_img_src_4207_blk_n">9, 2, 1, 2</column>
+<column name="indvar_flatten_reg_63">9, 2, 20, 40</column>
+<column name="real_start">9, 2, 1, 2</column>
+<column name="rgb_img_src_4206_blk_n">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">3, 0, 3, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter0">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter4">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter5">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter6">1, 0, 1, 0</column>
+<column name="icmp_ln23_reg_156">1, 0, 1, 0</column>
+<column name="indvar_flatten_reg_63">20, 0, 20, 0</column>
+<column name="rgb_V_1_reg_160">8, 0, 8, 0</column>
+<column name="rgb_V_1_reg_160_pp0_iter2_reg">8, 0, 8, 0</column>
+<column name="rgb_V_2_reg_165">8, 0, 8, 0</column>
+<column name="start_once_reg">1, 0, 1, 0</column>
+<column name="icmp_ln23_reg_156">64, 32, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, xfrgb2gray&lt;720, 1280&gt;, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, xfrgb2gray&lt;720, 1280&gt;, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, xfrgb2gray&lt;720, 1280&gt;, return value</column>
+<column name="start_full_n">in, 1, ap_ctrl_hs, xfrgb2gray&lt;720, 1280&gt;, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, xfrgb2gray&lt;720, 1280&gt;, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, xfrgb2gray&lt;720, 1280&gt;, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, xfrgb2gray&lt;720, 1280&gt;, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, xfrgb2gray&lt;720, 1280&gt;, return value</column>
+<column name="start_out">out, 1, ap_ctrl_hs, xfrgb2gray&lt;720, 1280&gt;, return value</column>
+<column name="start_write">out, 1, ap_ctrl_hs, xfrgb2gray&lt;720, 1280&gt;, return value</column>
+<column name="rgb_img_src_4206_dout">in, 24, ap_fifo, rgb_img_src_4206, pointer</column>
+<column name="rgb_img_src_4206_empty_n">in, 1, ap_fifo, rgb_img_src_4206, pointer</column>
+<column name="rgb_img_src_4206_read">out, 1, ap_fifo, rgb_img_src_4206, pointer</column>
+<column name="gray_img_src_4207_din">out, 8, ap_fifo, gray_img_src_4207, pointer</column>
+<column name="gray_img_src_4207_full_n">in, 1, ap_fifo, gray_img_src_4207, pointer</column>
+<column name="gray_img_src_4207_write">out, 1, ap_fifo, gray_img_src_4207, pointer</column>
+</table>
+</item>
+</section>
+</profile>

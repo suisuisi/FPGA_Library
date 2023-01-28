@@ -1,0 +1,161 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'edge_canny_detector'" level="0">
+<item name = "Date">Tue Jan 24 22:05:23 2023
+</item>
+<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)</item>
+<item name = "Project">edge_canny_detector</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.212 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1859948, 1859948, 18.599 ms, 18.599 ms, 932402, 932402, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_U0">xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_s, 932401, 932401, 9.324 ms, 9.324 ms, 932401, 932401, none</column>
+<column name="xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_U0">xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_s, 930083, 930083, 9.301 ms, 9.301 ms, 930083, 930083, none</column>
+<column name="xFSobel_0_2_720_1280_0_3_1_1_5_3_false_U0">xFSobel_0_2_720_1280_0_3_1_1_5_3_false_s, 931779, 931779, 9.318 ms, 9.318 ms, 931779, 931779, none</column>
+<column name="xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_U0">xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_s, 927923, 927923, 9.279 ms, 9.279 ms, 927923, 927923, none</column>
+<column name="xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_U0">xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_s, 925921, 925921, 9.259 ms, 9.259 ms, 925921, 925921, none</column>
+<column name="AXIvideo2xfMat_24_9_720_1280_1_16_U0">AXIvideo2xfMat_24_9_720_1280_1_16, 925203, 925924, 9.252 ms, 9.259 ms, 925203, 925924, none</column>
+<column name="xfrgb2gray_720_1280_U0">xfrgb2gray_720_1280_s, 921607, 921607, 9.216 ms, 9.216 ms, 921607, 921607, none</column>
+<column name="xfMat2AXIvideo_24_9_720_1280_1_U0">xfMat2AXIvideo_24_9_720_1280_1_s, 924481, 924481, 9.245 ms, 9.245 ms, 924481, 924481, none</column>
+<column name="duplicate_720_1280_U0">duplicate_720_1280_s, 921602, 921602, 9.216 ms, 9.216 ms, 921602, 921602, none</column>
+<column name="xfgray2rgb_720_1280_U0">xfgray2rgb_720_1280_s, 921602, 921602, 9.216 ms, 9.216 ms, 921602, 921602, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 2, -</column>
+<column name="FIFO">6, -, 1613, 1046, -</column>
+<column name="Instance">14, 6, 3796, 6273, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, -, -</column>
+<column name="Register">-, -, -, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">7, 2, 5, 13, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="AXIvideo2xfMat_24_9_720_1280_1_16_U0">AXIvideo2xfMat_24_9_720_1280_1_16, 0, 0, 173, 327, 0</column>
+<column name="duplicate_720_1280_U0">duplicate_720_1280_s, 0, 0, 28, 146, 0</column>
+<column name="xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_U0">xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_s, 0, 1, 358, 397, 0</column>
+<column name="xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_U0">xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_s, 3, 0, 334, 717, 0</column>
+<column name="xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_U0">xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_s, 0, 2, 1603, 2206, 0</column>
+<column name="xFSobel_0_2_720_1280_0_3_1_1_5_3_false_U0">xFSobel_0_2_720_1280_0_3_1_1_5_3_false_s, 3, 0, 527, 1009, 0</column>
+<column name="xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_U0">xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_s, 8, 0, 580, 1063, 0</column>
+<column name="xfMat2AXIvideo_24_9_720_1280_1_U0">xfMat2AXIvideo_24_9_720_1280_1_s, 0, 0, 44, 150, 0</column>
+<column name="xfgray2rgb_720_1280_U0">xfgray2rgb_720_1280_s, 0, 0, 28, 110, 0</column>
+<column name="xfrgb2gray_720_1280_U0">xfrgb2gray_720_1280_s, 0, 3, 121, 148, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+<column name="gaussian_mat_data_U">0, 99, 0, -, 2, 8, 16</column>
+<column name="gradx1_mat_data_U">0, 99, 0, -, 2, 16, 32</column>
+<column name="gradx2_mat_data_U">0, 99, 0, -, 2, 16, 32</column>
+<column name="gradx_mat_data_U">0, 99, 0, -, 2, 16, 32</column>
+<column name="grady1_mat_data_U">0, 99, 0, -, 2, 16, 32</column>
+<column name="grady2_mat_data_U">0, 99, 0, -, 2, 16, 32</column>
+<column name="grady_mat_data_U">0, 99, 0, -, 2, 16, 32</column>
+<column name="gray_img_src_data_U">0, 99, 0, -, 2, 8, 16</column>
+<column name="highthreshold_c_U">0, 99, 0, -, 7, 8, 56</column>
+<column name="lowthreshold_c_U">0, 99, 0, -, 7, 8, 56</column>
+<column name="magnitude_mat_data_U">4, 163, 0, -, 3840, 16, 61440</column>
+<column name="nms_mat_data_U">0, 99, 0, -, 2, 8, 16</column>
+<column name="phase_mat_data_U">2, 163, 0, -, 3840, 8, 30720</column>
+<column name="rgb_img_dst_data_U">0, 99, 0, -, 2, 24, 48</column>
+<column name="rgb_img_src_data_U">0, 99, 0, -, 2, 24, 48</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="AXIvideo2xfMat_24_9_720_1280_1_16_U0_start_full_n">and, 0, 0, 1, 1, 1</column>
+<column name="duplicate_720_1280_U0_start_full_n">and, 0, 0, 1, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="src_TDATA">in, 24, axis, src_V_data_V, pointer</column>
+<column name="src_TKEEP">in, 3, axis, src_V_keep_V, pointer</column>
+<column name="src_TSTRB">in, 3, axis, src_V_strb_V, pointer</column>
+<column name="src_TUSER">in, 1, axis, src_V_user_V, pointer</column>
+<column name="src_TLAST">in, 1, axis, src_V_last_V, pointer</column>
+<column name="src_TID">in, 1, axis, src_V_id_V, pointer</column>
+<column name="src_TDEST">in, 1, axis, src_V_dest_V, pointer</column>
+<column name="src_TVALID">in, 1, axis, src_V_dest_V, pointer</column>
+<column name="src_TREADY">out, 1, axis, src_V_dest_V, pointer</column>
+<column name="dst_TDATA">out, 24, axis, dst_V_data_V, pointer</column>
+<column name="dst_TKEEP">out, 3, axis, dst_V_keep_V, pointer</column>
+<column name="dst_TSTRB">out, 3, axis, dst_V_strb_V, pointer</column>
+<column name="dst_TUSER">out, 1, axis, dst_V_user_V, pointer</column>
+<column name="dst_TLAST">out, 1, axis, dst_V_last_V, pointer</column>
+<column name="dst_TID">out, 1, axis, dst_V_id_V, pointer</column>
+<column name="dst_TDEST">out, 1, axis, dst_V_dest_V, pointer</column>
+<column name="dst_TVALID">out, 1, axis, dst_V_dest_V, pointer</column>
+<column name="dst_TREADY">in, 1, axis, dst_V_dest_V, pointer</column>
+<column name="lowthreshold">in, 8, ap_vld, lowthreshold, pointer</column>
+<column name="lowthreshold_ap_vld">in, 1, ap_vld, lowthreshold, pointer</column>
+<column name="highthreshold">in, 8, ap_vld, highthreshold, pointer</column>
+<column name="highthreshold_ap_vld">in, 1, ap_vld, highthreshold, pointer</column>
+<column name="ap_clk">in, 1, ap_ctrl_none, edge_canny_detector, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_none, edge_canny_detector, return value</column>
+</table>
+</item>
+</section>
+</profile>

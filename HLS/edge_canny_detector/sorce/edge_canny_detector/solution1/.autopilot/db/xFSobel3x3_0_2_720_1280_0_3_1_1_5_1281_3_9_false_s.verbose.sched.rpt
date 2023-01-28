@@ -1,0 +1,470 @@
+
+
+================================================================
+== Vitis HLS Report for 'xFSobel3x3_0_2_720_1280_0_3_1_1_5_1281_3_9_false_s'
+================================================================
+* Date:           Tue Jan 24 22:05:10 2023
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        edge_canny_detector
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.212 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   931778|   931778|  9.318 ms|  9.318 ms|  931778|  931778|     none|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_448_1   |        3|        3|         1|          1|          1|     3|       yes|
+        |- read_lines         |     3849|     3849|      1283|          -|          -|     3|        no|
+        | + VITIS_LOOP_460_2  |     1280|     1280|         2|          1|          1|  1280|       yes|
+        |- VITIS_LOOP_471_3   |     1280|     1280|         2|          1|          1|  1280|       yes|
+        |- Row_Loop           |   926640|   926640|      1287|          -|          -|   720|        no|
+        | + Col_Loop          |     1284|     1284|         5|          1|          1|  1281|       yes|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+  * Pipeline-2: initiation interval (II) = 1, depth = 2
+  * Pipeline-3: initiation interval (II) = 1, depth = 5
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 17
+* Pipeline : 4
+  Pipeline-0 : II = 1, D = 1, States = { 2 }
+  Pipeline-1 : II = 1, D = 2, States = { 5 6 }
+  Pipeline-2 : II = 1, D = 2, States = { 8 9 }
+  Pipeline-3 : II = 1, D = 5, States = { 12 13 14 15 16 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 2 
+3 --> 4 
+4 --> 5 8 
+5 --> 7 6 
+6 --> 5 
+7 --> 4 
+8 --> 10 9 
+9 --> 8 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 17 16 
+16 --> 12 
+17 --> 11 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.29>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%row_ind_V_0_0 = alloca i32 1"   --->   Operation 18 'alloca' 'row_ind_V_0_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%row_ind_V_1_0 = alloca i32 1"   --->   Operation 19 'alloca' 'row_ind_V_1_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%row_ind_V_2_0 = alloca i32 1"   --->   Operation 20 'alloca' 'row_ind_V_2_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gaussian_mat_4209, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gradx_mat_4210, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %grady_mat_4213, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%buf_V_0 = alloca i64 1" [source/imgproc/xf_canny_sobel.hpp:434]   --->   Operation 24 'alloca' 'buf_V_0' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%buf_V_1 = alloca i64 1" [source/imgproc/xf_canny_sobel.hpp:434]   --->   Operation 25 'alloca' 'buf_V_1' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%buf_V_2 = alloca i64 1" [source/imgproc/xf_canny_sobel.hpp:434]   --->   Operation 26 'alloca' 'buf_V_2' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%specmemcore_ln440 = specmemcore void @_ssdm_op_SpecMemCore, i8 %buf_V_0, i8 %buf_V_1, i8 %buf_V_2, i64 666, i64 25, i64 18446744073709551615" [source/imgproc/xf_canny_sobel.hpp:440]   --->   Operation 27 'specmemcore' 'specmemcore_ln440' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (1.29ns)   --->   "%br_ln448 = br void" [source/imgproc/xf_canny_sobel.hpp:448]   --->   Operation 28 'br' 'br_ln448' <Predicate = true> <Delay = 1.29>
+
+State 2 <SV = 1> <Delay = 0.98>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%row_ind_V_0_2 = phi i2 0, void %arrayctor.loop2, i2 %init_row_ind, void %.split1320"   --->   Operation 29 'phi' 'row_ind_V_0_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.63ns)   --->   "%init_row_ind = add i2 %row_ind_V_0_2, i2 1" [source/imgproc/xf_canny_sobel.hpp:448]   --->   Operation 30 'add' 'init_row_ind' <Predicate = true> <Delay = 0.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%row_ind_V_0_0_load = load i13 %row_ind_V_0_0"   --->   Operation 31 'load' 'row_ind_V_0_0_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%row_ind_V_1_0_load = load i13 %row_ind_V_1_0" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 32 'load' 'row_ind_V_1_0_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%row_ind_V_2_0_load = load i13 %row_ind_V_2_0"   --->   Operation 33 'load' 'row_ind_V_2_0_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 34 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.50ns)   --->   "%icmp_ln878 = icmp_eq  i2 %row_ind_V_0_2, i2 3"   --->   Operation 35 'icmp' 'icmp_ln878' <Predicate = true> <Delay = 0.50> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%br_ln448 = br i1 %icmp_ln878, void %.split13, void %._crit_edge45.loopexit" [source/imgproc/xf_canny_sobel.hpp:448]   --->   Operation 36 'br' 'br_ln448' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%speclooptripcount_ln448 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 3, i64 3, i64 3" [source/imgproc/xf_canny_sobel.hpp:448]   --->   Operation 37 'speclooptripcount' 'speclooptripcount_ln448' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%specloopname_ln448 = specloopname void @_ssdm_op_SpecLoopName, void @empty_19" [source/imgproc/xf_canny_sobel.hpp:448]   --->   Operation 38 'specloopname' 'specloopname_ln448' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%zext_ln301 = zext i2 %row_ind_V_0_2"   --->   Operation 39 'zext' 'zext_ln301' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.98ns)   --->   "%switch_ln452 = switch i2 %row_ind_V_0_2, void %branch5, i2 0, void %.split13..split1320_crit_edge, i2 1, void %branch4" [source/imgproc/xf_canny_sobel.hpp:452]   --->   Operation 40 'switch' 'switch_ln452' <Predicate = (!icmp_ln878)> <Delay = 0.98>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%store_ln452 = store i13 %zext_ln301, i13 %row_ind_V_1_0" [source/imgproc/xf_canny_sobel.hpp:452]   --->   Operation 41 'store' 'store_ln452' <Predicate = (!icmp_ln878 & row_ind_V_0_2 == 1)> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%br_ln452 = br void %.split1320" [source/imgproc/xf_canny_sobel.hpp:452]   --->   Operation 42 'br' 'br_ln452' <Predicate = (!icmp_ln878 & row_ind_V_0_2 == 1)> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%store_ln452 = store i13 %zext_ln301, i13 %row_ind_V_0_0" [source/imgproc/xf_canny_sobel.hpp:452]   --->   Operation 43 'store' 'store_ln452' <Predicate = (!icmp_ln878 & row_ind_V_0_2 == 0)> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%br_ln452 = br void %.split1320" [source/imgproc/xf_canny_sobel.hpp:452]   --->   Operation 44 'br' 'br_ln452' <Predicate = (!icmp_ln878 & row_ind_V_0_2 == 0)> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%store_ln452 = store i13 %zext_ln301, i13 %row_ind_V_2_0" [source/imgproc/xf_canny_sobel.hpp:452]   --->   Operation 45 'store' 'store_ln452' <Predicate = (!icmp_ln878 & row_ind_V_0_2 != 0 & row_ind_V_0_2 != 1)> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%br_ln452 = br void %.split1320" [source/imgproc/xf_canny_sobel.hpp:452]   --->   Operation 46 'br' 'br_ln452' <Predicate = (!icmp_ln878 & row_ind_V_0_2 != 0 & row_ind_V_0_2 != 1)> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 47 'br' 'br_ln0' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.29>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%zext_ln534 = zext i13 %row_ind_V_1_0_load"   --->   Operation 48 'zext' 'zext_ln534' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%zext_ln456 = zext i13 %row_ind_V_2_0_load" [source/imgproc/xf_canny_sobel.hpp:456]   --->   Operation 49 'zext' 'zext_ln456' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (1.29ns)   --->   "%br_ln456 = br void %.lr.ph32" [source/imgproc/xf_canny_sobel.hpp:456]   --->   Operation 50 'br' 'br_ln456' <Predicate = true> <Delay = 1.29>
+
+State 4 <SV = 3> <Delay = 2.26>
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "%init_buf = phi i64 %add_ln456, void %._crit_edge33, i64 %zext_ln534, void %._crit_edge45.loopexit" [source/imgproc/xf_canny_sobel.hpp:456]   --->   Operation 51 'phi' 'init_buf' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 52 [1/1] (2.26ns)   --->   "%icmp_ln878_2 = icmp_slt  i64 %init_buf, i64 %zext_ln456"   --->   Operation 52 'icmp' 'icmp_ln878_2' <Predicate = true> <Delay = 2.26> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%br_ln456 = br i1 %icmp_ln878_2, void %.lr.ph26.loopexit.preheader, void %.lr.ph32.split" [source/imgproc/xf_canny_sobel.hpp:456]   --->   Operation 53 'br' 'br_ln456' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 54 [1/1] (0.00ns)   --->   "%speclooptripcount_ln456 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 3, i64 3, i64 3" [source/imgproc/xf_canny_sobel.hpp:456]   --->   Operation 54 'speclooptripcount' 'speclooptripcount_ln456' <Predicate = (icmp_ln878_2)> <Delay = 0.00>
+ST_4 : Operation 55 [1/1] (0.00ns)   --->   "%specloopname_ln456 = specloopname void @_ssdm_op_SpecLoopName, void @empty_18" [source/imgproc/xf_canny_sobel.hpp:456]   --->   Operation 55 'specloopname' 'specloopname_ln456' <Predicate = (icmp_ln878_2)> <Delay = 0.00>
+ST_4 : Operation 56 [1/1] (0.00ns)   --->   "%trunc_ln466 = trunc i64 %init_buf" [source/imgproc/xf_canny_sobel.hpp:466]   --->   Operation 56 'trunc' 'trunc_ln466' <Predicate = (icmp_ln878_2)> <Delay = 0.00>
+ST_4 : Operation 57 [1/1] (1.29ns)   --->   "%br_ln460 = br void" [source/imgproc/xf_canny_sobel.hpp:460]   --->   Operation 57 'br' 'br_ln460' <Predicate = (icmp_ln878_2)> <Delay = 1.29>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "%trunc_ln480 = trunc i13 %row_ind_V_1_0_load" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 58 'trunc' 'trunc_ln480' <Predicate = (!icmp_ln878_2)> <Delay = 0.00>
+ST_4 : Operation 59 [1/1] (1.29ns)   --->   "%br_ln0 = br void %.lr.ph26.loopexit"   --->   Operation 59 'br' 'br_ln0' <Predicate = (!icmp_ln878_2)> <Delay = 1.29>
+
+State 5 <SV = 4> <Delay = 1.88>
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "%col_V = phi i11 0, void %.lr.ph32.split, i11 %col_V_6, void %.split9120"   --->   Operation 60 'phi' 'col_V' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 61 [1/1] (1.48ns)   --->   "%col_V_6 = add i11 %col_V, i11 1"   --->   Operation 61 'add' 'col_V_6' <Predicate = true> <Delay = 1.48> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 62 [1/1] (1.88ns)   --->   "%icmp_ln878_3 = icmp_eq  i11 %col_V, i11 1280"   --->   Operation 62 'icmp' 'icmp_ln878_3' <Predicate = true> <Delay = 1.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1280, i64 1280, i64 1280"   --->   Operation 63 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%br_ln460 = br i1 %icmp_ln878_3, void %.split9, void %._crit_edge33" [source/imgproc/xf_canny_sobel.hpp:460]   --->   Operation 64 'br' 'br_ln460' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 65 [1/1] (0.98ns)   --->   "%switch_ln466 = switch i2 %trunc_ln466, void %branch11, i2 0, void %branch9, i2 1, void %branch10" [source/imgproc/xf_canny_sobel.hpp:466]   --->   Operation 65 'switch' 'switch_ln466' <Predicate = (!icmp_ln878_3)> <Delay = 0.98>
+ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 66 'br' 'br_ln0' <Predicate = (!icmp_ln878_3)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 6.17>
+ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%specpipeline_ln417 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_5" [source/imgproc/xf_canny_sobel.hpp:417]   --->   Operation 67 'specpipeline' 'specpipeline_ln417' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%specloopname_ln417 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3" [source/imgproc/xf_canny_sobel.hpp:417]   --->   Operation 68 'specloopname' 'specloopname_ln417' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 69 [1/1] (3.40ns)   --->   "%tmp_V = read i8 @_ssdm_op_Read.ap_fifo.volatile.i8P0A, i8 %gaussian_mat_4209" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 69 'read' 'tmp_V' <Predicate = true> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%zext_ln534_3 = zext i11 %col_V"   --->   Operation 70 'zext' 'zext_ln534_3' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%buf_V_0_addr_3 = getelementptr i8 %buf_V_0, i64 0, i64 %zext_ln534_3" [source/imgproc/xf_canny_sobel.hpp:466]   --->   Operation 71 'getelementptr' 'buf_V_0_addr_3' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%buf_V_1_addr = getelementptr i8 %buf_V_1, i64 0, i64 %zext_ln534_3" [source/imgproc/xf_canny_sobel.hpp:466]   --->   Operation 72 'getelementptr' 'buf_V_1_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%buf_V_2_addr = getelementptr i8 %buf_V_2, i64 0, i64 %zext_ln534_3" [source/imgproc/xf_canny_sobel.hpp:466]   --->   Operation 73 'getelementptr' 'buf_V_2_addr' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 74 [1/1] (2.77ns)   --->   "%store_ln466 = store i8 %tmp_V, i11 %buf_V_1_addr" [source/imgproc/xf_canny_sobel.hpp:466]   --->   Operation 74 'store' 'store_ln466' <Predicate = (trunc_ln466 == 1)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_6 : Operation 75 [1/1] (0.00ns)   --->   "%br_ln466 = br void %.split9120" [source/imgproc/xf_canny_sobel.hpp:466]   --->   Operation 75 'br' 'br_ln466' <Predicate = (trunc_ln466 == 1)> <Delay = 0.00>
+ST_6 : Operation 76 [1/1] (2.77ns)   --->   "%store_ln466 = store i8 %tmp_V, i11 %buf_V_0_addr_3" [source/imgproc/xf_canny_sobel.hpp:466]   --->   Operation 76 'store' 'store_ln466' <Predicate = (trunc_ln466 == 0)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_6 : Operation 77 [1/1] (0.00ns)   --->   "%br_ln466 = br void %.split9120" [source/imgproc/xf_canny_sobel.hpp:466]   --->   Operation 77 'br' 'br_ln466' <Predicate = (trunc_ln466 == 0)> <Delay = 0.00>
+ST_6 : Operation 78 [1/1] (2.77ns)   --->   "%store_ln466 = store i8 %tmp_V, i11 %buf_V_2_addr" [source/imgproc/xf_canny_sobel.hpp:466]   --->   Operation 78 'store' 'store_ln466' <Predicate = (trunc_ln466 != 0 & trunc_ln466 != 1)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_6 : Operation 79 [1/1] (0.00ns)   --->   "%br_ln466 = br void %.split9120" [source/imgproc/xf_canny_sobel.hpp:466]   --->   Operation 79 'br' 'br_ln466' <Predicate = (trunc_ln466 != 0 & trunc_ln466 != 1)> <Delay = 0.00>
+
+State 7 <SV = 5> <Delay = 2.69>
+ST_7 : Operation 80 [1/1] (2.69ns)   --->   "%add_ln456 = add i64 %init_buf, i64 1" [source/imgproc/xf_canny_sobel.hpp:456]   --->   Operation 80 'add' 'add_ln456' <Predicate = true> <Delay = 2.69> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 81 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.lr.ph32"   --->   Operation 81 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 8 <SV = 4> <Delay = 2.77>
+ST_8 : Operation 82 [1/1] (0.00ns)   --->   "%col_V_4 = phi i11 %col_V_5, void %.split6, i11 0, void %.lr.ph26.loopexit.preheader"   --->   Operation 82 'phi' 'col_V_4' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 83 [1/1] (1.48ns)   --->   "%col_V_5 = add i11 %col_V_4, i11 1"   --->   Operation 83 'add' 'col_V_5' <Predicate = true> <Delay = 1.48> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 84 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 84 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 85 [1/1] (1.88ns)   --->   "%icmp_ln878_4 = icmp_eq  i11 %col_V_4, i11 1280"   --->   Operation 85 'icmp' 'icmp_ln878_4' <Predicate = true> <Delay = 1.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 86 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1280, i64 1280, i64 1280"   --->   Operation 86 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 87 [1/1] (0.00ns)   --->   "%br_ln471 = br i1 %icmp_ln878_4, void %.split6, void %._crit_edge27.preheader" [source/imgproc/xf_canny_sobel.hpp:471]   --->   Operation 87 'br' 'br_ln471' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 88 [1/1] (0.00ns)   --->   "%conv_i90 = zext i11 %col_V_4"   --->   Operation 88 'zext' 'conv_i90' <Predicate = (!icmp_ln878_4)> <Delay = 0.00>
+ST_8 : Operation 89 [1/1] (0.00ns)   --->   "%buf_V_0_addr = getelementptr i8 %buf_V_0, i64 0, i64 %conv_i90" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 89 'getelementptr' 'buf_V_0_addr' <Predicate = (!icmp_ln878_4)> <Delay = 0.00>
+ST_8 : Operation 90 [2/2] (2.77ns)   --->   "%buf_V_0_load = load i11 %buf_V_0_addr" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 90 'load' 'buf_V_0_load' <Predicate = (!icmp_ln878_4)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_8 : Operation 91 [1/1] (0.00ns)   --->   "%buf_V_1_addr_4 = getelementptr i8 %buf_V_1, i64 0, i64 %conv_i90" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 91 'getelementptr' 'buf_V_1_addr_4' <Predicate = (!icmp_ln878_4)> <Delay = 0.00>
+ST_8 : Operation 92 [2/2] (2.77ns)   --->   "%buf_V_1_load = load i11 %buf_V_1_addr_4" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 92 'load' 'buf_V_1_load' <Predicate = (!icmp_ln878_4)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_8 : Operation 93 [1/1] (0.00ns)   --->   "%buf_V_2_addr_3 = getelementptr i8 %buf_V_2, i64 0, i64 %conv_i90" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 93 'getelementptr' 'buf_V_2_addr_3' <Predicate = (!icmp_ln878_4)> <Delay = 0.00>
+ST_8 : Operation 94 [2/2] (2.77ns)   --->   "%buf_V_2_load = load i11 %buf_V_2_addr_3" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 94 'load' 'buf_V_2_load' <Predicate = (!icmp_ln878_4)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+
+State 9 <SV = 5> <Delay = 6.86>
+ST_9 : Operation 95 [1/1] (0.00ns)   --->   "%specloopname_ln417 = specloopname void @_ssdm_op_SpecLoopName, void @empty_1" [source/imgproc/xf_canny_sobel.hpp:417]   --->   Operation 95 'specloopname' 'specloopname_ln417' <Predicate = (!icmp_ln878_4)> <Delay = 0.00>
+ST_9 : Operation 96 [1/2] (2.77ns)   --->   "%buf_V_0_load = load i11 %buf_V_0_addr" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 96 'load' 'buf_V_0_load' <Predicate = (!icmp_ln878_4)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_9 : Operation 97 [1/2] (2.77ns)   --->   "%buf_V_1_load = load i11 %buf_V_1_addr_4" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 97 'load' 'buf_V_1_load' <Predicate = (!icmp_ln878_4)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_9 : Operation 98 [1/2] (2.77ns)   --->   "%buf_V_2_load = load i11 %buf_V_2_addr_3" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 98 'load' 'buf_V_2_load' <Predicate = (!icmp_ln878_4)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_9 : Operation 99 [1/1] (1.32ns)   --->   "%tmp = mux i8 @_ssdm_op_Mux.ap_auto.3i8.i2, i8 %buf_V_0_load, i8 %buf_V_1_load, i8 %buf_V_2_load, i2 %trunc_ln480" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 99 'mux' 'tmp' <Predicate = (!icmp_ln878_4)> <Delay = 1.32> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.32> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 100 [1/1] (2.77ns)   --->   "%store_ln480 = store i8 %tmp, i11 %buf_V_0_addr" [source/imgproc/xf_canny_sobel.hpp:480]   --->   Operation 100 'store' 'store_ln480' <Predicate = (!icmp_ln878_4)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_9 : Operation 101 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.lr.ph26.loopexit"   --->   Operation 101 'br' 'br_ln0' <Predicate = (!icmp_ln878_4)> <Delay = 0.00>
+
+State 10 <SV = 5> <Delay = 1.29>
+ST_10 : Operation 102 [1/1] (1.29ns)   --->   "%br_ln485 = br void %._crit_edge27" [source/imgproc/xf_canny_sobel.hpp:485]   --->   Operation 102 'br' 'br_ln485' <Predicate = true> <Delay = 1.29>
+
+State 11 <SV = 6> <Delay = 4.16>
+ST_11 : Operation 103 [1/1] (0.00ns)   --->   "%row_ind_V_1_1 = phi i13 %row_ind_V_2, void %branch2, i13 %row_ind_V_2_0_load, void %._crit_edge27.preheader"   --->   Operation 103 'phi' 'row_ind_V_1_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 104 [1/1] (0.00ns)   --->   "%row_ind_V_0 = phi i13 %row_ind_V_1_1, void %branch2, i13 %row_ind_V_1_0_load, void %._crit_edge27.preheader"   --->   Operation 104 'phi' 'row_ind_V_0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 105 [1/1] (0.00ns)   --->   "%row_ind_V_2 = phi i13 %row_ind_V_0, void %branch2, i13 %row_ind_V_0_0_load, void %._crit_edge27.preheader"   --->   Operation 105 'phi' 'row_ind_V_2' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 106 [1/1] (0.00ns)   --->   "%row_V = phi i10 %row_V_2, void %branch2, i10 1, void %._crit_edge27.preheader"   --->   Operation 106 'phi' 'row_V' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 107 [1/1] (1.94ns)   --->   "%icmp_ln485 = icmp_eq  i10 %row_V, i10 721" [source/imgproc/xf_canny_sobel.hpp:485]   --->   Operation 107 'icmp' 'icmp_ln485' <Predicate = true> <Delay = 1.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 108 [1/1] (0.00ns)   --->   "%br_ln485 = br i1 %icmp_ln485, void %.split3, void %._crit_edge.loopexit" [source/imgproc/xf_canny_sobel.hpp:485]   --->   Operation 108 'br' 'br_ln485' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 109 [1/1] (0.00ns)   --->   "%speclooptripcount_ln417 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 720, i64 720, i64 720" [source/imgproc/xf_canny_sobel.hpp:417]   --->   Operation 109 'speclooptripcount' 'speclooptripcount_ln417' <Predicate = (!icmp_ln485)> <Delay = 0.00>
+ST_11 : Operation 110 [1/1] (0.00ns)   --->   "%specloopname_ln417 = specloopname void @_ssdm_op_SpecLoopName, void @empty_4" [source/imgproc/xf_canny_sobel.hpp:417]   --->   Operation 110 'specloopname' 'specloopname_ln417' <Predicate = (!icmp_ln485)> <Delay = 0.00>
+ST_11 : Operation 111 [1/1] (1.94ns)   --->   "%cmp_i_i283_i = icmp_ult  i10 %row_V, i10 720"   --->   Operation 111 'icmp' 'cmp_i_i283_i' <Predicate = (!icmp_ln485)> <Delay = 1.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 112 [1/1] (1.94ns)   --->   "%cmp_i_i253_i = icmp_ugt  i10 %row_V, i10 719"   --->   Operation 112 'icmp' 'cmp_i_i253_i' <Predicate = (!icmp_ln485)> <Delay = 1.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 113 [1/1] (0.00ns)   --->   "%row_V_cast = zext i10 %row_V"   --->   Operation 113 'zext' 'row_V_cast' <Predicate = (!icmp_ln485)> <Delay = 0.00>
+ST_11 : Operation 114 [1/1] (0.00ns)   --->   "%empty = trunc i10 %row_V"   --->   Operation 114 'trunc' 'empty' <Predicate = (!icmp_ln485)> <Delay = 0.00>
+ST_11 : Operation 115 [1/1] (1.48ns)   --->   "%sub_i_i227_i = add i11 %row_V_cast, i11 1329"   --->   Operation 115 'add' 'sub_i_i227_i' <Predicate = (!icmp_ln485)> <Delay = 1.48> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 116 [1/1] (0.63ns)   --->   "%sub_i210_i = sub i2 1, i2 %empty"   --->   Operation 116 'sub' 'sub_i210_i' <Predicate = (!icmp_ln485)> <Delay = 0.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 117 [1/1] (1.88ns)   --->   "%cmp_i_i198_i_2 = icmp_sgt  i11 %sub_i_i227_i, i11 0"   --->   Operation 117 'icmp' 'cmp_i_i198_i_2' <Predicate = (!icmp_ln485)> <Delay = 1.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 118 [1/1] (0.80ns)   --->   "%spec_select54 = and i1 %cmp_i_i253_i, i1 %cmp_i_i198_i_2"   --->   Operation 118 'and' 'spec_select54' <Predicate = (!icmp_ln485)> <Delay = 0.80> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 119 [1/1] (0.00ns)   --->   "%trunc_ln343 = trunc i13 %row_ind_V_2" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 119 'trunc' 'trunc_ln343' <Predicate = (!icmp_ln485)> <Delay = 0.00>
+ST_11 : Operation 120 [1/1] (0.00ns)   --->   "%trunc_ln343_1 = trunc i13 %row_ind_V_0" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 120 'trunc' 'trunc_ln343_1' <Predicate = (!icmp_ln485)> <Delay = 0.00>
+ST_11 : Operation 121 [1/1] (1.29ns)   --->   "%br_ln197 = br void" [source/imgproc/xf_canny_sobel.hpp:197]   --->   Operation 121 'br' 'br_ln197' <Predicate = (!icmp_ln485)> <Delay = 1.29>
+ST_11 : Operation 122 [1/1] (0.00ns)   --->   "%ret_ln508 = ret" [source/imgproc/xf_canny_sobel.hpp:508]   --->   Operation 122 'ret' 'ret_ln508' <Predicate = (icmp_ln485)> <Delay = 0.00>
+
+State 12 <SV = 7> <Delay = 2.68>
+ST_12 : Operation 123 [1/1] (0.00ns)   --->   "%col_V_7 = phi i11 0, void %.split3, i11 %col_V_8, void"   --->   Operation 123 'phi' 'col_V_7' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 124 [1/1] (1.48ns)   --->   "%col_V_8 = add i11 %col_V_7, i11 1"   --->   Operation 124 'add' 'col_V_8' <Predicate = true> <Delay = 1.48> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 125 [1/1] (1.88ns)   --->   "%icmp_ln878_5 = icmp_eq  i11 %col_V_7, i11 1281"   --->   Operation 125 'icmp' 'icmp_ln878_5' <Predicate = true> <Delay = 1.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 126 [1/1] (0.00ns)   --->   "%br_ln197 = br i1 %icmp_ln878_5, void %.split, void %branch2" [source/imgproc/xf_canny_sobel.hpp:197]   --->   Operation 126 'br' 'br_ln197' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 127 [1/1] (0.00ns)   --->   "%specpipeline_ln197 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_5" [source/imgproc/xf_canny_sobel.hpp:197]   --->   Operation 127 'specpipeline' 'specpipeline_ln197' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_12 : Operation 128 [1/1] (0.00ns)   --->   "%speclooptripcount_ln197 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1281, i64 1281, i64 1281" [source/imgproc/xf_canny_sobel.hpp:197]   --->   Operation 128 'speclooptripcount' 'speclooptripcount_ln197' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_12 : Operation 129 [1/1] (0.00ns)   --->   "%specloopname_ln197 = specloopname void @_ssdm_op_SpecLoopName, void @empty_9" [source/imgproc/xf_canny_sobel.hpp:197]   --->   Operation 129 'specloopname' 'specloopname_ln197' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_12 : Operation 130 [1/1] (1.88ns)   --->   "%icmp_ln878_6 = icmp_ult  i11 %col_V_7, i11 1280"   --->   Operation 130 'icmp' 'icmp_ln878_6' <Predicate = (!icmp_ln878_5)> <Delay = 1.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 131 [1/1] (0.80ns)   --->   "%and_ln203 = and i1 %cmp_i_i283_i, i1 %icmp_ln878_6" [source/imgproc/xf_canny_sobel.hpp:203]   --->   Operation 131 'and' 'and_ln203' <Predicate = (!icmp_ln878_5)> <Delay = 0.80> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 132 [1/1] (0.00ns)   --->   "%br_ln203 = br i1 %and_ln203, void %.split._crit_edge_ifconv, void" [source/imgproc/xf_canny_sobel.hpp:203]   --->   Operation 132 'br' 'br_ln203' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_12 : Operation 133 [1/1] (0.00ns)   --->   "%br_ln204 = br void %.split._crit_edge_ifconv" [source/imgproc/xf_canny_sobel.hpp:204]   --->   Operation 133 'br' 'br_ln204' <Predicate = (!icmp_ln878_5 & and_ln203)> <Delay = 0.00>
+
+State 13 <SV = 8> <Delay = 6.17>
+ST_13 : Operation 134 [1/1] (3.40ns)   --->   "%tmp_V_8 = read i8 @_ssdm_op_Read.ap_fifo.volatile.i8P0A, i8 %gaussian_mat_4209" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 134 'read' 'tmp_V_8' <Predicate = (!icmp_ln878_5 & and_ln203)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_13 : Operation 135 [1/1] (0.00ns)   --->   "%zext_ln534_4 = zext i11 %col_V_7"   --->   Operation 135 'zext' 'zext_ln534_4' <Predicate = (!icmp_ln878_5 & and_ln203)> <Delay = 0.00>
+ST_13 : Operation 136 [1/1] (0.00ns)   --->   "%buf_V_0_addr_4 = getelementptr i8 %buf_V_0, i64 0, i64 %zext_ln534_4" [source/imgproc/xf_canny_sobel.hpp:204]   --->   Operation 136 'getelementptr' 'buf_V_0_addr_4' <Predicate = (!icmp_ln878_5 & and_ln203)> <Delay = 0.00>
+ST_13 : Operation 137 [1/1] (0.00ns)   --->   "%buf_V_1_addr_3 = getelementptr i8 %buf_V_1, i64 0, i64 %zext_ln534_4" [source/imgproc/xf_canny_sobel.hpp:204]   --->   Operation 137 'getelementptr' 'buf_V_1_addr_3' <Predicate = (!icmp_ln878_5 & and_ln203)> <Delay = 0.00>
+ST_13 : Operation 138 [1/1] (0.00ns)   --->   "%buf_V_2_addr_2 = getelementptr i8 %buf_V_2, i64 0, i64 %zext_ln534_4" [source/imgproc/xf_canny_sobel.hpp:204]   --->   Operation 138 'getelementptr' 'buf_V_2_addr_2' <Predicate = (!icmp_ln878_5 & and_ln203)> <Delay = 0.00>
+ST_13 : Operation 139 [1/1] (0.00ns)   --->   "%trunc_ln456 = trunc i13 %row_ind_V_1_1" [source/imgproc/xf_canny_sobel.hpp:456]   --->   Operation 139 'trunc' 'trunc_ln456' <Predicate = (!icmp_ln878_5 & and_ln203)> <Delay = 0.00>
+ST_13 : Operation 140 [1/1] (0.98ns)   --->   "%switch_ln204 = switch i2 %trunc_ln456, void %branch8, i2 0, void %branch6, i2 1, void %branch7" [source/imgproc/xf_canny_sobel.hpp:204]   --->   Operation 140 'switch' 'switch_ln204' <Predicate = (!icmp_ln878_5 & and_ln203)> <Delay = 0.98>
+ST_13 : Operation 141 [1/1] (2.77ns)   --->   "%store_ln204 = store i8 %tmp_V_8, i11 %buf_V_1_addr_3" [source/imgproc/xf_canny_sobel.hpp:204]   --->   Operation 141 'store' 'store_ln204' <Predicate = (!icmp_ln878_5 & and_ln203 & trunc_ln456 == 1)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_13 : Operation 142 [1/1] (0.00ns)   --->   "%br_ln204 = br void" [source/imgproc/xf_canny_sobel.hpp:204]   --->   Operation 142 'br' 'br_ln204' <Predicate = (!icmp_ln878_5 & and_ln203 & trunc_ln456 == 1)> <Delay = 0.00>
+ST_13 : Operation 143 [1/1] (2.77ns)   --->   "%store_ln204 = store i8 %tmp_V_8, i11 %buf_V_0_addr_4" [source/imgproc/xf_canny_sobel.hpp:204]   --->   Operation 143 'store' 'store_ln204' <Predicate = (!icmp_ln878_5 & and_ln203 & trunc_ln456 == 0)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_13 : Operation 144 [1/1] (0.00ns)   --->   "%br_ln204 = br void" [source/imgproc/xf_canny_sobel.hpp:204]   --->   Operation 144 'br' 'br_ln204' <Predicate = (!icmp_ln878_5 & and_ln203 & trunc_ln456 == 0)> <Delay = 0.00>
+ST_13 : Operation 145 [1/1] (2.77ns)   --->   "%store_ln204 = store i8 %tmp_V_8, i11 %buf_V_2_addr_2" [source/imgproc/xf_canny_sobel.hpp:204]   --->   Operation 145 'store' 'store_ln204' <Predicate = (!icmp_ln878_5 & and_ln203 & trunc_ln456 != 0 & trunc_ln456 != 1)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_13 : Operation 146 [1/1] (0.00ns)   --->   "%br_ln204 = br void" [source/imgproc/xf_canny_sobel.hpp:204]   --->   Operation 146 'br' 'br_ln204' <Predicate = (!icmp_ln878_5 & and_ln203 & trunc_ln456 != 0 & trunc_ln456 != 1)> <Delay = 0.00>
+
+State 14 <SV = 9> <Delay = 2.77>
+ST_14 : Operation 147 [1/1] (0.00ns)   --->   "%conv_i152_i = zext i11 %col_V_7"   --->   Operation 147 'zext' 'conv_i152_i' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_14 : Operation 148 [1/1] (0.00ns)   --->   "%buf_V_0_addr_5 = getelementptr i8 %buf_V_0, i64 0, i64 %conv_i152_i" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 148 'getelementptr' 'buf_V_0_addr_5' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_14 : Operation 149 [2/2] (2.77ns)   --->   "%buf_V_0_load_1 = load i11 %buf_V_0_addr_5" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 149 'load' 'buf_V_0_load_1' <Predicate = (!icmp_ln878_5)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_14 : Operation 150 [1/1] (0.00ns)   --->   "%buf_V_1_addr_5 = getelementptr i8 %buf_V_1, i64 0, i64 %conv_i152_i" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 150 'getelementptr' 'buf_V_1_addr_5' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_14 : Operation 151 [2/2] (2.77ns)   --->   "%buf_V_1_load_1 = load i11 %buf_V_1_addr_5" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 151 'load' 'buf_V_1_load_1' <Predicate = (!icmp_ln878_5)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_14 : Operation 152 [1/1] (0.00ns)   --->   "%buf_V_2_addr_4 = getelementptr i8 %buf_V_2, i64 0, i64 %conv_i152_i" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 152 'getelementptr' 'buf_V_2_addr_4' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_14 : Operation 153 [2/2] (2.77ns)   --->   "%buf_V_2_load_1 = load i11 %buf_V_2_addr_4" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 153 'load' 'buf_V_2_load_1' <Predicate = (!icmp_ln878_5)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_14 : Operation 154 [1/1] (1.88ns)   --->   "%icmp_ln882 = icmp_eq  i11 %col_V_7, i11 0"   --->   Operation 154 'icmp' 'icmp_ln882' <Predicate = (!icmp_ln878_5)> <Delay = 1.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 10> <Delay = 7.21>
+ST_15 : Operation 155 [1/1] (0.00ns)   --->   "%src_buf_V_2_0 = phi i8 0, void %.split3, i8 %src_buf_V_2_0_2, void"   --->   Operation 155 'phi' 'src_buf_V_2_0' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 156 [1/1] (0.00ns)   --->   "%src_buf_V_2_0_0 = phi i8 0, void %.split3, i8 %storemerge, void"   --->   Operation 156 'phi' 'src_buf_V_2_0_0' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 157 [1/1] (0.00ns)   --->   "%src_buf_V_1_2_3 = phi i8 0, void %.split3, i8 %src_buf_V_1_1, void"   --->   Operation 157 'phi' 'src_buf_V_1_2_3' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 158 [1/1] (0.00ns)   --->   "%src_buf_V_1_0_0 = phi i8 0, void %.split3, i8 %src_buf_V_1_0_1, void"   --->   Operation 158 'phi' 'src_buf_V_1_0_0' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 159 [1/1] (0.00ns)   --->   "%src_buf_V_0_2_3 = phi i8 0, void %.split3, i8 %src_buf_V_0_1, void"   --->   Operation 159 'phi' 'src_buf_V_0_2_3' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 160 [1/1] (0.00ns)   --->   "%src_buf_V_0_0_0 = phi i8 0, void %.split3, i8 %src_buf_V_0_0_11, void"   --->   Operation 160 'phi' 'src_buf_V_0_0_0' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 161 [1/2] (2.77ns)   --->   "%buf_V_0_load_1 = load i11 %buf_V_0_addr_5" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 161 'load' 'buf_V_0_load_1' <Predicate = (!icmp_ln878_5)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_15 : Operation 162 [1/2] (2.77ns)   --->   "%buf_V_1_load_1 = load i11 %buf_V_1_addr_5" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 162 'load' 'buf_V_1_load_1' <Predicate = (!icmp_ln878_5)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_15 : Operation 163 [1/2] (2.77ns)   --->   "%buf_V_2_load_1 = load i11 %buf_V_2_addr_4" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 163 'load' 'buf_V_2_load_1' <Predicate = (!icmp_ln878_5)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_15 : Operation 164 [1/1] (1.32ns)   --->   "%src_buf_V_0_2 = mux i8 @_ssdm_op_Mux.ap_auto.3i8.i2, i8 %buf_V_0_load_1, i8 %buf_V_1_load_1, i8 %buf_V_2_load_1, i2 %trunc_ln343" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 164 'mux' 'src_buf_V_0_2' <Predicate = (!icmp_ln878_5 & icmp_ln878_6)> <Delay = 1.32> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.32> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 165 [1/1] (1.32ns)   --->   "%src_buf_V_1_2 = mux i8 @_ssdm_op_Mux.ap_auto.3i8.i2, i8 %buf_V_0_load_1, i8 %buf_V_1_load_1, i8 %buf_V_2_load_1, i2 %trunc_ln343_1" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 165 'mux' 'src_buf_V_1_2' <Predicate = (!icmp_ln878_5 & icmp_ln878_6)> <Delay = 1.32> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.32> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 166 [1/1] (1.32ns)   --->   "%tmp_s = mux i13 @_ssdm_op_Mux.ap_auto.3i13.i2, i13 %row_ind_V_2, i13 %row_ind_V_0, i13 %row_ind_V_1_1, i2 %sub_i210_i"   --->   Operation 166 'mux' 'tmp_s' <Predicate = (!icmp_ln878_5 & spec_select54 & icmp_ln878_6)> <Delay = 1.32> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.32> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 167 [1/1] (0.00ns)   --->   "%trunc_ln341 = trunc i13 %tmp_s" [source/imgproc/xf_canny_sobel.hpp:341]   --->   Operation 167 'trunc' 'trunc_ln341' <Predicate = (!icmp_ln878_5 & spec_select54 & icmp_ln878_6)> <Delay = 0.00>
+ST_15 : Operation 168 [1/1] (1.32ns)   --->   "%tmp_1 = mux i8 @_ssdm_op_Mux.ap_auto.3i8.i2, i8 %buf_V_0_load_1, i8 %buf_V_1_load_1, i8 %buf_V_2_load_1, i2 %trunc_ln341" [source/imgproc/xf_canny_sobel.hpp:341]   --->   Operation 168 'mux' 'tmp_1' <Predicate = (!icmp_ln878_5 & spec_select54 & icmp_ln878_6)> <Delay = 1.32> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.32> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 169 [1/1] (0.00ns)   --->   "%trunc_ln456_1 = trunc i13 %row_ind_V_1_1" [source/imgproc/xf_canny_sobel.hpp:456]   --->   Operation 169 'trunc' 'trunc_ln456_1' <Predicate = (!icmp_ln878_5 & !spec_select54 & icmp_ln878_6)> <Delay = 0.00>
+ST_15 : Operation 170 [1/1] (1.32ns)   --->   "%tmp_2 = mux i8 @_ssdm_op_Mux.ap_auto.3i8.i2, i8 %buf_V_0_load_1, i8 %buf_V_1_load_1, i8 %buf_V_2_load_1, i2 %trunc_ln456_1" [source/imgproc/xf_canny_sobel.hpp:343]   --->   Operation 170 'mux' 'tmp_2' <Predicate = (!icmp_ln878_5 & !spec_select54 & icmp_ln878_6)> <Delay = 1.32> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.32> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 171 [1/1] (0.00ns) (grouped into LUT with out node src_buf_V_2_0_2)   --->   "%arrayidx261_i534_load_0_2 = select i1 %spec_select54, i8 %tmp_1, i8 %tmp_2"   --->   Operation 171 'select' 'arrayidx261_i534_load_0_2' <Predicate = (!icmp_ln878_5 & icmp_ln878_6)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 172 [1/1] (0.44ns)   --->   "%src_buf_V_1_1 = select i1 %icmp_ln878_6, i8 %src_buf_V_1_2, i8 %src_buf_V_1_2_3"   --->   Operation 172 'select' 'src_buf_V_1_1' <Predicate = (!icmp_ln878_5)> <Delay = 0.44> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 173 [1/1] (0.44ns)   --->   "%src_buf_V_0_1 = select i1 %icmp_ln878_6, i8 %src_buf_V_0_2, i8 %src_buf_V_0_2_3"   --->   Operation 173 'select' 'src_buf_V_0_1' <Predicate = (!icmp_ln878_5)> <Delay = 0.44> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 174 [1/1] (0.44ns) (out node of the LUT)   --->   "%src_buf_V_2_0_2 = select i1 %icmp_ln878_6, i8 %arrayidx261_i534_load_0_2, i8 %src_buf_V_2_0"   --->   Operation 174 'select' 'src_buf_V_2_0_2' <Predicate = (!icmp_ln878_5)> <Delay = 0.44> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_15 : Operation 175 [1/1] (0.00ns)   --->   "%r = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i8.i1, i8 %src_buf_V_1_0_0, i1 0"   --->   Operation 175 'bitconcatenate' 'r' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 176 [1/1] (0.00ns)   --->   "%zext_ln1497 = zext i9 %r"   --->   Operation 176 'zext' 'zext_ln1497' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 177 [1/1] (0.00ns)   --->   "%r_1 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i8.i1, i8 %src_buf_V_1_1, i1 0"   --->   Operation 177 'bitconcatenate' 'r_1' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 178 [1/1] (0.00ns)   --->   "%zext_ln1497_1 = zext i9 %r_1"   --->   Operation 178 'zext' 'zext_ln1497_1' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 179 [1/1] (0.00ns)   --->   "%zext_ln1346 = zext i8 %src_buf_V_0_1"   --->   Operation 179 'zext' 'zext_ln1346' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 180 [1/1] (0.00ns)   --->   "%zext_ln1346_1 = zext i8 %src_buf_V_2_0_2"   --->   Operation 180 'zext' 'zext_ln1346_1' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 181 [1/1] (1.30ns)   --->   "%ret = add i9 %zext_ln1346_1, i9 %zext_ln1346"   --->   Operation 181 'add' 'ret' <Predicate = (!icmp_ln878_5)> <Delay = 1.30> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 182 [1/1] (0.00ns)   --->   "%zext_ln1346_2 = zext i8 %src_buf_V_0_0_0"   --->   Operation 182 'zext' 'zext_ln1346_2' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 183 [1/1] (0.00ns)   --->   "%zext_ln1346_3 = zext i8 %src_buf_V_2_0_0"   --->   Operation 183 'zext' 'zext_ln1346_3' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 184 [1/1] (1.30ns)   --->   "%ret_1 = add i9 %zext_ln1346_3, i9 %zext_ln1346_2"   --->   Operation 184 'add' 'ret_1' <Predicate = (!icmp_ln878_5)> <Delay = 1.30> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 185 [1/1] (1.36ns)   --->   "%g_x_V_3 = sub i10 %zext_ln1497_1, i10 %zext_ln1497"   --->   Operation 185 'sub' 'g_x_V_3' <Predicate = (!icmp_ln878_5)> <Delay = 1.36> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 186 [1/1] (0.00ns)   --->   "%r_2 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i8.i1, i8 %src_buf_V_0_2_3, i1 0"   --->   Operation 186 'bitconcatenate' 'r_2' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 187 [1/1] (0.00ns)   --->   "%r_3 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i8.i1, i8 %src_buf_V_2_0, i1 0"   --->   Operation 187 'bitconcatenate' 'r_3' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 188 [1/1] (1.30ns)   --->   "%ret_2 = add i9 %zext_ln1346_3, i9 %zext_ln1346_1"   --->   Operation 188 'add' 'ret_2' <Predicate = (!icmp_ln878_5)> <Delay = 1.30> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 189 [1/1] (1.30ns)   --->   "%ret_3 = add i9 %zext_ln1346_2, i9 %zext_ln1346"   --->   Operation 189 'add' 'ret_3' <Predicate = (!icmp_ln878_5)> <Delay = 1.30> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 190 [1/1] (0.00ns)   --->   "%zext_ln121 = zext i9 %ret_2" [source/imgproc/xf_canny_sobel.hpp:121]   --->   Operation 190 'zext' 'zext_ln121' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 191 [1/1] (0.00ns)   --->   "%zext_ln69_1 = zext i9 %ret_3"   --->   Operation 191 'zext' 'zext_ln69_1' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 192 [1/1] (1.36ns)   --->   "%g_y_V_3 = sub i10 %zext_ln121, i10 %zext_ln69_1"   --->   Operation 192 'sub' 'g_y_V_3' <Predicate = (!icmp_ln878_5)> <Delay = 1.36> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 193 [1/1] (1.29ns)   --->   "%br_ln365 = br i1 %icmp_ln882, void, void" [source/imgproc/xf_canny_sobel.hpp:365]   --->   Operation 193 'br' 'br_ln365' <Predicate = (!icmp_ln878_5)> <Delay = 1.29>
+ST_15 : Operation 194 [1/1] (1.29ns)   --->   "%br_ln0 = br void"   --->   Operation 194 'br' 'br_ln0' <Predicate = (!icmp_ln878_5 & !icmp_ln882)> <Delay = 1.29>
+ST_15 : Operation 195 [1/1] (0.00ns)   --->   "%src_buf_V_1_0_1 = phi i8 %src_buf_V_1_2_3, void, i8 %src_buf_V_1_1, void %.split._crit_edge_ifconv"   --->   Operation 195 'phi' 'src_buf_V_1_0_1' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 196 [1/1] (0.00ns)   --->   "%src_buf_V_0_0_11 = phi i8 %src_buf_V_0_2_3, void, i8 %src_buf_V_0_1, void %.split._crit_edge_ifconv"   --->   Operation 196 'phi' 'src_buf_V_0_0_11' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 197 [1/1] (0.00ns)   --->   "%storemerge = phi i8 %src_buf_V_2_0, void, i8 %src_buf_V_2_0_2, void %.split._crit_edge_ifconv"   --->   Operation 197 'phi' 'storemerge' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_15 : Operation 198 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 198 'br' 'br_ln0' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+
+State 16 <SV = 11> <Delay = 6.44>
+ST_16 : Operation 199 [1/1] (0.00ns)   --->   "%zext_ln100 = zext i9 %ret" [source/imgproc/xf_canny_sobel.hpp:100]   --->   Operation 199 'zext' 'zext_ln100' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_16 : Operation 200 [1/1] (0.00ns)   --->   "%zext_ln69 = zext i9 %ret_1"   --->   Operation 200 'zext' 'zext_ln69' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_16 : Operation 201 [1/1] (0.00ns)   --->   "%sext_ln69 = sext i10 %g_x_V_3"   --->   Operation 201 'sext' 'sext_ln69' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_16 : Operation 202 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%g_x_V_4 = add i11 %sext_ln69, i11 %zext_ln100"   --->   Operation 202 'add' 'g_x_V_4' <Predicate = (!icmp_ln878_5)> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.52> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
+ST_16 : Operation 203 [1/1] (3.04ns) (root node of TernaryAdder)   --->   "%g_x_V = sub i11 %g_x_V_4, i11 %zext_ln69"   --->   Operation 203 'sub' 'g_x_V' <Predicate = (!icmp_ln878_5)> <Delay = 3.04> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.52> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
+ST_16 : Operation 204 [1/1] (0.00ns)   --->   "%sext_ln100 = sext i11 %g_x_V" [source/imgproc/xf_canny_sobel.hpp:100]   --->   Operation 204 'sext' 'sext_ln100' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_16 : Operation 205 [1/1] (0.00ns)   --->   "%zext_ln1497_2 = zext i9 %r_2"   --->   Operation 205 'zext' 'zext_ln1497_2' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_16 : Operation 206 [1/1] (0.00ns)   --->   "%zext_ln1497_3 = zext i9 %r_3"   --->   Operation 206 'zext' 'zext_ln1497_3' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_16 : Operation 207 [1/1] (0.00ns)   --->   "%sext_ln69_1 = sext i10 %g_y_V_3"   --->   Operation 207 'sext' 'sext_ln69_1' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_16 : Operation 208 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%g_y_V_4 = sub i11 %sext_ln69_1, i11 %zext_ln1497_2"   --->   Operation 208 'sub' 'g_y_V_4' <Predicate = (!icmp_ln878_5)> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.52> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
+ST_16 : Operation 209 [1/1] (3.04ns) (root node of TernaryAdder)   --->   "%g_y_V = add i11 %g_y_V_4, i11 %zext_ln1497_3"   --->   Operation 209 'add' 'g_y_V' <Predicate = (!icmp_ln878_5)> <Delay = 3.04> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.52> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
+ST_16 : Operation 210 [1/1] (0.00ns)   --->   "%sext_ln121 = sext i11 %g_y_V" [source/imgproc/xf_canny_sobel.hpp:121]   --->   Operation 210 'sext' 'sext_ln121' <Predicate = (!icmp_ln878_5)> <Delay = 0.00>
+ST_16 : Operation 211 [1/1] (3.40ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i16P0A, i16 %gradx_mat_4210, i16 %sext_ln100" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 211 'write' 'write_ln174' <Predicate = (!icmp_ln878_5 & !icmp_ln882)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_16 : Operation 212 [1/1] (3.40ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i16P0A, i16 %grady_mat_4213, i16 %sext_ln121" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 212 'write' 'write_ln174' <Predicate = (!icmp_ln878_5 & !icmp_ln882)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+
+State 17 <SV = 11> <Delay = 1.41>
+ST_17 : Operation 213 [1/1] (1.41ns)   --->   "%row_V_2 = add i10 %row_V, i10 1"   --->   Operation 213 'add' 'row_V_2' <Predicate = true> <Delay = 1.41> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 214 [1/1] (0.00ns)   --->   "%br_ln0 = br void %._crit_edge27"   --->   Operation 214 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('init_row_ind') with incoming values : ('init_row_ind', source/imgproc/xf_canny_sobel.hpp:448) [16]  (1.3 ns)
+
+ <State 2>: 0.98ns
+The critical path consists of the following:
+	'phi' operation ('init_row_ind') with incoming values : ('init_row_ind', source/imgproc/xf_canny_sobel.hpp:448) [16]  (0 ns)
+	blocking operation 0.98 ns on control path)
+
+ <State 3>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('init_buf', source/imgproc/xf_canny_sobel.hpp:456) with incoming values : ('zext_ln534') ('add_ln456', source/imgproc/xf_canny_sobel.hpp:456) [45]  (1.3 ns)
+
+ <State 4>: 2.27ns
+The critical path consists of the following:
+	'phi' operation ('init_buf', source/imgproc/xf_canny_sobel.hpp:456) with incoming values : ('zext_ln534') ('add_ln456', source/imgproc/xf_canny_sobel.hpp:456) [45]  (0 ns)
+	'icmp' operation ('icmp_ln878_2') [46]  (2.27 ns)
+
+ <State 5>: 1.88ns
+The critical path consists of the following:
+	'phi' operation ('col.V') with incoming values : ('col.V') [54]  (0 ns)
+	'icmp' operation ('icmp_ln878_3') [56]  (1.88 ns)
+
+ <State 6>: 6.17ns
+The critical path consists of the following:
+	fifo read on port 'gaussian_mat_4209' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145) [62]  (3.4 ns)
+	'store' operation ('store_ln466', source/imgproc/xf_canny_sobel.hpp:466) of variable 'tmp.V', C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145 on array 'buf.V[2]', source/imgproc/xf_canny_sobel.hpp:434 [75]  (2.77 ns)
+
+ <State 7>: 2.69ns
+The critical path consists of the following:
+	'add' operation ('add_ln456', source/imgproc/xf_canny_sobel.hpp:456) [80]  (2.69 ns)
+
+ <State 8>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('col.V') with incoming values : ('col.V') [86]  (0 ns)
+	'getelementptr' operation ('buf_V_0_addr', source/imgproc/xf_canny_sobel.hpp:480) [95]  (0 ns)
+	'load' operation ('buf_V_0_load', source/imgproc/xf_canny_sobel.hpp:480) on array 'buf.V[0]', source/imgproc/xf_canny_sobel.hpp:434 [96]  (2.77 ns)
+
+ <State 9>: 6.87ns
+The critical path consists of the following:
+	'load' operation ('buf_V_0_load', source/imgproc/xf_canny_sobel.hpp:480) on array 'buf.V[0]', source/imgproc/xf_canny_sobel.hpp:434 [96]  (2.77 ns)
+	'mux' operation ('tmp', source/imgproc/xf_canny_sobel.hpp:480) [101]  (1.33 ns)
+	'store' operation ('store_ln480', source/imgproc/xf_canny_sobel.hpp:480) of variable 'tmp', source/imgproc/xf_canny_sobel.hpp:480 on array 'buf.V[0]', source/imgproc/xf_canny_sobel.hpp:434 [102]  (2.77 ns)
+
+ <State 10>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('row_ind.V[2]') with incoming values : ('row_ind_V_0_0_load') ('row_ind_V_1_0_load', source/imgproc/xf_canny_sobel.hpp:480) ('row_ind_V_2_0_load') [107]  (1.3 ns)
+
+ <State 11>: 4.16ns
+The critical path consists of the following:
+	'phi' operation ('row.V') with incoming values : ('row.V') [110]  (0 ns)
+	'add' operation ('sub_i_i227_i') [120]  (1.48 ns)
+	'icmp' operation ('cmp_i_i198_i_2') [122]  (1.88 ns)
+	'and' operation ('spec_select54') [123]  (0.8 ns)
+
+ <State 12>: 2.68ns
+The critical path consists of the following:
+	'phi' operation ('col.V') with incoming values : ('col.V') [134]  (0 ns)
+	'icmp' operation ('icmp_ln878_6') [142]  (1.88 ns)
+	'and' operation ('and_ln203', source/imgproc/xf_canny_sobel.hpp:203) [143]  (0.8 ns)
+
+ <State 13>: 6.17ns
+The critical path consists of the following:
+	fifo read on port 'gaussian_mat_4209' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145) [146]  (3.4 ns)
+	'store' operation ('store_ln204', source/imgproc/xf_canny_sobel.hpp:204) of variable 'tmp.V', C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145 on array 'buf.V[0]', source/imgproc/xf_canny_sobel.hpp:434 [157]  (2.77 ns)
+
+ <State 14>: 2.77ns
+The critical path consists of the following:
+	'getelementptr' operation ('buf_V_0_addr_5', source/imgproc/xf_canny_sobel.hpp:343) [166]  (0 ns)
+	'load' operation ('buf_V_0_load_1', source/imgproc/xf_canny_sobel.hpp:343) on array 'buf.V[0]', source/imgproc/xf_canny_sobel.hpp:434 [167]  (2.77 ns)
+
+ <State 15>: 7.21ns
+The critical path consists of the following:
+	'load' operation ('buf_V_0_load_1', source/imgproc/xf_canny_sobel.hpp:343) on array 'buf.V[0]', source/imgproc/xf_canny_sobel.hpp:434 [167]  (2.77 ns)
+	'mux' operation ('src_buf.V[0][2]', source/imgproc/xf_canny_sobel.hpp:343) [172]  (1.33 ns)
+	'select' operation ('src_buf.V[0][1]') [181]  (0.448 ns)
+	'add' operation ('ret') [205]  (1.31 ns)
+	'sub' operation ('g_y_V_3') [208]  (1.36 ns)
+
+ <State 16>: 6.45ns
+The critical path consists of the following:
+	'add' operation ('g_x_V_4') [197]  (0 ns)
+	'sub' operation ('g_x.V') [198]  (3.05 ns)
+	fifo write on port 'gradx_mat_4210' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) [216]  (3.4 ns)
+
+ <State 17>: 1.42ns
+The critical path consists of the following:
+	'add' operation ('row.V') [225]  (1.42 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

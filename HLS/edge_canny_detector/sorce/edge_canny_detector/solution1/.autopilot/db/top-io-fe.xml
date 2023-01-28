@@ -1,0 +1,29 @@
+<root versionMajor = "1" versionMinor = "5">
+  <kernel src_name="edge_canny_detector" language="c" hwCtrl="ap_ctrl_none" mem_layout="fpga64-xilinx-none">
+    <args>
+      <arg id="0" access_type="r" src_name="src" src_type="stream&lt;hls::axis&lt;ap_uint&lt;24&gt;, 1, 1, 1&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="96" src_size_or_depth="16">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="src" hw_bitwidth="24" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="1" access_type="w" src_name="dst" src_type="stream&lt;hls::axis&lt;ap_uint&lt;24&gt;, 1, 1, 1&gt;, 0&gt;&amp;" src_isptr="1" src_bitwidth="96" src_size_or_depth="16">
+        <hw hw_usage="data" hw_interface="AXI-Stream" hw_name="dst" hw_bitwidth="24" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both"/>
+        </hw>
+      </arg>
+      <arg id="2" access_type="r" src_name="lowthreshold" src_type="ap_int&lt;8&gt;&amp;" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="lowthreshold" hw_bitwidth="8" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_vld" register_option="1"/>
+        </hw>
+      </arg>
+      <arg id="3" access_type="r" src_name="highthreshold" src_type="ap_int&lt;8&gt;&amp;" src_isptr="1" src_bitwidth="8" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="highthreshold" hw_bitwidth="8" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_vld" register_option="1"/>
+        </hw>
+      </arg>
+    </args>
+    <return src_type="void" src_bitwidth="0" offset="0x0">
+      <hw hw_usage="data" hw_interface="" hw_name="" hw_bitwidth="0"/>
+    </return>
+  </kernel>
+</root>

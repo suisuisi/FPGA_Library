@@ -1,0 +1,55 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'edge_canny_detector'" level="0">
+<item name = "Date">Tue Jan 24 22:05:17 2023
+</item>
+<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)</item>
+<item name = "Project">edge_canny_detector</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.212 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1859948, 1859948, 18.599 ms, 18.599 ms, 932402, 932402, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_s_fu_186">xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_s, 932401, 932401, 9.324 ms, 9.324 ms, 932401, 932401, none</column>
+<column name="grp_xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_s_fu_193">xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_s, 930083, 930083, 9.301 ms, 9.301 ms, 930083, 930083, none</column>
+<column name="grp_xFSobel_0_2_720_1280_0_3_1_1_5_3_false_s_fu_202">xFSobel_0_2_720_1280_0_3_1_1_5_3_false_s, 931779, 931779, 9.318 ms, 9.318 ms, 931779, 931779, none</column>
+<column name="grp_xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_s_fu_209">xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_s, 927923, 927923, 9.279 ms, 9.279 ms, 927923, 927923, none</column>
+<column name="grp_xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_s_fu_215">xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_s, 925921, 925921, 9.259 ms, 9.259 ms, 925921, 925921, none</column>
+<column name="grp_AXIvideo2xfMat_24_9_720_1280_1_16_fu_222">AXIvideo2xfMat_24_9_720_1280_1_16, 925203, 925924, 9.252 ms, 9.259 ms, 925203, 925924, none</column>
+<column name="grp_xfrgb2gray_720_1280_s_fu_247">xfrgb2gray_720_1280_s, 921607, 921607, 9.216 ms, 9.216 ms, 921607, 921607, none</column>
+<column name="grp_xfMat2AXIvideo_24_9_720_1280_1_s_fu_253">xfMat2AXIvideo_24_9_720_1280_1_s, 924481, 924481, 9.245 ms, 9.245 ms, 924481, 924481, none</column>
+<column name="grp_duplicate_720_1280_s_fu_272">duplicate_720_1280_s, 921602, 921602, 9.216 ms, 9.216 ms, 921602, 921602, none</column>
+<column name="grp_xfgray2rgb_720_1280_s_fu_282">xfgray2rgb_720_1280_s, 921602, 921602, 9.216 ms, 9.216 ms, 921602, 921602, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

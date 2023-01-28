@@ -1,0 +1,115 @@
+
+
+================================================================
+== Vitis HLS Report for 'ExtractPixel'
+================================================================
+* Date:           Tue Jan 24 22:05:08 2023
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        edge_canny_detector
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|      0 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%src_V_read_1 = read i24 @_ssdm_op_Read.ap_auto.i24, i24 %src_V_read" [source/edge_canny_detector.cpp:3]   --->   Operation 2 'read' 'src_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%trunc_ln674 = trunc i24 %src_V_read_1"   --->   Operation 3 'trunc' 'trunc_ln674' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%src_value_1 = partselect i8 @_ssdm_op_PartSelect.i8.i24.i32.i32, i24 %src_V_read_1, i32 8, i32 15"   --->   Operation 4 'partselect' 'src_value_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%src_value_2 = partselect i8 @_ssdm_op_PartSelect.i8.i24.i32.i32, i24 %src_V_read_1, i32 16, i32 23"   --->   Operation 5 'partselect' 'src_value_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%mrv = insertvalue i24 <undef>, i8 %trunc_ln674" [source/edge_canny_detector.cpp:13]   --->   Operation 6 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i24 %mrv, i8 %src_value_1" [source/edge_canny_detector.cpp:13]   --->   Operation 7 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i24 %mrv_1, i8 %src_value_2" [source/edge_canny_detector.cpp:13]   --->   Operation 8 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%ret_ln13 = ret i24 %mrv_2" [source/edge_canny_detector.cpp:13]   --->   Operation 9 'ret' 'ret_ln13' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

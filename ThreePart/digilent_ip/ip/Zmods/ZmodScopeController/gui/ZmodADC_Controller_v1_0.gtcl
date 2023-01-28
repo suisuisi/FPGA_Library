@@ -1,0 +1,2 @@
+# This file is automatically written.  Do not modify.
+proc gen_USERPARAMETER_kADC_Width_VALUE {kZmodID } {expr $kZmodID == 0 ? 14 : $kZmodID == 1 ? 10 : $kZmodID == 2 ? 10 : $kZmodID == 3 ? 12 : $kZmodID == 4 ? 12 : $kZmodID == 5 ? 14 : $kZmodID == 6 ? 14 : 14}

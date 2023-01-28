@@ -1,0 +1,318 @@
+
+
+================================================================
+== Vitis HLS Report for 'AXIvideo2xfMat_24_9_720_1280_1_16'
+================================================================
+* Date:           Tue Jan 24 22:05:08 2023
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        edge_canny_detector
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.401 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   925203|   925924|  9.252 ms|  9.259 ms|  925203|  925924|     none|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+---------+-------------+-----------+-----------+-------+----------+
+        |                     |  Latency (cycles) |  Iteration  |  Initiation Interval  |  Trip |          |
+        |      Loop Name      |   min   |   max   |   Latency   |  achieved |   target  | Count | Pipelined|
+        +---------------------+---------+---------+-------------+-----------+-----------+-------+----------+
+        |- loop_start_hunt    |        0|        1|            1|          1|          1|  0 ~ 1|       yes|
+        |- loop_row_axi2mat   |   925200|   925920|  1285 ~ 1286|          -|          -|    720|        no|
+        | + loop_col_zxi2mat  |     1280|     1280|            2|          1|          1|   1280|       yes|
+        | + loop_last_hunt    |        0|        1|            1|          1|          1|  0 ~ 1|       yes|
+        +---------------------+---------+---------+-------------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+  * Pipeline-2: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 9
+* Pipeline : 3
+  Pipeline-0 : II = 1, D = 1, States = { 2 }
+  Pipeline-1 : II = 1, D = 2, States = { 5 6 }
+  Pipeline-2 : II = 1, D = 1, States = { 8 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 2 
+3 --> 4 
+4 --> 5 
+5 --> 7 6 
+6 --> 5 
+7 --> 8 
+8 --> 9 8 
+9 --> 4 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.28>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %rgb_img_src_4206, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %rgb_img_src_4206, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 34 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 38 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 40 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 42 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 44 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 46 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 47 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 48 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 49 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 50 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 51 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 52 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 53 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 54 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 55 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 56 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 57 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 58 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 59 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 60 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 61 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 62 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 63 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 64 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 65 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 66 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 67 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%lowthreshold_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %lowthreshold"   --->   Operation 68 'read' 'lowthreshold_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %lowthreshold_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 69 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (3.28ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.i8P0A, i8 %lowthreshold_out, i8 %lowthreshold_read"   --->   Operation 70 'write' 'write_ln0' <Predicate = true> <Delay = 3.28> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.28> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 7> <FIFO>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%highthreshold_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %highthreshold"   --->   Operation 71 'read' 'highthreshold_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %highthreshold_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 72 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (3.28ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.i8P0A, i8 %highthreshold_out, i8 %highthreshold_read"   --->   Operation 73 'write' 'write_ln0' <Predicate = true> <Delay = 3.28> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.28> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 7> <FIFO>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %rgb_img_src_4206, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 74 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 75 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 76 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 77 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 78 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 79 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 80 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 81 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %rgb_img_src_4206, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 82 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %AXI_video_strm_V_dest_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_user_V, i3 %AXI_video_strm_V_strb_V, i3 %AXI_video_strm_V_keep_V, i24 %AXI_video_strm_V_data_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 83 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (1.29ns)   --->   "%br_ln101 = br void %._crit_edge2.i.i" [source/common/xf_infra.hpp:101]   --->   Operation 84 'br' 'br_ln101' <Predicate = true> <Delay = 1.29>
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 85 [1/1] (0.00ns)   --->   "%axi_last_V = phi i1 %axi_last_V_1, void, i1 0, void %entry"   --->   Operation 85 'phi' 'axi_last_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "%axi_data_V = phi i24 %axi_data_V_1, void, i24 0, void %entry"   --->   Operation 86 'phi' 'axi_data_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "%start = phi i1 %axi_user_V, void, i1 0, void %entry"   --->   Operation 87 'phi' 'start' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%br_ln117 = br i1 %start, void, void %.lr.ph64.i.i.preheader" [source/common/xf_infra.hpp:117]   --->   Operation 88 'br' 'br_ln117' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "%specpipeline_ln283 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_5"   --->   Operation 89 'specpipeline' 'specpipeline_ln283' <Predicate = (!start)> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (0.00ns)   --->   "%speclooptripcount_ln283 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 0, i64 1, i64 1"   --->   Operation 90 'speclooptripcount' 'speclooptripcount_ln283' <Predicate = (!start)> <Delay = 0.00>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "%specloopname_ln283 = specloopname void @_ssdm_op_SpecLoopName, void @empty_10"   --->   Operation 91 'specloopname' 'specloopname_ln283' <Predicate = (!start)> <Delay = 0.00>
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "%empty = read i34 @_ssdm_op_Read.axis.volatile.i24P0A.i3P0A.i3P0A.i1P0A.i1P0A.i1P0A.i1P0A, i24 %AXI_video_strm_V_data_V, i3 %AXI_video_strm_V_keep_V, i3 %AXI_video_strm_V_strb_V, i1 %AXI_video_strm_V_user_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_dest_V"   --->   Operation 92 'read' 'empty' <Predicate = (!start)> <Delay = 0.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_2 : Operation 93 [1/1] (0.00ns)   --->   "%axi_data_V_1 = extractvalue i34 %empty"   --->   Operation 93 'extractvalue' 'axi_data_V_1' <Predicate = (!start)> <Delay = 0.00>
+ST_2 : Operation 94 [1/1] (0.00ns)   --->   "%axi_user_V = extractvalue i34 %empty"   --->   Operation 94 'extractvalue' 'axi_user_V' <Predicate = (!start)> <Delay = 0.00>
+ST_2 : Operation 95 [1/1] (0.00ns)   --->   "%axi_last_V_1 = extractvalue i34 %empty"   --->   Operation 95 'extractvalue' 'axi_last_V_1' <Predicate = (!start)> <Delay = 0.00>
+ST_2 : Operation 96 [1/1] (0.00ns)   --->   "%br_ln117 = br void %._crit_edge2.i.i" [source/common/xf_infra.hpp:117]   --->   Operation 96 'br' 'br_ln117' <Predicate = (!start)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.29>
+ST_3 : Operation 97 [1/1] (1.29ns)   --->   "%br_ln128 = br void %.lr.ph64.i.i" [source/common/xf_infra.hpp:128]   --->   Operation 97 'br' 'br_ln128' <Predicate = true> <Delay = 1.29>
+
+State 4 <SV = 3> <Delay = 1.94>
+ST_4 : Operation 98 [1/1] (0.00ns)   --->   "%i = phi i10 %i_3, void, i10 0, void %.lr.ph64.i.i.preheader"   --->   Operation 98 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 99 [1/1] (0.00ns)   --->   "%start_2 = phi i1 0, void, i1 1, void %.lr.ph64.i.i.preheader"   --->   Operation 99 'phi' 'start_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 100 [1/1] (0.00ns)   --->   "%axi_data_V_2 = phi i24 %axi_data_V_4, void, i24 %axi_data_V, void %.lr.ph64.i.i.preheader"   --->   Operation 100 'phi' 'axi_data_V_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 101 [1/1] (0.00ns)   --->   "%axi_last_V_2 = phi i1 1, void, i1 %axi_last_V, void %.lr.ph64.i.i.preheader"   --->   Operation 101 'phi' 'axi_last_V_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 102 [1/1] (1.41ns)   --->   "%i_3 = add i10 %i, i10 1" [source/common/xf_infra.hpp:128]   --->   Operation 102 'add' 'i_3' <Predicate = true> <Delay = 1.41> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 103 [1/1] (1.94ns)   --->   "%icmp_ln128 = icmp_eq  i10 %i, i10 720" [source/common/xf_infra.hpp:128]   --->   Operation 103 'icmp' 'icmp_ln128' <Predicate = true> <Delay = 1.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 104 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 720, i64 720, i64 720"   --->   Operation 104 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 105 [1/1] (0.00ns)   --->   "%br_ln128 = br i1 %icmp_ln128, void %.split2.i.i, void %.exit" [source/common/xf_infra.hpp:128]   --->   Operation 105 'br' 'br_ln128' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 106 [1/1] (0.00ns)   --->   "%specloopname_ln101 = specloopname void @_ssdm_op_SpecLoopName, void @empty_11" [source/common/xf_infra.hpp:101]   --->   Operation 106 'specloopname' 'specloopname_ln101' <Predicate = (!icmp_ln128)> <Delay = 0.00>
+ST_4 : Operation 107 [1/1] (1.29ns)   --->   "%br_ln132 = br void %.lr.ph.i.i" [source/common/xf_infra.hpp:132]   --->   Operation 107 'br' 'br_ln132' <Predicate = (!icmp_ln128)> <Delay = 1.29>
+ST_4 : Operation 108 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 108 'ret' 'ret_ln0' <Predicate = (icmp_ln128)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 2.09>
+ST_5 : Operation 109 [1/1] (0.00ns)   --->   "%j = phi i11 %j_3, void %.split._crit_edge.i.i, i11 0, void %.split2.i.i"   --->   Operation 109 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 110 [1/1] (0.00ns)   --->   "%last = phi i1 %axi_last_V_8, void %.split._crit_edge.i.i, i1 0, void %.split2.i.i"   --->   Operation 110 'phi' 'last' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 111 [1/1] (0.00ns)   --->   "%start_3 = phi i1 0, void %.split._crit_edge.i.i, i1 %start_2, void %.split2.i.i"   --->   Operation 111 'phi' 'start_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 112 [1/1] (0.00ns)   --->   "%axi_data_V_3 = phi i24 %p_Val2_s, void %.split._crit_edge.i.i, i24 %axi_data_V_2, void %.split2.i.i"   --->   Operation 112 'phi' 'axi_data_V_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 113 [1/1] (0.00ns)   --->   "%axi_last_V_3 = phi i1 %axi_last_V_8, void %.split._crit_edge.i.i, i1 %axi_last_V_2, void %.split2.i.i"   --->   Operation 113 'phi' 'axi_last_V_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 114 [1/1] (1.48ns)   --->   "%j_3 = add i11 %j, i11 1" [source/common/xf_infra.hpp:132]   --->   Operation 114 'add' 'j_3' <Predicate = true> <Delay = 1.48> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 115 [1/1] (1.88ns)   --->   "%icmp_ln132 = icmp_eq  i11 %j, i11 1280" [source/common/xf_infra.hpp:132]   --->   Operation 115 'icmp' 'icmp_ln132' <Predicate = true> <Delay = 1.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 116 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1280, i64 1280, i64 1280"   --->   Operation 116 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 117 [1/1] (0.00ns)   --->   "%br_ln132 = br i1 %icmp_ln132, void %.split.i.i, void %._crit_edge.i.i.preheader" [source/common/xf_infra.hpp:132]   --->   Operation 117 'br' 'br_ln132' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 118 [1/1] (0.00ns)   --->   "%specpipeline_ln101 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_5" [source/common/xf_infra.hpp:101]   --->   Operation 118 'specpipeline' 'specpipeline_ln101' <Predicate = (!icmp_ln132)> <Delay = 0.00>
+ST_5 : Operation 119 [1/1] (0.00ns)   --->   "%specloopname_ln101 = specloopname void @_ssdm_op_SpecLoopName, void @empty_13" [source/common/xf_infra.hpp:101]   --->   Operation 119 'specloopname' 'specloopname_ln101' <Predicate = (!icmp_ln132)> <Delay = 0.00>
+ST_5 : Operation 120 [1/1] (0.80ns)   --->   "%or_ln138 = or i1 %start_3, i1 %last" [source/common/xf_infra.hpp:138]   --->   Operation 120 'or' 'or_ln138' <Predicate = (!icmp_ln132)> <Delay = 0.80> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 121 [1/1] (1.29ns)   --->   "%br_ln138 = br i1 %or_ln138, void, void %.split._crit_edge.i.i" [source/common/xf_infra.hpp:138]   --->   Operation 121 'br' 'br_ln138' <Predicate = (!icmp_ln132)> <Delay = 1.29>
+ST_5 : Operation 122 [1/1] (0.00ns)   --->   "%empty_743 = read i34 @_ssdm_op_Read.axis.volatile.i24P0A.i3P0A.i3P0A.i1P0A.i1P0A.i1P0A.i1P0A, i24 %AXI_video_strm_V_data_V, i3 %AXI_video_strm_V_keep_V, i3 %AXI_video_strm_V_strb_V, i1 %AXI_video_strm_V_user_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_dest_V"   --->   Operation 122 'read' 'empty_743' <Predicate = (!icmp_ln132 & !or_ln138)> <Delay = 0.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_5 : Operation 123 [1/1] (0.00ns)   --->   "%axi_data_V_5 = extractvalue i34 %empty_743"   --->   Operation 123 'extractvalue' 'axi_data_V_5' <Predicate = (!icmp_ln132 & !or_ln138)> <Delay = 0.00>
+ST_5 : Operation 124 [1/1] (0.00ns)   --->   "%axi_last_V_4 = extractvalue i34 %empty_743"   --->   Operation 124 'extractvalue' 'axi_last_V_4' <Predicate = (!icmp_ln132 & !or_ln138)> <Delay = 0.00>
+ST_5 : Operation 125 [1/1] (1.29ns)   --->   "%br_ln0 = br void %.split._crit_edge.i.i"   --->   Operation 125 'br' 'br_ln0' <Predicate = (!icmp_ln132 & !or_ln138)> <Delay = 1.29>
+ST_5 : Operation 126 [1/1] (0.00ns)   --->   "%axi_last_V_8 = phi i1 %axi_last_V_4, void, i1 %axi_last_V_3, void %.split.i.i"   --->   Operation 126 'phi' 'axi_last_V_8' <Predicate = (!icmp_ln132)> <Delay = 0.00>
+ST_5 : Operation 127 [1/1] (0.00ns)   --->   "%p_Val2_s = phi i24 %axi_data_V_5, void, i24 %axi_data_V_3, void %.split.i.i"   --->   Operation 127 'phi' 'p_Val2_s' <Predicate = (!icmp_ln132)> <Delay = 0.00>
+ST_5 : Operation 128 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.lr.ph.i.i"   --->   Operation 128 'br' 'br_ln0' <Predicate = (!icmp_ln132)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 3.40>
+ST_6 : Operation 129 [1/1] (3.40ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i24P0A, i24 %rgb_img_src_4206, i24 %p_Val2_s" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 129 'write' 'write_ln174' <Predicate = (!icmp_ln132)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+
+State 7 <SV = 5> <Delay = 1.29>
+ST_7 : Operation 130 [1/1] (1.29ns)   --->   "%br_ln158 = br void %._crit_edge.i.i" [source/common/xf_infra.hpp:158]   --->   Operation 130 'br' 'br_ln158' <Predicate = true> <Delay = 1.29>
+
+State 8 <SV = 6> <Delay = 0.00>
+ST_8 : Operation 131 [1/1] (0.00ns)   --->   "%axi_last_V_9 = phi i1 %axi_last_V_10, void, i1 %last, void %._crit_edge.i.i.preheader"   --->   Operation 131 'phi' 'axi_last_V_9' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 132 [1/1] (0.00ns)   --->   "%axi_data_V_4 = phi i24 %axi_data_V_6, void, i24 %axi_data_V_3, void %._crit_edge.i.i.preheader"   --->   Operation 132 'phi' 'axi_data_V_4' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 133 [1/1] (0.00ns)   --->   "%br_ln158 = br i1 %axi_last_V_9, void, void" [source/common/xf_infra.hpp:158]   --->   Operation 133 'br' 'br_ln158' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 134 [1/1] (0.00ns)   --->   "%specpipeline_ln283 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_5"   --->   Operation 134 'specpipeline' 'specpipeline_ln283' <Predicate = (!axi_last_V_9)> <Delay = 0.00>
+ST_8 : Operation 135 [1/1] (0.00ns)   --->   "%speclooptripcount_ln283 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 0, i64 1, i64 1"   --->   Operation 135 'speclooptripcount' 'speclooptripcount_ln283' <Predicate = (!axi_last_V_9)> <Delay = 0.00>
+ST_8 : Operation 136 [1/1] (0.00ns)   --->   "%specloopname_ln283 = specloopname void @_ssdm_op_SpecLoopName, void @empty_12"   --->   Operation 136 'specloopname' 'specloopname_ln283' <Predicate = (!axi_last_V_9)> <Delay = 0.00>
+ST_8 : Operation 137 [1/1] (0.00ns)   --->   "%empty_744 = read i34 @_ssdm_op_Read.axis.volatile.i24P0A.i3P0A.i3P0A.i1P0A.i1P0A.i1P0A.i1P0A, i24 %AXI_video_strm_V_data_V, i3 %AXI_video_strm_V_keep_V, i3 %AXI_video_strm_V_strb_V, i1 %AXI_video_strm_V_user_V, i1 %AXI_video_strm_V_last_V, i1 %AXI_video_strm_V_id_V, i1 %AXI_video_strm_V_dest_V"   --->   Operation 137 'read' 'empty_744' <Predicate = (!axi_last_V_9)> <Delay = 0.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_8 : Operation 138 [1/1] (0.00ns)   --->   "%axi_data_V_6 = extractvalue i34 %empty_744"   --->   Operation 138 'extractvalue' 'axi_data_V_6' <Predicate = (!axi_last_V_9)> <Delay = 0.00>
+ST_8 : Operation 139 [1/1] (0.00ns)   --->   "%axi_last_V_10 = extractvalue i34 %empty_744"   --->   Operation 139 'extractvalue' 'axi_last_V_10' <Predicate = (!axi_last_V_9)> <Delay = 0.00>
+ST_8 : Operation 140 [1/1] (0.00ns)   --->   "%br_ln158 = br void %._crit_edge.i.i" [source/common/xf_infra.hpp:158]   --->   Operation 140 'br' 'br_ln158' <Predicate = (!axi_last_V_9)> <Delay = 0.00>
+
+State 9 <SV = 7> <Delay = 0.00>
+ST_9 : Operation 141 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.lr.ph64.i.i"   --->   Operation 141 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 3.28ns
+The critical path consists of the following:
+	wire read on port 'lowthreshold' [71]  (0 ns)
+	fifo write on port 'lowthreshold_out' [73]  (3.28 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', source/common/xf_infra.hpp:128) [105]  (1.3 ns)
+
+ <State 4>: 1.94ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', source/common/xf_infra.hpp:128) [105]  (0 ns)
+	'icmp' operation ('icmp_ln128', source/common/xf_infra.hpp:128) [110]  (1.94 ns)
+
+ <State 5>: 2.1ns
+The critical path consists of the following:
+	'phi' operation ('axi.last.V') with incoming values : ('axi.last.V') [118]  (0 ns)
+	'or' operation ('or_ln138', source/common/xf_infra.hpp:138) [129]  (0.8 ns)
+	multiplexor before 'phi' operation ('axi.last.V') with incoming values : ('axi.last.V') [137]  (1.3 ns)
+	'phi' operation ('axi.last.V') with incoming values : ('axi.last.V') [137]  (0 ns)
+
+ <State 6>: 3.4ns
+The critical path consists of the following:
+	fifo write on port 'rgb_img_src_4206' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) [139]  (3.4 ns)
+
+ <State 7>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('axi.last.V') with incoming values : ('axi.last.V') [144]  (1.3 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

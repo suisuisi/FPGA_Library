@@ -1,0 +1,221 @@
+
+
+================================================================
+== Vitis HLS Report for 'xfrgb2gray_720_1280_s'
+================================================================
+* Date:           Tue Jan 24 22:05:08 2023
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        edge_canny_detector
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.221 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   921607|   921607|  9.216 ms|  9.216 ms|  921607|  921607|     none|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |                                   |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip  |          |
+        |             Loop Name             |   min   |   max   |  Latency |  achieved |   target  |  Count | Pipelined|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |- VITIS_LOOP_23_1_VITIS_LOOP_25_2  |   921605|   921605|         7|          1|          1|  921600|       yes|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 7
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 9
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 7, States = { 2 3 4 5 6 7 8 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 9 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 2 
+9 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.29>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gray_img_src_4207, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %rgb_img_src_4206, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (1.29ns)   --->   "%br_ln23 = br void" [source/edge_canny_detector.cpp:23]   --->   Operation 12 'br' 'br_ln23' <Predicate = true> <Delay = 1.29>
+
+State 2 <SV = 1> <Delay = 2.02>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i20 0, void, i20 %add_ln23, void %.split2" [source/edge_canny_detector.cpp:23]   --->   Operation 13 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (1.58ns)   --->   "%add_ln23 = add i20 %indvar_flatten, i20 1" [source/edge_canny_detector.cpp:23]   --->   Operation 14 'add' 'add_ln23' <Predicate = true> <Delay = 1.58> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.58> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (2.02ns)   --->   "%icmp_ln23 = icmp_eq  i20 %indvar_flatten, i20 921600" [source/edge_canny_detector.cpp:23]   --->   Operation 15 'icmp' 'icmp_ln23' <Predicate = true> <Delay = 2.02> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln23 = br i1 %icmp_ln23, void %.split2, void" [source/edge_canny_detector.cpp:23]   --->   Operation 16 'br' 'br_ln23' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 5.22>
+ST_3 : Operation 17 [1/1] (3.40ns)   --->   "%tmp_V = read i24 @_ssdm_op_Read.ap_fifo.volatile.i24P0A, i24 %rgb_img_src_4206" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 17 'read' 'tmp_V' <Predicate = (!icmp_ln23)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%call_ret = call i24 @ExtractPixel, i24 %tmp_V" [source/edge_canny_detector.cpp:29]   --->   Operation 18 'call' 'call_ret' <Predicate = (!icmp_ln23)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%rgb_V_0 = extractvalue i24 %call_ret" [source/edge_canny_detector.cpp:29]   --->   Operation 19 'extractvalue' 'rgb_V_0' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%rgb_V_1 = extractvalue i24 %call_ret" [source/edge_canny_detector.cpp:29]   --->   Operation 20 'extractvalue' 'rgb_V_1' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%rgb_V_2 = extractvalue i24 %call_ret" [source/edge_canny_detector.cpp:29]   --->   Operation 21 'extractvalue' 'rgb_V_2' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%zext_ln852 = zext i8 %rgb_V_0" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 22 'zext' 'zext_ln852' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_3 : Operation 23 [4/4] (1.82ns) (root node of the DSP)   --->   "%mul_ln852 = mul i22 %zext_ln852, i22 9798" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 23 'mul' 'mul_ln852' <Predicate = (!icmp_ln23)> <Delay = 1.82> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 4 <SV = 3> <Delay = 1.82>
+ST_4 : Operation 24 [3/4] (1.82ns) (root node of the DSP)   --->   "%mul_ln852 = mul i22 %zext_ln852, i22 9798" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 24 'mul' 'mul_ln852' <Predicate = (!icmp_ln23)> <Delay = 1.82> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%zext_ln852_2 = zext i8 %rgb_V_2" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 25 'zext' 'zext_ln852_2' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_4 : Operation 26 [3/3] (0.98ns) (grouped into DSP with root node add_ln852)   --->   "%mul_ln852_2 = mul i20 %zext_ln852_2, i20 3736" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 26 'mul' 'mul_ln852_2' <Predicate = (!icmp_ln23)> <Delay = 0.98> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 5 <SV = 4> <Delay = 1.82>
+ST_5 : Operation 27 [2/4] (1.82ns) (root node of the DSP)   --->   "%mul_ln852 = mul i22 %zext_ln852, i22 9798" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 27 'mul' 'mul_ln852' <Predicate = (!icmp_ln23)> <Delay = 1.82> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 28 [1/1] (0.00ns)   --->   "%zext_ln852_1 = zext i8 %rgb_V_1" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 28 'zext' 'zext_ln852_1' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_5 : Operation 29 [3/3] (0.98ns) (grouped into DSP with root node GRAY)   --->   "%mul_ln852_1 = mul i23 %zext_ln852_1, i23 19235" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 29 'mul' 'mul_ln852_1' <Predicate = (!icmp_ln23)> <Delay = 0.98> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 30 [2/3] (0.98ns) (grouped into DSP with root node add_ln852)   --->   "%mul_ln852_2 = mul i20 %zext_ln852_2, i20 3736" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 30 'mul' 'mul_ln852_2' <Predicate = (!icmp_ln23)> <Delay = 0.98> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 6 <SV = 5> <Delay = 1.76>
+ST_6 : Operation 31 [1/4] (0.00ns) (root node of the DSP)   --->   "%mul_ln852 = mul i22 %zext_ln852, i22 9798" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 31 'mul' 'mul_ln852' <Predicate = (!icmp_ln23)> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 32 [2/3] (0.98ns) (grouped into DSP with root node GRAY)   --->   "%mul_ln852_1 = mul i23 %zext_ln852_1, i23 19235" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 32 'mul' 'mul_ln852_1' <Predicate = (!icmp_ln23)> <Delay = 0.98> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 33 [1/3] (0.00ns) (grouped into DSP with root node add_ln852)   --->   "%mul_ln852_2 = mul i20 %zext_ln852_2, i20 3736" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 33 'mul' 'mul_ln852_2' <Predicate = (!icmp_ln23)> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 34 [1/1] (0.00ns) (grouped into DSP with root node add_ln852)   --->   "%zext_ln852_3 = zext i20 %mul_ln852_2" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 34 'zext' 'zext_ln852_3' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_6 : Operation 35 [2/2] (1.76ns) (root node of the DSP)   --->   "%add_ln852 = add i22 %mul_ln852, i22 %zext_ln852_3" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 35 'add' 'add_ln852' <Predicate = (!icmp_ln23)> <Delay = 1.76> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 7 <SV = 6> <Delay = 3.52>
+ST_7 : Operation 36 [1/3] (0.00ns) (grouped into DSP with root node GRAY)   --->   "%mul_ln852_1 = mul i23 %zext_ln852_1, i23 19235" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 36 'mul' 'mul_ln852_1' <Predicate = (!icmp_ln23)> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_7 : Operation 37 [1/2] (1.76ns) (root node of the DSP)   --->   "%add_ln852 = add i22 %mul_ln852, i22 %zext_ln852_3" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 37 'add' 'add_ln852' <Predicate = (!icmp_ln23)> <Delay = 1.76> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_7 : Operation 38 [1/1] (0.00ns)   --->   "%zext_ln852_4 = zext i22 %add_ln852" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 38 'zext' 'zext_ln852_4' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_7 : Operation 39 [2/2] (1.76ns) (root node of the DSP)   --->   "%GRAY = add i23 %zext_ln852_4, i23 %mul_ln852_1" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 39 'add' 'GRAY' <Predicate = (!icmp_ln23)> <Delay = 1.76> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+State 8 <SV = 7> <Delay = 5.16>
+ST_8 : Operation 40 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_23_1_VITIS_LOOP_25_2_str"   --->   Operation 40 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_8 : Operation 41 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 921600, i64 921600, i64 921600"   --->   Operation 41 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_8 : Operation 42 [1/1] (0.00ns)   --->   "%specpipeline_ln19 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_5" [source/edge_canny_detector.cpp:19]   --->   Operation 42 'specpipeline' 'specpipeline_ln19' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_8 : Operation 43 [1/1] (0.00ns)   --->   "%specloopname_ln19 = specloopname void @_ssdm_op_SpecLoopName, void @empty_15" [source/edge_canny_detector.cpp:19]   --->   Operation 43 'specloopname' 'specloopname_ln19' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_8 : Operation 44 [1/2] (1.76ns) (root node of the DSP)   --->   "%GRAY = add i23 %zext_ln852_4, i23 %mul_ln852_1" [source/imgproc/xf_cvt_color_utils.hpp:852]   --->   Operation 44 'add' 'GRAY' <Predicate = (!icmp_ln23)> <Delay = 1.76> <CoreInst = "DSP48">   --->   Core 119 'DSP48' <Latency = 3> <II = 1> <Delay = 1.82> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_8 : Operation 45 [1/1] (0.00ns)   --->   "%gray_packed_V = partselect i8 @_ssdm_op_PartSelect.i8.i23.i32.i32, i23 %GRAY, i32 15, i32 22" [source/imgproc/xf_cvt_color_utils.hpp:745]   --->   Operation 45 'partselect' 'gray_packed_V' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_8 : Operation 46 [1/1] (3.40ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i8P0A, i8 %gray_img_src_4207, i8 %gray_packed_V" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 46 'write' 'write_ln174' <Predicate = (!icmp_ln23)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_8 : Operation 47 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 47 'br' 'br_ln0' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+
+State 9 <SV = 2> <Delay = 0.00>
+ST_9 : Operation 48 [1/1] (0.00ns)   --->   "%ret_ln35 = ret" [source/edge_canny_detector.cpp:35]   --->   Operation 48 'ret' 'ret_ln35' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten', source/edge_canny_detector.cpp:23) with incoming values : ('add_ln23', source/edge_canny_detector.cpp:23) [7]  (1.3 ns)
+
+ <State 2>: 2.03ns
+The critical path consists of the following:
+	'phi' operation ('indvar_flatten', source/edge_canny_detector.cpp:23) with incoming values : ('add_ln23', source/edge_canny_detector.cpp:23) [7]  (0 ns)
+	'icmp' operation ('icmp_ln23', source/edge_canny_detector.cpp:23) [9]  (2.03 ns)
+
+ <State 3>: 5.22ns
+The critical path consists of the following:
+	fifo read on port 'rgb_img_src_4206' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145) [16]  (3.4 ns)
+	'call' operation ('call_ret', source/edge_canny_detector.cpp:29) to 'ExtractPixel' [17]  (0 ns)
+	'mul' operation of DSP[22] ('mul_ln852', source/imgproc/xf_cvt_color_utils.hpp:852) [22]  (1.82 ns)
+
+ <State 4>: 1.82ns
+The critical path consists of the following:
+	'mul' operation of DSP[22] ('mul_ln852', source/imgproc/xf_cvt_color_utils.hpp:852) [22]  (1.82 ns)
+
+ <State 5>: 1.82ns
+The critical path consists of the following:
+	'mul' operation of DSP[22] ('mul_ln852', source/imgproc/xf_cvt_color_utils.hpp:852) [22]  (1.82 ns)
+
+ <State 6>: 1.76ns
+The critical path consists of the following:
+	'mul' operation of DSP[22] ('mul_ln852', source/imgproc/xf_cvt_color_utils.hpp:852) [22]  (0 ns)
+	'add' operation of DSP[28] ('add_ln852', source/imgproc/xf_cvt_color_utils.hpp:852) [28]  (1.76 ns)
+
+ <State 7>: 3.52ns
+The critical path consists of the following:
+	'add' operation of DSP[28] ('add_ln852', source/imgproc/xf_cvt_color_utils.hpp:852) [28]  (1.76 ns)
+	'add' operation of DSP[30] ('GRAY', source/imgproc/xf_cvt_color_utils.hpp:852) [30]  (1.76 ns)
+
+ <State 8>: 5.16ns
+The critical path consists of the following:
+	'add' operation of DSP[30] ('GRAY', source/imgproc/xf_cvt_color_utils.hpp:852) [30]  (1.76 ns)
+	fifo write on port 'gray_img_src_4207' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) [32]  (3.4 ns)
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

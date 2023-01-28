@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1674569121643">
+  <ports id="1" name="p_i00" type="PortType" coreId="0" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="p_i01" type="PortType" coreId="0" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="p_i02" type="PortType" coreId="0" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="4" name="p_i10" type="PortType" coreId="0" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="5" name="p_i11" type="PortType" coreId="1478700960" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="6" name="p_i12" type="PortType" coreId="1853187616" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="7" name="p_i20" type="PortType" coreId="1480593968" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="8" name="p_i21" type="PortType" coreId="1478701776" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="9" name="p_i22" type="PortType" coreId="1852383271" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="10" name="angle" type="PortType" coreId="2020167720" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="11" name="p_low_threshold" type="PortType" originalName="_low_threshold" coreId="1853187616" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="12" name="p_high_threshold" type="PortType" originalName="_high_threshold" coreId="1633902438" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="22" name="ap_return" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <edges id="92" source_obj="//@ports.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="94" source_obj="//@ports.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="96" source_obj="//@ports.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="99" source_obj="//@ports.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="101" source_obj="//@ports.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="103" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="105" source_obj="//@ports.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="107" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="109" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="111" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="113" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
+  <edges id="115" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
+  <edges id="116" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
+  <edges id="117" source_obj="//@regions.0/@basic_blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="118" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
+  <edges id="119" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.14"/>
+  <edges id="122" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="123" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="124" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="125" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="126" source_obj="//@regions.0/@basic_blocks.0/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.17"/>
+  <edges id="129" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="132" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="133" source_obj="//@regions.0/@basic_blocks.0/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
+  <edges id="134" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
+  <edges id="135" source_obj="//@regions.0/@basic_blocks.0/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
+  <edges id="139" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="140" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="141" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.23"/>
+  <edges id="142" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.23"/>
+  <edges id="143" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.24"/>
+  <edges id="146" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="147" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.25"/>
+  <edges id="148" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="149" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.26"/>
+  <edges id="150" source_obj="//@regions.0/@basic_blocks.0/@node_objs.26" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.27"/>
+  <edges id="152" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.28"/>
+  <edges id="155" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.29"/>
+  <edges id="156" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.29"/>
+  <edges id="157" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.30"/>
+  <edges id="158" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.30"/>
+  <edges id="159" source_obj="//@regions.0/@basic_blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.31"/>
+  <edges id="161" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.32"/>
+  <edges id="162" source_obj="//@regions.0/@basic_blocks.0/@node_objs.31" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.32"/>
+  <edges id="163" source_obj="//@regions.0/@basic_blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.33"/>
+  <edges id="165" source_obj="//@regions.0/@basic_blocks.0/@node_objs.32" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.34"/>
+  <edges id="166" source_obj="//@regions.0/@basic_blocks.0/@node_objs.33" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.34"/>
+  <edges id="167" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.35"/>
+  <edges id="169" source_obj="//@regions.0/@basic_blocks.0/@node_objs.34" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.36"/>
+  <edges id="170" source_obj="//@regions.0/@basic_blocks.0/@node_objs.35" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.36"/>
+  <edges id="171" source_obj="//@regions.0/@basic_blocks.0/@node_objs.36" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.37"/>
+  <edges id="172" source_obj="//@regions.0/@basic_blocks.0/@node_objs.28" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.37"/>
+  <edges id="173" source_obj="//@regions.0/@basic_blocks.0/@node_objs.30" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.38"/>
+  <edges id="174" source_obj="//@regions.0/@basic_blocks.0/@node_objs.29" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.38"/>
+  <edges id="175" source_obj="//@regions.0/@basic_blocks.0/@node_objs.38" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.39"/>
+  <edges id="176" source_obj="//@regions.0/@basic_blocks.0/@node_objs.37" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.39"/>
+  <edges id="177" source_obj="//@regions.0/@basic_blocks.0/@node_objs.39" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.40"/>
+  <edges id="178" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.40"/>
+  <edges id="181" source_obj="//@regions.0/@basic_blocks.0/@node_objs.34" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.41"/>
+  <edges id="182" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.41"/>
+  <edges id="183" source_obj="//@regions.0/@basic_blocks.0/@node_objs.27" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.42"/>
+  <edges id="184" source_obj="//@regions.0/@basic_blocks.0/@node_objs.41" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.42"/>
+  <edges id="185" source_obj="//@regions.0/@basic_blocks.0/@node_objs.42" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.43"/>
+  <edges id="186" source_obj="//@regions.0/@basic_blocks.0/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.43"/>
+  <edges id="187" source_obj="//@regions.0/@basic_blocks.0/@node_objs.43" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.44"/>
+  <edges id="188" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.44"/>
+  <edges id="189" source_obj="//@regions.0/@basic_blocks.0/@node_objs.40" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.44"/>
+  <edges id="190" source_obj="//@regions.0/@basic_blocks.0/@node_objs.32" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.45"/>
+  <edges id="191" source_obj="//@regions.0/@basic_blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.45"/>
+  <edges id="192" source_obj="//@regions.0/@basic_blocks.0/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.46"/>
+  <edges id="193" source_obj="//@regions.0/@basic_blocks.0/@node_objs.45" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.46"/>
+  <edges id="194" source_obj="//@regions.0/@basic_blocks.0/@node_objs.46" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.47"/>
+  <edges id="195" source_obj="//@regions.0/@basic_blocks.0/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.47"/>
+  <edges id="196" source_obj="//@regions.0/@basic_blocks.0/@node_objs.47" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.48"/>
+  <edges id="197" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.48"/>
+  <edges id="198" source_obj="//@regions.0/@basic_blocks.0/@node_objs.44" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.48"/>
+  <edges id="199" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.49"/>
+  <edges id="200" source_obj="//@regions.0/@basic_blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.49"/>
+  <edges id="201" source_obj="//@regions.0/@basic_blocks.0/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.50"/>
+  <edges id="202" source_obj="//@regions.0/@basic_blocks.0/@node_objs.49" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.50"/>
+  <edges id="203" source_obj="//@regions.0/@basic_blocks.0/@node_objs.50" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.51"/>
+  <edges id="204" source_obj="//@regions.0/@basic_blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.51"/>
+  <edges id="205" source_obj="//@regions.0/@basic_blocks.0/@node_objs.51" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.52"/>
+  <edges id="206" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.52"/>
+  <edges id="207" source_obj="//@regions.0/@basic_blocks.0/@node_objs.48" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.52"/>
+  <edges id="208" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.53"/>
+  <edges id="209" source_obj="//@regions.0/@basic_blocks.0/@node_objs.52" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.53"/>
+  <edges id="211" source_obj="//@regions.0/@basic_blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.54"/>
+  <edges id="212" source_obj="//@regions.0/@basic_blocks.0/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.54"/>
+  <edges id="213" source_obj="//@regions.0/@basic_blocks.0/@node_objs.54" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.55"/>
+  <edges id="215" source_obj="//@regions.0/@basic_blocks.0/@node_objs.49" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.56"/>
+  <edges id="216" source_obj="//@regions.0/@basic_blocks.0/@node_objs.55" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.56"/>
+  <edges id="217" source_obj="//@regions.0/@basic_blocks.0/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.57"/>
+  <edges id="218" source_obj="//@regions.0/@basic_blocks.0/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.57"/>
+  <edges id="219" source_obj="//@regions.0/@basic_blocks.0/@node_objs.57" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.58"/>
+  <edges id="221" source_obj="//@regions.0/@basic_blocks.0/@node_objs.45" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.59"/>
+  <edges id="222" source_obj="//@regions.0/@basic_blocks.0/@node_objs.58" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.59"/>
+  <edges id="223" source_obj="//@regions.0/@basic_blocks.0/@node_objs.59" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.60"/>
+  <edges id="224" source_obj="//@regions.0/@basic_blocks.0/@node_objs.56" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.60"/>
+  <edges id="225" source_obj="//@regions.0/@basic_blocks.0/@node_objs.60" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.61"/>
+  <edges id="227" source_obj="//@regions.0/@basic_blocks.0/@node_objs.53" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.61"/>
+  <edges id="228" source_obj="//@regions.0/@basic_blocks.0/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.62"/>
+  <edges id="229" source_obj="//@regions.0/@basic_blocks.0/@node_objs.27" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.62"/>
+  <edges id="230" source_obj="//@regions.0/@basic_blocks.0/@node_objs.62" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.63"/>
+  <edges id="232" source_obj="//@regions.0/@basic_blocks.0/@node_objs.41" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.64"/>
+  <edges id="233" source_obj="//@regions.0/@basic_blocks.0/@node_objs.63" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.64"/>
+  <edges id="234" source_obj="//@regions.0/@basic_blocks.0/@node_objs.28" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.65"/>
+  <edges id="236" source_obj="//@regions.0/@basic_blocks.0/@node_objs.36" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.66"/>
+  <edges id="237" source_obj="//@regions.0/@basic_blocks.0/@node_objs.65" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.66"/>
+  <edges id="238" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.67"/>
+  <edges id="240" source_obj="//@regions.0/@basic_blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.68"/>
+  <edges id="241" source_obj="//@regions.0/@basic_blocks.0/@node_objs.67" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.68"/>
+  <edges id="242" source_obj="//@regions.0/@basic_blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.69"/>
+  <edges id="243" source_obj="//@regions.0/@basic_blocks.0/@node_objs.68" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.69"/>
+  <edges id="244" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.70"/>
+  <edges id="245" source_obj="//@regions.0/@basic_blocks.0/@node_objs.69" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.70"/>
+  <edges id="246" source_obj="//@regions.0/@basic_blocks.0/@node_objs.28" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.71"/>
+  <edges id="247" source_obj="//@regions.0/@basic_blocks.0/@node_objs.70" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.71"/>
+  <edges id="248" source_obj="//@regions.0/@basic_blocks.0/@node_objs.71" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.72"/>
+  <edges id="251" source_obj="//@regions.0/@basic_blocks.0/@node_objs.66" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.73"/>
+  <edges id="252" source_obj="//@regions.0/@basic_blocks.0/@node_objs.64" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.73"/>
+  <edges id="253" source_obj="//@regions.0/@basic_blocks.0/@node_objs.73" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.74"/>
+  <edges id="254" source_obj="//@regions.0/@basic_blocks.0/@node_objs.72" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.74"/>
+  <edges id="255" source_obj="//@regions.0/@basic_blocks.0/@node_objs.61" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.74"/>
+  <edges id="256" source_obj="//@regions.0/@basic_blocks.0/@node_objs.74" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.75"/>
+  <edges source_obj="//@regions.0/@basic_blocks.0/@node_objs.75" sink_obj="//@ports.12"/>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="325" pipe_depth="2" RegionName="xFFindmax3x3&lt;3, 0, 0>">
+    <basic_blocks id="89" name="xFFindmax3x3&lt;3, 0, 0>" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="p_high_threshold_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="1479283424" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="8" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>p_high_threshold</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="p_low_threshold_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="1242954793" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="8" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>p_low_threshold</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="angle_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="1274346440" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="8" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>angle</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="p_i22_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="1220475550" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="16" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>p_i22</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="p_i21_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="172" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="16" opcode="read" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>p_i21</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="p_i20_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="1257241839" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="16" opcode="read" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>p_i20</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="p_i12_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="543973748" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="16" opcode="read" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>p_i12</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="p_i11_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="0" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="16" opcode="read" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>p_i11</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="p_i10_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="15" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="16" opcode="read" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>p_i10</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="p_i02_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="1684104562" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="16" opcode="read" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>p_i02</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="p_i01_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="1601185056" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="16" opcode="read" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>p_i01</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="p_i00_read" lineNumber="38" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="1231616340" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="16" opcode="read" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="38" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>p_i00</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="zext_ln886" lineNumber="886" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="zext_ln886_fu_114_p1" coreId="1313929324" contextFuncName="operator_gt_8_false" bitwidth="16" opcode="zext" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="886" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;&amp;lt;8, false&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="icmp_ln886" lineNumber="886" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln886_fu_118_p2" opType="icmp" coreId="1225652529" contextFuncName="operator_gt_8_false" bitwidth="1" opcode="icmp" m_display="0" m_delay="2.13" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="886" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;&amp;lt;8, false&amp;gt;"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="icmp_ln870" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln870_fu_124_p2" opType="icmp" coreId="1214315100" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="1.31" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="icmp_ln886_1" lineNumber="886" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln886_1_fu_130_p2" opType="icmp" coreId="0" contextFuncName="operator_gt_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="2.13" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="886" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="icmp_ln882" lineNumber="882" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln882_fu_136_p2" opType="icmp" coreId="1268382629" contextFuncName="operator_ge_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="2.13" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="882" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;=&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="xor_ln882" lineNumber="882" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="xor_ln882_fu_206_p2" opType="xor" coreId="1260256033" contextFuncName="operator_ge_32_true" bitwidth="1" opcode="xor" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="29" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="882" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;=&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="icmp_ln870_5" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln870_5_fu_142_p2" opType="icmp" coreId="1251081389" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="1.31" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="zext_ln886_1" lineNumber="886" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="zext_ln886_1_fu_148_p1" coreId="1262156546" contextFuncName="operator_gt_8_false" bitwidth="16" opcode="zext" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="886" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;&amp;lt;8, false&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="icmp_ln886_2" lineNumber="886" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln886_2_fu_152_p2" opType="icmp" coreId="1210251802" contextFuncName="operator_gt_8_false" bitwidth="1" opcode="icmp" m_display="0" m_delay="2.13" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="886" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;&amp;lt;8, false&amp;gt;"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="NMS" lineNumber="49" originalName="NMS" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="NMS_fu_211_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.44" m_topoIndex="30" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="49" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="icmp_ln886_3" lineNumber="886" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln886_3_fu_158_p2" opType="icmp" coreId="1235679638" contextFuncName="operator_gt_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="2.13" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="886" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="icmp_ln886_4" lineNumber="886" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln886_4_fu_164_p2" opType="icmp" coreId="1233779125" contextFuncName="operator_gt_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="2.13" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="886" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="icmp_ln870_6" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln870_6_fu_170_p2" opType="icmp" coreId="29" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="1.31" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="icmp_ln886_5" lineNumber="886" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln886_5_fu_176_p2" opType="icmp" coreId="1605191536" contextFuncName="operator_gt_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="2.13" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="886" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="icmp_ln882_1" lineNumber="882" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln882_1_fu_182_p2" opType="icmp" coreId="1309866026" contextFuncName="operator_ge_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="2.13" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="882" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;=&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="xor_ln882_1" lineNumber="882" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="xor_ln882_1_fu_218_p2" opType="xor" coreId="1411394680" contextFuncName="operator_ge_32_true" bitwidth="1" opcode="xor" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="31" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="882" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;=&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="icmp_ln870_7" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln870_7_fu_188_p2" opType="icmp" coreId="1247018091" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="1.31" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="icmp_ln886_6" lineNumber="886" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln886_6_fu_194_p2" opType="icmp" coreId="1300690358" contextFuncName="operator_gt_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="2.13" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="886" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="icmp_ln886_7" lineNumber="886" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="icmp_ln886_7_fu_200_p2" opType="icmp" coreId="1229715827" contextFuncName="operator_gt_32_true" bitwidth="1" opcode="icmp" m_display="0" m_delay="2.13" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="886" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="xor_ln870" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="xor_ln870_fu_223_p2" opType="xor" coreId="1324153040" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="xor" nodeLabel="1.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="and_ln870" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="and_ln870_fu_228_p2" opType="and" coreId="1277425179" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="33" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="xor_ln870_1" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="xor_ln870_1_fu_233_p2" opType="xor" coreId="1027423549" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="xor" nodeLabel="1.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="and_ln870_1" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="and_ln870_1_fu_238_p2" opType="and" coreId="1606756032" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="35" m_clusterGroupNumber="2">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="xor_ln870_2" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="xor_ln870_2_fu_244_p2" opType="xor" coreId="0" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="xor" nodeLabel="1.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="and_ln870_2" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="and_ln870_2_fu_249_p2" opType="and" coreId="1341519817" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="37" m_clusterGroupNumber="3">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="and_ln86" lineNumber="86" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln86_fu_255_p2" opType="and" coreId="0" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="4">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="86" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="and_ln86_1" lineNumber="86" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln86_1_fu_260_p2" opType="and" coreId="1335293862" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="4">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="86" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="and_ln86_2" lineNumber="86" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln86_2_fu_264_p2" opType="and" coreId="1478229808" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="4">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="86" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="NMS_1" lineNumber="86" originalName="NMS" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="NMS_1_fu_270_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="41" m_clusterGroupNumber="4">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="86" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="and_ln870_3" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="and_ln870_3_fu_278_p2" opType="and" coreId="1481900656" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="42" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="and_ln73" lineNumber="73" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln73_fu_283_p2" opType="and" coreId="1605188976" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="43" m_clusterGroupNumber="5">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="73" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="and_ln73_1" lineNumber="73" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln73_1_fu_289_p2" opType="and" coreId="1321745885" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="5">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="73" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="NMS_2" lineNumber="73" originalName="NMS" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="NMS_2_fu_294_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="45" m_clusterGroupNumber="5">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="73" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="and_ln870_4" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="and_ln870_4_fu_302_p2" opType="and" coreId="1605375017" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="46" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="and_ln59" lineNumber="59" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln59_fu_307_p2" opType="and" coreId="1327451426" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="6">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="59" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="and_ln59_1" lineNumber="59" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln59_1_fu_312_p2" opType="and" coreId="741417004" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="6">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="59" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="NMS_3" lineNumber="59" originalName="NMS" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="NMS_3_fu_317_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="49" m_clusterGroupNumber="6">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="59" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="and_ln870_5" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="and_ln870_5_fu_325_p2" opType="and" coreId="0" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="50" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="and_ln46" lineNumber="46" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln46_fu_329_p2" opType="and" coreId="1605375168" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="7">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="46" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="64" name="and_ln46_1" lineNumber="46" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln46_1_fu_335_p2" opType="and" coreId="15" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="7">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="46" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="65" name="NMS_4" lineNumber="46" originalName="NMS" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="NMS_4_fu_340_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="7">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="46" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="NMS_5" lineNumber="886" originalName="NMS" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="NMS_5_fu_348_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="operator_gt_8_false" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="54" m_clusterGroupNumber="7">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="886" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator&amp;gt;&amp;lt;8, false&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="67" name="and_ln46_2" lineNumber="46" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln46_2_fu_355_p2" opType="and" coreId="1277185051" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="55" m_clusterGroupNumber="8">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="46" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="68" name="xor_ln46" lineNumber="46" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="xor_ln46_fu_360_p2" opType="xor" coreId="2700081" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="xor" nodeLabel="1.0" m_display="0" m_topoIndex="56" m_clusterGroupNumber="8">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="46" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="and_ln46_3" lineNumber="46" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln46_3_fu_366_p2" opType="and" coreId="824192048" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="8">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="46" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="and_ln59_2" lineNumber="59" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln59_2_fu_372_p2" opType="and" coreId="942813472" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="8">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="59" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="71" name="xor_ln59" lineNumber="59" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="xor_ln59_fu_376_p2" opType="xor" coreId="1849771640" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="xor" nodeLabel="1.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="8">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="59" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="and_ln59_3" lineNumber="59" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln59_3_fu_382_p2" opType="and" coreId="1043472428" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="8">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="59" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="or_ln59" lineNumber="59" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="or_ln59_fu_388_p2" opType="or" coreId="762474356" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="or" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="61" m_clusterGroupNumber="8">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="59" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="NMS_6" lineNumber="59" originalName="NMS" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="NMS_6_fu_394_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.44" m_topoIndex="62" m_clusterGroupNumber="9">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="59" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="and_ln73_2" lineNumber="73" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln73_2_fu_402_p2" opType="and" coreId="0" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="63" m_clusterGroupNumber="10">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="73" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>xor</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="xor_ln73" lineNumber="73" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="xor_ln73_fu_407_p2" opType="xor" coreId="15" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="xor" nodeLabel="1.0" m_display="0" m_topoIndex="64" m_clusterGroupNumber="10">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="73" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="77" name="and_ln73_3" lineNumber="73" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="and_ln73_3_fu_413_p2" opType="and" coreId="775172713" contextFuncName="xFFindmax3x3_3_0_0_s" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="65" m_clusterGroupNumber="10">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="73" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="xor_ln870_3" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="xor_ln870_3_fu_419_p2" opType="xor" coreId="2020167712" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="xor" nodeLabel="1.0" m_display="0" m_topoIndex="66" m_clusterGroupNumber="10">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>and</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="and_ln870_6" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="and_ln870_6_fu_424_p2" opType="and" coreId="1953392991" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="and" nodeLabel="1.0" m_display="0" m_topoIndex="67" m_clusterGroupNumber="10">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="80" name="xor_ln870_4" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="xor_ln870_4_fu_430_p2" opType="xor" coreId="943486062" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="xor" nodeLabel="1.0" m_display="0" m_topoIndex="68" m_clusterGroupNumber="11">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="or_ln870_1" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="or_ln870_1_fu_435_p2" opType="or" coreId="909261151" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="or" nodeLabel="1.0" m_display="0" m_topoIndex="69" m_clusterGroupNumber="11">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>xor</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="or_ln870_2" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="or_ln870_2_fu_440_p2" opType="or" coreId="0" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="or" nodeLabel="1.0" m_display="0" m_topoIndex="70" m_clusterGroupNumber="11">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>or</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="or_ln870_3" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="or_ln870_3_fu_445_p2" opType="or" coreId="1633836916" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="or" nodeLabel="1.0" m_display="0" m_topoIndex="71" m_clusterGroupNumber="11">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>or</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="or_ln870_4" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="or_ln870_4_fu_450_p2" opType="or" coreId="1920213036" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="or" nodeLabel="1.0" m_display="0" m_topoIndex="72" m_clusterGroupNumber="11">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <dataInputObjs>or</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="select_ln870" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="select_ln870_fu_455_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="operator_eq_32_true" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.81" m_topoIndex="73" m_clusterGroupNumber="11">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="or_ln870" lineNumber="870" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="or_ln870_fu_463_p2" opType="or" coreId="1605377088" contextFuncName="operator_eq_32_true" bitwidth="1" opcode="or" nodeLabel="1.0" m_display="0" m_delay="0.8" m_topoIndex="74" m_clusterGroupNumber="10">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>and</dataInputObjs>
+        <dataInputObjs>and</dataInputObjs>
+        <dataOutputObjs>select</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="87" name="NMS_7" lineNumber="870" originalName="NMS" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="NMS_7_fu_469_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="operator_eq_32_true" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.44" m_topoIndex="75" m_clusterGroupNumber="12">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="870" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator==&amp;lt;32, true&amp;gt;"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>ret</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="_ln99" lineNumber="99" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." coreId="112" contextFuncName="xFFindmax3x3_3_0_0_s" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="76" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="99" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFFindmax3x3&amp;lt;3, 0, 0&amp;gt;"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>ap_return</dataOutputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/imgproc/xf_canny_utils.hpp">
+        <validLinenumbers>38</validLinenumbers>
+        <validLinenumbers>49</validLinenumbers>
+        <validLinenumbers>86</validLinenumbers>
+        <validLinenumbers>73</validLinenumbers>
+        <validLinenumbers>59</validLinenumbers>
+        <validLinenumbers>46</validLinenumbers>
+        <validLinenumbers>99</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h">
+        <validLinenumbers>886</validLinenumbers>
+        <validLinenumbers>870</validLinenumbers>
+        <validLinenumbers>882</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <regnodes realName="icmp_ln870_reg_485">
+    <nodeIds>27</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln882_1_reg_540">
+    <nodeIds>39</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln886_reg_477">
+    <nodeIds>26</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln886_7_reg_557">
+    <nodeIds>43</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln870_6_reg_527">
+    <nodeIds>37</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln886_3_reg_515">
+    <nodeIds>35</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln870_5_reg_503">
+    <nodeIds>31</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln882_reg_498">
+    <nodeIds>29</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln886_1_reg_492">
+    <nodeIds>28</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln870_7_reg_545">
+    <nodeIds>41</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln886_4_reg_521">
+    <nodeIds>36</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln886_2_reg_510">
+    <nodeIds>33</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln886_5_reg_534">
+    <nodeIds>38</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln886_6_reg_552">
+    <nodeIds>42</nodeIds>
+  </regnodes>
+  <expressionNodes realName="and_ln73_3_fu_413">
+    <nodeIds>77</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln870_fu_124">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln59_fu_388">
+    <nodeIds>73</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln870_5_fu_325">
+    <nodeIds>62</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln870_1_fu_435">
+    <nodeIds>81</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="NMS_1_fu_270">
+    <nodeIds>53</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln86_1_fu_260">
+    <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln886_7_fu_200">
+    <nodeIds>43</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="NMS_6_fu_394">
+    <nodeIds>74</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln870_2_fu_249">
+    <nodeIds>49</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln59_fu_376">
+    <nodeIds>71</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln86_2_fu_264">
+    <nodeIds>52</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln886_4_fu_164">
+    <nodeIds>36</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln46_1_fu_335">
+    <nodeIds>64</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln73_fu_407">
+    <nodeIds>76</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln886_fu_118">
+    <nodeIds>26</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln882_1_fu_218">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln870_fu_463">
+    <nodeIds>86</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln870_3_fu_445">
+    <nodeIds>83</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln870_2_fu_440">
+    <nodeIds>82</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="NMS_fu_211">
+    <nodeIds>34</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln46_fu_360">
+    <nodeIds>68</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="NMS_4_fu_340">
+    <nodeIds>65</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln59_3_fu_382">
+    <nodeIds>72</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln870_fu_455">
+    <nodeIds>85</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln73_2_fu_402">
+    <nodeIds>75</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln870_3_fu_419">
+    <nodeIds>78</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln886_3_fu_158">
+    <nodeIds>35</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln59_fu_307">
+    <nodeIds>59</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln886_1_fu_148">
+    <nodeIds>32</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln870_4_fu_430">
+    <nodeIds>80</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln870_1_fu_238">
+    <nodeIds>47</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln882_fu_136">
+    <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln870_3_fu_278">
+    <nodeIds>54</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="NMS_3_fu_317">
+    <nodeIds>61</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln46_3_fu_366">
+    <nodeIds>69</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln86_fu_255">
+    <nodeIds>50</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="NMS_2_fu_294">
+    <nodeIds>57</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln870_4_fu_302">
+    <nodeIds>58</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln870_2_fu_244">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln59_2_fu_372">
+    <nodeIds>70</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln870_6_fu_424">
+    <nodeIds>79</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln870_6_fu_170">
+    <nodeIds>37</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln46_2_fu_355">
+    <nodeIds>67</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln870_7_fu_188">
+    <nodeIds>41</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="NMS_7_fu_469">
+    <nodeIds>87</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln882_fu_206">
+    <nodeIds>30</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln870_1_fu_233">
+    <nodeIds>46</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln870_fu_223">
+    <nodeIds>44</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="NMS_5_fu_348">
+    <nodeIds>66</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln870_5_fu_142">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln46_fu_329">
+    <nodeIds>63</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln73_fu_283">
+    <nodeIds>55</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln882_1_fu_182">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln886_5_fu_176">
+    <nodeIds>38</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln73_1_fu_289">
+    <nodeIds>56</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln886_6_fu_194">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln886_1_fu_130">
+    <nodeIds>28</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln886_2_fu_152">
+    <nodeIds>33</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln870_4_fu_450">
+    <nodeIds>84</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln59_1_fu_312">
+    <nodeIds>60</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln886_fu_114">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln870_fu_228">
+    <nodeIds>45</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="p_i01_read_read_fu_102">
+    <nodeIds>23</nodeIds>
+  </ioNodes>
+  <ioNodes realName="angle_read_read_fu_54">
+    <nodeIds>15</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_i02_read_read_fu_96">
+    <nodeIds>22</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_low_threshold_read_read_fu_48">
+    <nodeIds>14</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_i10_read_read_fu_90">
+    <nodeIds>21</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_i11_read_read_fu_84">
+    <nodeIds>20</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_i12_read_read_fu_78">
+    <nodeIds>19</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_i21_read_read_fu_66">
+    <nodeIds>17</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_i22_read_read_fu_60">
+    <nodeIds>16</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_high_threshold_read_read_fu_42">
+    <nodeIds>13</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_i00_read_read_fu_108">
+    <nodeIds>24</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_i20_read_read_fu_72">
+    <nodeIds>18</nodeIds>
+  </ioNodes>
+  <ioPorts name="angle">
+    <contents name="read">
+      <nodeIds>15</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_high_threshold">
+    <contents name="read">
+      <nodeIds>13</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_i00">
+    <contents name="read">
+      <nodeIds>24</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_i01">
+    <contents name="read">
+      <nodeIds>23</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_i02">
+    <contents name="read">
+      <nodeIds>22</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_i10">
+    <contents name="read">
+      <nodeIds>21</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_i11">
+    <contents name="read">
+      <nodeIds>20</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_i12">
+    <contents name="read">
+      <nodeIds>19</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_i20">
+    <contents name="read">
+      <nodeIds>18</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_i21">
+    <contents name="read">
+      <nodeIds>17</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_i22">
+    <contents name="read">
+      <nodeIds>16</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="p_low_threshold">
+    <contents name="read">
+      <nodeIds>14</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return">
+    <contents name="ret">
+      <nodeIds>88</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="64" stage="1" latency="1"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+      <operations id="67" stage="1" latency="1"/>
+      <operations id="68" stage="1" latency="1"/>
+      <operations id="69" stage="1" latency="1"/>
+      <operations id="70" stage="1" latency="1"/>
+      <operations id="71" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="1"/>
+      <operations id="74" stage="1" latency="1"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="77" stage="1" latency="1"/>
+      <operations id="78" stage="1" latency="1"/>
+      <operations id="79" stage="1" latency="1"/>
+      <operations id="80" stage="1" latency="1"/>
+      <operations id="81" stage="1" latency="1"/>
+      <operations id="82" stage="1" latency="1"/>
+      <operations id="83" stage="1" latency="1"/>
+      <operations id="84" stage="1" latency="1"/>
+      <operations id="85" stage="1" latency="1"/>
+      <operations id="86" stage="1" latency="1"/>
+      <operations id="87" stage="1" latency="1"/>
+      <operations id="88" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="xFFindmax3x3_3_0_0_s" mII="1" mDepth="2" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="1" mMaxLatency="1">
+      <basicBlocks>89</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

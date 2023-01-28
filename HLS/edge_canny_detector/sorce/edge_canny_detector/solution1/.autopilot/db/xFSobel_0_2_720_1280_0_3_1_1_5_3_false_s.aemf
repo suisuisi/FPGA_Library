@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1674569119643">
+  <ports id="1" name="gaussian_mat_4209" type="PortType" coreName="FIFO_SRL" coreId="1931943994" bitwidth="8" iftype="IfTypeRom">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="2" name="gradx_mat_4210" type="PortType" coreName="FIFO_SRL" coreId="540680293" bitwidth="16" direction="DirOut" iftype="IfTypeRom">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="3" name="grady_mat_4213" type="PortType" coreName="FIFO_SRL" coreId="4294967295" bitwidth="16" direction="DirOut" iftype="IfTypeRom">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <edges id="12" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="13" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@ports.1"/>
+  <edges id="14" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@ports.2"/>
+  <blocks id="9" name="xFSobel&lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false>" type="BlockType">
+    <node_objs xsi:type="cdfg:CdfgNode" id="7" name="_ln530" lineNumber="530" fileName="source/imgproc/xf_canny_sobel.hpp" fileDirectory=".." rtlName="grp_xFSobel3x3_0_2_720_1280_0_3_1_1_5_1281_3_9_false_s_fu_16" coreId="0" contextFuncName="xFSobel_0_2_720_1280_0_3_1_1_5_3_false_s" opcode="call" nodeLatency="1" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="source/imgproc/xf_canny_sobel.hpp" linenumber="530" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFSobel&amp;lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&amp;gt;"/>
+      <dataInputObjs>gaussian_mat_4209</dataInputObjs>
+      <dataOutputObjs>gradx_mat_4210</dataOutputObjs>
+      <dataOutputObjs>grady_mat_4213</dataOutputObjs>
+      <constName>xFSobel3x3_0_2_720_1280_0_3_1_1_5_1281_3_9_false_s</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="8" name="_ln533" lineNumber="533" fileName="source/imgproc/xf_canny_sobel.hpp" fileDirectory=".." coreId="539767614" contextFuncName="xFSobel_0_2_720_1280_0_3_1_1_5_3_false_s" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="source/imgproc/xf_canny_sobel.hpp" linenumber="533" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFSobel&amp;lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&amp;gt;"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="source/imgproc/xf_canny_sobel.hpp">
+      <validLinenumbers>530</validLinenumbers>
+      <validLinenumbers>533</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <moduleNodes realName="grp_xFSobel3x3_0_2_720_1280_0_3_1_1_5_1281_3_9_false_s_fu_16">
+    <nodeIds>7</nodeIds>
+  </moduleNodes>
+  <ioPorts name="gaussian_mat_4209">
+    <contents name="call">
+      <nodeIds>7</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="gradx_mat_4210">
+    <contents name="call">
+      <nodeIds>7</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="grady_mat_4213">
+    <contents name="call">
+      <nodeIds>7</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="7" stage="2" latency="2"/>
+    </states>
+    <states id="2">
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="2"/>
+      <operations id="8" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="xFSobel_0_2_720_1280_0_3_1_1_5_3_false_s" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="931779" mMaxLatency="931779">
+      <basicBlocks>9</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

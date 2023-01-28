@@ -1,0 +1,259 @@
+
+
+================================================================
+== Vitis HLS Report for 'xfExtractPixels_1_5_3_s'
+================================================================
+* Date:           Tue Jan 24 22:05:21 2023
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        edge_canny_detector
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|      0 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       -|      -|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|      -|    -|
+|Register         |        -|    -|       -|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|       0|      0|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|       0|      0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------+-----+-----+------------+--------------------------+--------------+
+| RTL Ports | Dir | Bits|  Protocol  |       Source Object      |    C Type    |
++-----------+-----+-----+------------+--------------------------+--------------+
+|ap_ready   |  out|    1|  ap_ctrl_hs|  xfExtractPixels<1, 5, 3>|  return value|
+|ap_return  |  out|   16|  ap_ctrl_hs|  xfExtractPixels<1, 5, 3>|  return value|
+|p_read1    |   in|   16|     ap_none|                   p_read1|        scalar|
++-----------+-----+-----+------------+--------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 1
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%p_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %p_read1" [source/common/xf_utility.hpp:57]   --->   Operation 2 'read' 'p_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%ret_ln69 = ret i16 %p_read" [source/common/xf_utility.hpp:69]   --->   Operation 3 'ret' 'ret_ln69' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 1
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 1
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ p_read1]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+p_read   (read) [ 00]
+ret_ln69 (ret ) [ 00]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="p_read1">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_read1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1001" name="const_2">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i16"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1004" name="p_read_read_fu_4">
+<pin_list>
+<pin id="5" dir="0" index="0" bw="16" slack="0"/>
+<pin id="6" dir="0" index="1" bw="16" slack="0"/>
+<pin id="7" dir="1" index="2" bw="16" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="p_read/1 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="8"><net_src comp="2" pin="0"/><net_sink comp="4" pin=0"/></net>
+
+<net id="9"><net_src comp="0" pin="0"/><net_sink comp="4" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+	Port: xfExtractPixels<1, 5, 3> : p_read1 | {1 }
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|------------------|
+| Operation|  Functional Unit |
+|----------|------------------|
+|   read   | p_read_read_fu_4 |
+|----------|------------------|
+|   Total  |                  |
+|----------|------------------|
+
+Memories:
+N/A
+
+* Register list:
+N/A
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+
+|           |
++-----------+
+|  Function |
+|   Memory  |
+|Multiplexer|
+|  Register |
++-----------+
+|   Total   |
++-----------+

@@ -1,0 +1,772 @@
+
+
+================================================================
+== Vitis HLS Report for 'duplicate_720_1280_s'
+================================================================
+* Date:           Tue Jan 24 22:05:19 2023
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        edge_canny_detector
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.802 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   921602|   921602|  9.216 ms|  9.216 ms|  921602|  921602|     none|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |                                     |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip  |          |
+        |              Loop Name              |   min   |   max   |  Latency |  achieved |   target  |  Count | Pipelined|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |- VITIS_LOOP_116_1_VITIS_LOOP_118_2  |   921600|   921600|         2|          1|          1|  921600|       yes|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     35|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    111|    -|
+|Register         |        -|    -|      28|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|      28|    146|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |add_ln116_fu_99_p2                |         +|   0|  0|  20|          20|           1|
+    |ap_block_pp0_stage0_01001         |       and|   0|  0|   1|           1|           1|
+    |icmp_ln116_fu_105_p2              |      icmp|   0|  0|   8|          20|          18|
+    |ap_block_state1                   |        or|   0|  0|   1|           1|           1|
+    |ap_block_state3_pp0_stage0_iter1  |        or|   0|  0|   1|           1|           1|
+    |ap_enable_pp0                     |       xor|   0|  0|   2|           1|           2|
+    |ap_enable_reg_pp0_iter1           |       xor|   0|  0|   2|           2|           1|
+    +----------------------------------+----------+----+---+----+------------+------------+
+    |Total                             |          |   0|  0|  35|          46|          25|
+    +----------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                |  17|          4|    1|          4|
+    |ap_done                  |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |  13|          3|    1|          3|
+    |gradx1_mat_4211_blk_n    |   9|          2|    1|          2|
+    |gradx2_mat_4212_blk_n    |   9|          2|    1|          2|
+    |gradx_mat_4210_blk_n     |   9|          2|    1|          2|
+    |grady1_mat_4214_blk_n    |   9|          2|    1|          2|
+    |grady2_mat_4215_blk_n    |   9|          2|    1|          2|
+    |grady_mat_4213_blk_n     |   9|          2|    1|          2|
+    |indvar_flatten_reg_88    |   9|          2|   20|         40|
+    |real_start               |   9|          2|    1|          2|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    | 111|         25|   30|         63|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |   3|   0|    3|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0  |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |icmp_ln116_reg_116       |   1|   0|    1|          0|
+    |indvar_flatten_reg_88    |  20|   0|   20|          0|
+    |start_once_reg           |   1|   0|    1|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    |  28|   0|   28|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+----------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++------------------------+-----+-----+------------+----------------------+--------------+
+|ap_clk                  |   in|    1|  ap_ctrl_hs|  duplicate<720, 1280>|  return value|
+|ap_rst                  |   in|    1|  ap_ctrl_hs|  duplicate<720, 1280>|  return value|
+|ap_start                |   in|    1|  ap_ctrl_hs|  duplicate<720, 1280>|  return value|
+|start_full_n            |   in|    1|  ap_ctrl_hs|  duplicate<720, 1280>|  return value|
+|ap_done                 |  out|    1|  ap_ctrl_hs|  duplicate<720, 1280>|  return value|
+|ap_continue             |   in|    1|  ap_ctrl_hs|  duplicate<720, 1280>|  return value|
+|ap_idle                 |  out|    1|  ap_ctrl_hs|  duplicate<720, 1280>|  return value|
+|ap_ready                |  out|    1|  ap_ctrl_hs|  duplicate<720, 1280>|  return value|
+|start_out               |  out|    1|  ap_ctrl_hs|  duplicate<720, 1280>|  return value|
+|start_write             |  out|    1|  ap_ctrl_hs|  duplicate<720, 1280>|  return value|
+|gradx_mat_4210_dout     |   in|   16|     ap_fifo|        gradx_mat_4210|       pointer|
+|gradx_mat_4210_empty_n  |   in|    1|     ap_fifo|        gradx_mat_4210|       pointer|
+|gradx_mat_4210_read     |  out|    1|     ap_fifo|        gradx_mat_4210|       pointer|
+|grady_mat_4213_dout     |   in|   16|     ap_fifo|        grady_mat_4213|       pointer|
+|grady_mat_4213_empty_n  |   in|    1|     ap_fifo|        grady_mat_4213|       pointer|
+|grady_mat_4213_read     |  out|    1|     ap_fifo|        grady_mat_4213|       pointer|
+|gradx1_mat_4211_din     |  out|   16|     ap_fifo|       gradx1_mat_4211|       pointer|
+|gradx1_mat_4211_full_n  |   in|    1|     ap_fifo|       gradx1_mat_4211|       pointer|
+|gradx1_mat_4211_write   |  out|    1|     ap_fifo|       gradx1_mat_4211|       pointer|
+|gradx2_mat_4212_din     |  out|   16|     ap_fifo|       gradx2_mat_4212|       pointer|
+|gradx2_mat_4212_full_n  |   in|    1|     ap_fifo|       gradx2_mat_4212|       pointer|
+|gradx2_mat_4212_write   |  out|    1|     ap_fifo|       gradx2_mat_4212|       pointer|
+|grady1_mat_4214_din     |  out|   16|     ap_fifo|       grady1_mat_4214|       pointer|
+|grady1_mat_4214_full_n  |   in|    1|     ap_fifo|       grady1_mat_4214|       pointer|
+|grady1_mat_4214_write   |  out|    1|     ap_fifo|       grady1_mat_4214|       pointer|
+|grady2_mat_4215_din     |  out|   16|     ap_fifo|       grady2_mat_4215|       pointer|
+|grady2_mat_4215_full_n  |   in|    1|     ap_fifo|       grady2_mat_4215|       pointer|
+|grady2_mat_4215_write   |  out|    1|     ap_fifo|       grady2_mat_4215|       pointer|
++------------------------+-----+-----+------------+----------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 4 3 
+3 --> 2 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.29>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %grady2_mat_4215, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 5 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %grady1_mat_4214, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %grady_mat_4213, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gradx2_mat_4212, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gradx1_mat_4211, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gradx_mat_4210, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (1.29ns)   --->   "%br_ln116 = br void" [source/edge_canny_detector.cpp:116]   --->   Operation 11 'br' 'br_ln116' <Predicate = true> <Delay = 1.29>
+
+State 2 <SV = 1> <Delay = 2.02>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i20 0, void, i20 %add_ln116, void %.split2" [source/edge_canny_detector.cpp:116]   --->   Operation 12 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (1.58ns)   --->   "%add_ln116 = add i20 %indvar_flatten, i20 1" [source/edge_canny_detector.cpp:116]   --->   Operation 13 'add' 'add_ln116' <Predicate = true> <Delay = 1.58> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.58> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 14 [1/1] (2.02ns)   --->   "%icmp_ln116 = icmp_eq  i20 %indvar_flatten, i20 921600" [source/edge_canny_detector.cpp:116]   --->   Operation 14 'icmp' 'icmp_ln116' <Predicate = true> <Delay = 2.02> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%br_ln116 = br i1 %icmp_ln116, void %.split2, void" [source/edge_canny_detector.cpp:116]   --->   Operation 15 'br' 'br_ln116' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 6.80>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_116_1_VITIS_LOOP_118_2_str"   --->   Operation 16 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln116)> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 921600, i64 921600, i64 921600"   --->   Operation 17 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = (!icmp_ln116)> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%specpipeline_ln115 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_5" [source/edge_canny_detector.cpp:115]   --->   Operation 18 'specpipeline' 'specpipeline_ln115' <Predicate = (!icmp_ln116)> <Delay = 0.00>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%specloopname_ln115 = specloopname void @_ssdm_op_SpecLoopName, void @empty_22" [source/edge_canny_detector.cpp:115]   --->   Operation 19 'specloopname' 'specloopname_ln115' <Predicate = (!icmp_ln116)> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (3.40ns)   --->   "%gradx_mat_4210_read = read i16 @_ssdm_op_Read.ap_fifo.volatile.i16P0A, i16 %gradx_mat_4210" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 20 'read' 'gradx_mat_4210_read' <Predicate = (!icmp_ln116)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_3 : Operation 21 [1/1] (3.40ns)   --->   "%grady_mat_4213_read = read i16 @_ssdm_op_Read.ap_fifo.volatile.i16P0A, i16 %grady_mat_4213" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 21 'read' 'grady_mat_4213_read' <Predicate = (!icmp_ln116)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_3 : Operation 22 [1/1] (3.40ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i16P0A, i16 %gradx1_mat_4211, i16 %gradx_mat_4210_read" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 22 'write' 'write_ln174' <Predicate = (!icmp_ln116)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_3 : Operation 23 [1/1] (3.40ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i16P0A, i16 %gradx2_mat_4212, i16 %gradx_mat_4210_read" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 23 'write' 'write_ln174' <Predicate = (!icmp_ln116)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_3 : Operation 24 [1/1] (3.40ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i16P0A, i16 %grady1_mat_4214, i16 %grady_mat_4213_read" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 24 'write' 'write_ln174' <Predicate = (!icmp_ln116)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_3 : Operation 25 [1/1] (3.40ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i16P0A, i16 %grady2_mat_4215, i16 %grady_mat_4213_read" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 25 'write' 'write_ln174' <Predicate = (!icmp_ln116)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 26 'br' 'br_ln0' <Predicate = (!icmp_ln116)> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 0.00>
+ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%ret_ln129 = ret" [source/edge_canny_detector.cpp:129]   --->   Operation 27 'ret' 'ret_ln129' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ gradx_mat_4210]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ grady_mat_4213]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ gradx1_mat_4211]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ gradx2_mat_4212]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ grady1_mat_4214]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ grady2_mat_4215]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+specinterface_ln0     (specinterface    ) [ 00000]
+specinterface_ln0     (specinterface    ) [ 00000]
+specinterface_ln0     (specinterface    ) [ 00000]
+specinterface_ln0     (specinterface    ) [ 00000]
+specinterface_ln0     (specinterface    ) [ 00000]
+specinterface_ln0     (specinterface    ) [ 00000]
+br_ln116              (br               ) [ 01110]
+indvar_flatten        (phi              ) [ 00100]
+add_ln116             (add              ) [ 01110]
+icmp_ln116            (icmp             ) [ 00110]
+br_ln116              (br               ) [ 00000]
+specloopname_ln0      (specloopname     ) [ 00000]
+speclooptripcount_ln0 (speclooptripcount) [ 00000]
+specpipeline_ln115    (specpipeline     ) [ 00000]
+specloopname_ln115    (specloopname     ) [ 00000]
+gradx_mat_4210_read   (read             ) [ 00000]
+grady_mat_4213_read   (read             ) [ 00000]
+write_ln174           (write            ) [ 00000]
+write_ln174           (write            ) [ 00000]
+write_ln174           (write            ) [ 00000]
+write_ln174           (write            ) [ 00000]
+br_ln0                (br               ) [ 01110]
+ret_ln129             (ret              ) [ 00000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="gradx_mat_4210">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradx_mat_4210"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="grady_mat_4213">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="grady_mat_4213"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="gradx1_mat_4211">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradx1_mat_4211"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="gradx2_mat_4212">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradx2_mat_4212"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="grady1_mat_4214">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="grady1_mat_4214"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="grady2_mat_4215">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="grady2_mat_4215"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_17"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopName"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="VITIS_LOOP_116_1_VITIS_LOOP_118_2_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_22"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_fifo.volatile.i16P0A"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_fifo.volatile.i16P0A"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1004" name="gradx_mat_4210_read_read_fu_44">
+<pin_list>
+<pin id="45" dir="0" index="0" bw="16" slack="0"/>
+<pin id="46" dir="0" index="1" bw="16" slack="0"/>
+<pin id="47" dir="1" index="2" bw="16" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="gradx_mat_4210_read/3 "/>
+</bind>
+</comp>
+
+<comp id="50" class="1004" name="grady_mat_4213_read_read_fu_50">
+<pin_list>
+<pin id="51" dir="0" index="0" bw="16" slack="0"/>
+<pin id="52" dir="0" index="1" bw="16" slack="0"/>
+<pin id="53" dir="1" index="2" bw="16" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="grady_mat_4213_read/3 "/>
+</bind>
+</comp>
+
+<comp id="56" class="1004" name="write_ln174_write_fu_56">
+<pin_list>
+<pin id="57" dir="0" index="0" bw="0" slack="0"/>
+<pin id="58" dir="0" index="1" bw="16" slack="0"/>
+<pin id="59" dir="0" index="2" bw="16" slack="0"/>
+<pin id="60" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln174/3 "/>
+</bind>
+</comp>
+
+<comp id="64" class="1004" name="write_ln174_write_fu_64">
+<pin_list>
+<pin id="65" dir="0" index="0" bw="0" slack="0"/>
+<pin id="66" dir="0" index="1" bw="16" slack="0"/>
+<pin id="67" dir="0" index="2" bw="16" slack="0"/>
+<pin id="68" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln174/3 "/>
+</bind>
+</comp>
+
+<comp id="72" class="1004" name="write_ln174_write_fu_72">
+<pin_list>
+<pin id="73" dir="0" index="0" bw="0" slack="0"/>
+<pin id="74" dir="0" index="1" bw="16" slack="0"/>
+<pin id="75" dir="0" index="2" bw="16" slack="0"/>
+<pin id="76" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln174/3 "/>
+</bind>
+</comp>
+
+<comp id="80" class="1004" name="write_ln174_write_fu_80">
+<pin_list>
+<pin id="81" dir="0" index="0" bw="0" slack="0"/>
+<pin id="82" dir="0" index="1" bw="16" slack="0"/>
+<pin id="83" dir="0" index="2" bw="16" slack="0"/>
+<pin id="84" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln174/3 "/>
+</bind>
+</comp>
+
+<comp id="88" class="1005" name="indvar_flatten_reg_88">
+<pin_list>
+<pin id="89" dir="0" index="0" bw="20" slack="1"/>
+<pin id="90" dir="1" index="1" bw="20" slack="1"/>
+</pin_list>
+<bind>
+<opset="indvar_flatten (phireg) "/>
+</bind>
+</comp>
+
+<comp id="92" class="1004" name="indvar_flatten_phi_fu_92">
+<pin_list>
+<pin id="93" dir="0" index="0" bw="1" slack="1"/>
+<pin id="94" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="95" dir="0" index="2" bw="20" slack="0"/>
+<pin id="96" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="97" dir="1" index="4" bw="20" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="indvar_flatten/2 "/>
+</bind>
+</comp>
+
+<comp id="99" class="1004" name="add_ln116_fu_99">
+<pin_list>
+<pin id="100" dir="0" index="0" bw="20" slack="0"/>
+<pin id="101" dir="0" index="1" bw="1" slack="0"/>
+<pin id="102" dir="1" index="2" bw="20" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln116/2 "/>
+</bind>
+</comp>
+
+<comp id="105" class="1004" name="icmp_ln116_fu_105">
+<pin_list>
+<pin id="106" dir="0" index="0" bw="20" slack="0"/>
+<pin id="107" dir="0" index="1" bw="20" slack="0"/>
+<pin id="108" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln116/2 "/>
+</bind>
+</comp>
+
+<comp id="111" class="1005" name="add_ln116_reg_111">
+<pin_list>
+<pin id="112" dir="0" index="0" bw="20" slack="0"/>
+<pin id="113" dir="1" index="1" bw="20" slack="0"/>
+</pin_list>
+<bind>
+<opset="add_ln116 "/>
+</bind>
+</comp>
+
+<comp id="116" class="1005" name="icmp_ln116_reg_116">
+<pin_list>
+<pin id="117" dir="0" index="0" bw="1" slack="1"/>
+<pin id="118" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln116 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="48"><net_src comp="40" pin="0"/><net_sink comp="44" pin=0"/></net>
+
+<net id="49"><net_src comp="0" pin="0"/><net_sink comp="44" pin=1"/></net>
+
+<net id="54"><net_src comp="40" pin="0"/><net_sink comp="50" pin=0"/></net>
+
+<net id="55"><net_src comp="2" pin="0"/><net_sink comp="50" pin=1"/></net>
+
+<net id="61"><net_src comp="42" pin="0"/><net_sink comp="56" pin=0"/></net>
+
+<net id="62"><net_src comp="4" pin="0"/><net_sink comp="56" pin=1"/></net>
+
+<net id="63"><net_src comp="44" pin="2"/><net_sink comp="56" pin=2"/></net>
+
+<net id="69"><net_src comp="42" pin="0"/><net_sink comp="64" pin=0"/></net>
+
+<net id="70"><net_src comp="6" pin="0"/><net_sink comp="64" pin=1"/></net>
+
+<net id="71"><net_src comp="44" pin="2"/><net_sink comp="64" pin=2"/></net>
+
+<net id="77"><net_src comp="42" pin="0"/><net_sink comp="72" pin=0"/></net>
+
+<net id="78"><net_src comp="8" pin="0"/><net_sink comp="72" pin=1"/></net>
+
+<net id="79"><net_src comp="50" pin="2"/><net_sink comp="72" pin=2"/></net>
+
+<net id="85"><net_src comp="42" pin="0"/><net_sink comp="80" pin=0"/></net>
+
+<net id="86"><net_src comp="10" pin="0"/><net_sink comp="80" pin=1"/></net>
+
+<net id="87"><net_src comp="50" pin="2"/><net_sink comp="80" pin=2"/></net>
+
+<net id="91"><net_src comp="20" pin="0"/><net_sink comp="88" pin=0"/></net>
+
+<net id="98"><net_src comp="88" pin="1"/><net_sink comp="92" pin=0"/></net>
+
+<net id="103"><net_src comp="92" pin="4"/><net_sink comp="99" pin=0"/></net>
+
+<net id="104"><net_src comp="22" pin="0"/><net_sink comp="99" pin=1"/></net>
+
+<net id="109"><net_src comp="92" pin="4"/><net_sink comp="105" pin=0"/></net>
+
+<net id="110"><net_src comp="24" pin="0"/><net_sink comp="105" pin=1"/></net>
+
+<net id="114"><net_src comp="99" pin="2"/><net_sink comp="111" pin=0"/></net>
+
+<net id="115"><net_src comp="111" pin="1"/><net_sink comp="92" pin=2"/></net>
+
+<net id="119"><net_src comp="105" pin="2"/><net_sink comp="116" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: gradx1_mat_4211 | {3 }
+	Port: gradx2_mat_4212 | {3 }
+	Port: grady1_mat_4214 | {3 }
+	Port: grady2_mat_4215 | {3 }
+ - Input state : 
+	Port: duplicate<720, 1280> : gradx_mat_4210 | {3 }
+	Port: duplicate<720, 1280> : grady_mat_4213 | {3 }
+  - Chain level:
+	State 1
+	State 2
+		add_ln116 : 1
+		icmp_ln116 : 1
+		br_ln116 : 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------------|---------|---------|
+| Operation|         Functional Unit        |    FF   |   LUT   |
+|----------|--------------------------------|---------|---------|
+|    add   |         add_ln116_fu_99        |    0    |    20   |
+|----------|--------------------------------|---------|---------|
+|   icmp   |        icmp_ln116_fu_105       |    0    |    8    |
+|----------|--------------------------------|---------|---------|
+|   read   | gradx_mat_4210_read_read_fu_44 |    0    |    0    |
+|          | grady_mat_4213_read_read_fu_50 |    0    |    0    |
+|----------|--------------------------------|---------|---------|
+|          |     write_ln174_write_fu_56    |    0    |    0    |
+|   write  |     write_ln174_write_fu_64    |    0    |    0    |
+|          |     write_ln174_write_fu_72    |    0    |    0    |
+|          |     write_ln174_write_fu_80    |    0    |    0    |
+|----------|--------------------------------|---------|---------|
+|   Total  |                                |    0    |    28   |
+|----------|--------------------------------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++---------------------+--------+
+|                     |   FF   |
++---------------------+--------+
+|  add_ln116_reg_111  |   20   |
+|  icmp_ln116_reg_116 |    1   |
+|indvar_flatten_reg_88|   20   |
++---------------------+--------+
+|        Total        |   41   |
++---------------------+--------+
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+
+|           |   FF   |   LUT  |
++-----------+--------+--------+
+|  Function |    0   |   28   |
+|   Memory  |    -   |    -   |
+|Multiplexer|    -   |    -   |
+|  Register |   41   |    -   |
++-----------+--------+--------+
+|   Total   |   41   |   28   |
++-----------+--------+--------+

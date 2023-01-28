@@ -1,0 +1,280 @@
+<profile>
+
+<ReportVersion>
+<Version>2020.2</Version>
+</ReportVersion>
+
+<UserAssignments>
+<unit>ns</unit>
+<ProductFamily>zynq</ProductFamily>
+<Part>xc7z020-clg400-2</Part>
+<TopModelName>xfMat2AXIvideo_24_9_720_1280_1_s</TopModelName>
+<TargetClockPeriod>10.00</TargetClockPeriod>
+<ClockUncertainty>2.70</ClockUncertainty>
+<FlowTarget>vivado</FlowTarget>
+</UserAssignments>
+
+<PerformanceEstimates>
+<PipelineType>none</PipelineType>
+<SummaryOfTimingAnalysis>
+<unit>ns</unit>
+<EstimatedClockPeriod>3.401</EstimatedClockPeriod>
+</SummaryOfTimingAnalysis>
+<SummaryOfOverallLatency>
+<unit>clock cycles</unit>
+<Best-caseLatency>924481</Best-caseLatency>
+<Average-caseLatency>924481</Average-caseLatency>
+<Worst-caseLatency>924481</Worst-caseLatency>
+<Best-caseRealTimeLatency>9.245 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>9.245 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>9.245 ms</Worst-caseRealTimeLatency>
+<Interval-min>924481</Interval-min>
+<Interval-max>924481</Interval-max>
+</SummaryOfOverallLatency>
+<SummaryOfLoopLatency>
+<loop_row_mat2axi>
+<TripCount>720</TripCount>
+<Latency>924480</Latency>
+<AbsoluteTimeLatency>9244800</AbsoluteTimeLatency>
+<IterationLatency>1284</IterationLatency>
+<loop_col_mat2axi>
+<TripCount>1280</TripCount>
+<Latency>1281</Latency>
+<AbsoluteTimeLatency>12810</AbsoluteTimeLatency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>3</PipelineDepth>
+</loop_col_mat2axi>
+</loop_row_mat2axi>
+</SummaryOfLoopLatency>
+</PerformanceEstimates>
+
+<AreaEstimates>
+<Resources>
+<FF>44</FF>
+<LUT>150</LUT>
+<BRAM_18K>0</BRAM_18K>
+<DSP>0</DSP>
+<URAM>0</URAM>
+</Resources>
+<AvailableResources>
+<BRAM_18K>280</BRAM_18K>
+<DSP>220</DSP>
+<FF>106400</FF>
+<LUT>53200</LUT>
+<URAM>0</URAM>
+</AvailableResources>
+</AreaEstimates>
+
+<InterfaceSummary>
+<RtlPorts>
+<name>ap_clk</name>
+<Object>xfMat2AXIvideo&lt;24, 9, 720, 1280, 1&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_rst</name>
+<Object>xfMat2AXIvideo&lt;24, 9, 720, 1280, 1&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_start</name>
+<Object>xfMat2AXIvideo&lt;24, 9, 720, 1280, 1&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_done</name>
+<Object>xfMat2AXIvideo&lt;24, 9, 720, 1280, 1&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_continue</name>
+<Object>xfMat2AXIvideo&lt;24, 9, 720, 1280, 1&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_idle</name>
+<Object>xfMat2AXIvideo&lt;24, 9, 720, 1280, 1&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_ready</name>
+<Object>xfMat2AXIvideo&lt;24, 9, 720, 1280, 1&gt;</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>rgb_img_dst_4208_dout</name>
+<Object>rgb_img_dst_4208</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>24</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>rgb_img_dst_4208_empty_n</name>
+<Object>rgb_img_dst_4208</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>rgb_img_dst_4208_read</name>
+<Object>rgb_img_dst_4208</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>dst_TDATA</name>
+<Object>AXI_video_strm_V_data_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>24</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>dst_TVALID</name>
+<Object>AXI_video_strm_V_dest_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>dst_TREADY</name>
+<Object>AXI_video_strm_V_dest_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>dst_TDEST</name>
+<Object>AXI_video_strm_V_dest_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>dst_TKEEP</name>
+<Object>AXI_video_strm_V_keep_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>3</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>dst_TSTRB</name>
+<Object>AXI_video_strm_V_strb_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>3</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>dst_TUSER</name>
+<Object>AXI_video_strm_V_user_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>dst_TLAST</name>
+<Object>AXI_video_strm_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>dst_TID</name>
+<Object>AXI_video_strm_V_id_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+</RtlPorts>
+</InterfaceSummary>
+
+</profile>

@@ -1,0 +1,383 @@
+
+
+================================================================
+== Vitis HLS Report for 'ExtractPixel'
+================================================================
+* Date:           Tue Jan 24 22:05:08 2023
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        edge_canny_detector
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|      0 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%src_V_read_1 = read i24 @_ssdm_op_Read.ap_auto.i24, i24 %src_V_read" [source/edge_canny_detector.cpp:3]   --->   Operation 2 'read' 'src_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%trunc_ln674 = trunc i24 %src_V_read_1"   --->   Operation 3 'trunc' 'trunc_ln674' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%src_value_1 = partselect i8 @_ssdm_op_PartSelect.i8.i24.i32.i32, i24 %src_V_read_1, i32 8, i32 15"   --->   Operation 4 'partselect' 'src_value_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%src_value_2 = partselect i8 @_ssdm_op_PartSelect.i8.i24.i32.i32, i24 %src_V_read_1, i32 16, i32 23"   --->   Operation 5 'partselect' 'src_value_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%mrv = insertvalue i24 <undef>, i8 %trunc_ln674" [source/edge_canny_detector.cpp:13]   --->   Operation 6 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i24 %mrv, i8 %src_value_1" [source/edge_canny_detector.cpp:13]   --->   Operation 7 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i24 %mrv_1, i8 %src_value_2" [source/edge_canny_detector.cpp:13]   --->   Operation 8 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%ret_ln13 = ret i24 %mrv_2" [source/edge_canny_detector.cpp:13]   --->   Operation 9 'ret' 'ret_ln13' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 1
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 1
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ src_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+src_V_read_1 (read       ) [ 00]
+trunc_ln674  (trunc      ) [ 00]
+src_value_1  (partselect ) [ 00]
+src_value_2  (partselect ) [ 00]
+mrv          (insertvalue) [ 00]
+mrv_1        (insertvalue) [ 00]
+mrv_2        (insertvalue) [ 00]
+ret_ln13     (ret        ) [ 00]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="src_V_read">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="src_V_read"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1001" name="const_2">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i24"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1001" name="const_4">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i8.i24.i32.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1004" name="src_V_read_1_read_fu_16">
+<pin_list>
+<pin id="17" dir="0" index="0" bw="24" slack="0"/>
+<pin id="18" dir="0" index="1" bw="24" slack="0"/>
+<pin id="19" dir="1" index="2" bw="24" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="src_V_read_1/1 "/>
+</bind>
+</comp>
+
+<comp id="22" class="1004" name="trunc_ln674_fu_22">
+<pin_list>
+<pin id="23" dir="0" index="0" bw="24" slack="0"/>
+<pin id="24" dir="1" index="1" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln674/1 "/>
+</bind>
+</comp>
+
+<comp id="26" class="1004" name="src_value_1_fu_26">
+<pin_list>
+<pin id="27" dir="0" index="0" bw="8" slack="0"/>
+<pin id="28" dir="0" index="1" bw="24" slack="0"/>
+<pin id="29" dir="0" index="2" bw="5" slack="0"/>
+<pin id="30" dir="0" index="3" bw="5" slack="0"/>
+<pin id="31" dir="1" index="4" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="src_value_1/1 "/>
+</bind>
+</comp>
+
+<comp id="36" class="1004" name="src_value_2_fu_36">
+<pin_list>
+<pin id="37" dir="0" index="0" bw="8" slack="0"/>
+<pin id="38" dir="0" index="1" bw="24" slack="0"/>
+<pin id="39" dir="0" index="2" bw="6" slack="0"/>
+<pin id="40" dir="0" index="3" bw="6" slack="0"/>
+<pin id="41" dir="1" index="4" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="partselect(1002) " fcode="partselect"/>
+<opset="src_value_2/1 "/>
+</bind>
+</comp>
+
+<comp id="46" class="1004" name="mrv_fu_46">
+<pin_list>
+<pin id="47" dir="0" index="0" bw="24" slack="0"/>
+<pin id="48" dir="0" index="1" bw="8" slack="0"/>
+<pin id="49" dir="1" index="2" bw="24" slack="0"/>
+</pin_list>
+<bind>
+<opcode="insertvalue(57) " fcode="insertvalue"/>
+<opset="mrv/1 "/>
+</bind>
+</comp>
+
+<comp id="52" class="1004" name="mrv_1_fu_52">
+<pin_list>
+<pin id="53" dir="0" index="0" bw="24" slack="0"/>
+<pin id="54" dir="0" index="1" bw="8" slack="0"/>
+<pin id="55" dir="1" index="2" bw="24" slack="0"/>
+</pin_list>
+<bind>
+<opcode="insertvalue(57) " fcode="insertvalue"/>
+<opset="mrv_1/1 "/>
+</bind>
+</comp>
+
+<comp id="58" class="1004" name="mrv_2_fu_58">
+<pin_list>
+<pin id="59" dir="0" index="0" bw="24" slack="0"/>
+<pin id="60" dir="0" index="1" bw="8" slack="0"/>
+<pin id="61" dir="1" index="2" bw="24" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="insertvalue(57) " fcode="insertvalue"/>
+<opset="mrv_2/1 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="20"><net_src comp="2" pin="0"/><net_sink comp="16" pin=0"/></net>
+
+<net id="21"><net_src comp="0" pin="0"/><net_sink comp="16" pin=1"/></net>
+
+<net id="25"><net_src comp="16" pin="2"/><net_sink comp="22" pin=0"/></net>
+
+<net id="32"><net_src comp="4" pin="0"/><net_sink comp="26" pin=0"/></net>
+
+<net id="33"><net_src comp="16" pin="2"/><net_sink comp="26" pin=1"/></net>
+
+<net id="34"><net_src comp="6" pin="0"/><net_sink comp="26" pin=2"/></net>
+
+<net id="35"><net_src comp="8" pin="0"/><net_sink comp="26" pin=3"/></net>
+
+<net id="42"><net_src comp="4" pin="0"/><net_sink comp="36" pin=0"/></net>
+
+<net id="43"><net_src comp="16" pin="2"/><net_sink comp="36" pin=1"/></net>
+
+<net id="44"><net_src comp="10" pin="0"/><net_sink comp="36" pin=2"/></net>
+
+<net id="45"><net_src comp="12" pin="0"/><net_sink comp="36" pin=3"/></net>
+
+<net id="50"><net_src comp="14" pin="0"/><net_sink comp="46" pin=0"/></net>
+
+<net id="51"><net_src comp="22" pin="1"/><net_sink comp="46" pin=1"/></net>
+
+<net id="56"><net_src comp="46" pin="2"/><net_sink comp="52" pin=0"/></net>
+
+<net id="57"><net_src comp="26" pin="4"/><net_sink comp="52" pin=1"/></net>
+
+<net id="62"><net_src comp="52" pin="2"/><net_sink comp="58" pin=0"/></net>
+
+<net id="63"><net_src comp="36" pin="4"/><net_sink comp="58" pin=1"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+	Port: ExtractPixel : src_V_read | {1 }
+  - Chain level:
+	State 1
+		mrv : 1
+		mrv_1 : 2
+		mrv_2 : 3
+		ret_ln13 : 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-------------------------|
+| Operation|     Functional Unit     |
+|----------|-------------------------|
+|   read   | src_V_read_1_read_fu_16 |
+|----------|-------------------------|
+|   trunc  |    trunc_ln674_fu_22    |
+|----------|-------------------------|
+|partselect|    src_value_1_fu_26    |
+|          |    src_value_2_fu_36    |
+|----------|-------------------------|
+|          |        mrv_fu_46        |
+|insertvalue|       mrv_1_fu_52       |
+|          |       mrv_2_fu_58       |
+|----------|-------------------------|
+|   Total  |                         |
+|----------|-------------------------|
+
+Memories:
+N/A
+
+* Register list:
+N/A
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+
+|           |
++-----------+
+|  Function |
+|   Memory  |
+|Multiplexer|
+|  Register |
++-----------+
+|   Total   |
++-----------+

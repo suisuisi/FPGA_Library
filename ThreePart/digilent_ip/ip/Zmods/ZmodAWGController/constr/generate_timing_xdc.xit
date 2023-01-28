@@ -1,0 +1,50 @@
+set instname [current_inst]
+set f_xdc [add_ipfile -usedIn  [list synthesis implementation board ] -processingOrder [list late] -force ConstrsZmodDAC.xdc]
+puts "Generating $f_xdc...."
+
+puts_ipfile $f_xdc {# Disable timing analysis for clock domain crossing double synchronizers, between clock domains}
+puts_ipfile $f_xdc {set_false_path -through [get_pins -filter {NAME =~ *SyncAsync*/oSyncStages_reg[0]/D} -hier]}
+puts_ipfile $f_xdc {}
+puts_ipfile $f_xdc {# Overconstrain the metastable paths in the double synchronizer output clock domain to 1/2 of the period, to leave enough margin for metastability to settle}
+puts_ipfile $f_xdc {set_max_delay -from [get_pins -filter {NAME =~ *InstDacSysReset*SyncAsync*/oSyncStages_reg[0]/C} -hier] -to [get_pins -filter {NAME =~ *InstDacSysReset*SyncAsync*/oSyncStages_reg[1]/D} -hier] 5.0}
+puts_ipfile $f_xdc {set ClkPeriod [get_property PERIOD [get_clocks -of_objects [get_pins -filter {NAME =~ *InstDacSamplingReset*SyncAsync*/oSyncStages_reg[0]/C} -hier]]]}
+puts_ipfile $f_xdc {set_max_delay -from [get_pins -filter {NAME =~ *InstDacSamplingReset*SyncAsync*/oSyncStages_reg[0]/C} -hier] -to [get_pins -filter {NAME =~ *InstDacSamplingReset*SyncAsync*/oSyncStages_reg[1]/D} -hier] [expr {$ClkPeriod/2}]}
+puts_ipfile $f_xdc {set ClkPeriod [get_property PERIOD [get_clocks -of_objects [get_pins -filter {NAME =~ *InstDacClkReset*SyncAsync*/oSyncStages_reg[0]/C} -hier]]]}
+puts_ipfile $f_xdc {set_max_delay -from [get_pins -filter {NAME =~ *InstDacClkReset*SyncAsync*/oSyncStages_reg[0]/C} -hier] -to [get_pins -filter {NAME =~ *InstDacClkReset*SyncAsync*/oSyncStages_reg[1]/D} -hier] [expr {$ClkPeriod/2}]}
+puts_ipfile $f_xdc {set ClkPeriod [get_property PERIOD [get_clocks -of_objects [get_pins -filter {NAME =~ *InstDacTestModeSync*SyncAsync*/oSyncStages_reg[0]/C} -hier]]]}
+puts_ipfile $f_xdc {set_max_delay -from [get_pins -filter {NAME =~ *InstDacTestModeSync*SyncAsync*/oSyncStages_reg[0]/C} -hier] -to [get_pins -filter {NAME =~ *InstDacTestModeSync*SyncAsync*/oSyncStages_reg[1]/D} -hier] [expr {$ClkPeriod/2}]}
+set DynScale [get_property PARAM_VALUE.kExtScaleConfigEn]
+puts "  kExtScaleConfigEn: $DynScale"
+if {$DynScale == true} {
+	puts_ipfile $f_xdc {set ClkPeriod [get_property PERIOD [get_clocks -of_objects [get_pins -filter {NAME =~ *InstDacCh1ScaleSync*SyncAsync*/oSyncStages_reg[0]/C} -hier]]]}
+	puts_ipfile $f_xdc {set_max_delay -from [get_pins -filter {NAME =~ *InstDacCh1ScaleSync*SyncAsync*/oSyncStages_reg[0]/C} -hier] -to [get_pins -filter {NAME =~ *InstDacCh1ScaleSync*SyncAsync*/oSyncStages_reg[1]/D} -hier] [expr {$ClkPeriod/2}]}
+	puts_ipfile $f_xdc {set ClkPeriod [get_property PERIOD [get_clocks -of_objects [get_pins -filter {NAME =~ *InstDacCh2ScaleSync*SyncAsync*/oSyncStages_reg[0]/C} -hier]]]}
+	puts_ipfile $f_xdc {set_max_delay -from [get_pins -filter {NAME =~ *InstDacCh2ScaleSync*SyncAsync*/oSyncStages_reg[0]/C} -hier] -to [get_pins -filter {NAME =~ *InstDacCh2ScaleSync*SyncAsync*/oSyncStages_reg[1]/D} -hier] [expr {$ClkPeriod/2}]}
+}
+puts_ipfile $f_xdc {}
+
+puts_ipfile $f_xdc {# Disable timing analysis on ResetBridge components' asynchronous reset input.}
+puts_ipfile $f_xdc {set_false_path -to [get_pins -filter {NAME =~ *InstDacSysReset*SyncAsync*/oSyncStages*/PRE || NAME =~ *InstDacSysReset*SyncAsync*/oSyncStages*/CLR} -hier]}
+puts_ipfile $f_xdc {set_false_path -to [get_pins -filter {NAME =~ *InstDacSamplingReset*SyncAsync*/oSyncStages*/PRE || NAME =~ *InstDacSamplingReset*SyncAsync*/oSyncStages*/CLR} -hier]}
+puts_ipfile $f_xdc {set_false_path -to [get_pins -filter {NAME =~ *InstDacClkReset*SyncAsync*/oSyncStages*/PRE || NAME =~ *InstDacClkReset*SyncAsync*/oSyncStages*/CLR} -hier]}
+puts_ipfile $f_xdc {}
+
+puts_ipfile $f_xdc {create_generated_clock -name ZmodDAC_ClkIO -source [get_pins InstDAC_ClkIO_ODDR/C] -add -master_clock [get_clocks -of [get_ports DAC_Clk]] -divide_by 1 [get_ports ZmodDAC_ClkIO]}
+puts_ipfile $f_xdc {create_generated_clock -name ZmodDAC_ClkIn -source [get_pins InstDAC_ClkinODDR/C] -add -master_clock [get_clocks -of [get_ports DAC_Clk]] -divide_by 1 [get_ports ZmodDAC_ClkIn]}
+puts_ipfile $f_xdc {}
+
+puts_ipfile $f_xdc {#Specify timing parameters for AD9717}
+puts_ipfile $f_xdc {set t_setup_falling 0.250;}
+puts_ipfile $f_xdc {set t_setup_rising 0.130;}
+puts_ipfile $f_xdc {set t_hold_falling  -1.200;}
+puts_ipfile $f_xdc {set t_hold_rising  -1.100;} 
+puts_ipfile $f_xdc {#Length matching tolerance is 1mm on Eclypse Z7 + 0.1mm on ZmodAWG. For 140mm/ns, this means ~0.008ns.}
+puts_ipfile $f_xdc {set t_length_matching_err 0.008;}
+puts_ipfile $f_xdc {}
+
+puts_ipfile $f_xdc {set_output_delay -clock [get_clocks ZmodDAC_ClkIO] -clock_fall -min -add_delay [expr $t_hold_falling - $t_length_matching_err] [get_ports {dZmodDAC_Data[*]} -prop_thru_buffers]}
+puts_ipfile $f_xdc {set_output_delay -clock [get_clocks ZmodDAC_ClkIO] -clock_fall -max -add_delay [expr $t_setup_falling + $t_length_matching_err] [get_ports {dZmodDAC_Data[*]} -prop_thru_buffers]}
+puts_ipfile $f_xdc {set_output_delay -clock [get_clocks ZmodDAC_ClkIO] -min -add_delay [expr $t_hold_rising - $t_length_matching_err] [get_ports {dZmodDAC_Data[*]} -prop_thru_buffers]}
+puts_ipfile $f_xdc {set_output_delay -clock [get_clocks ZmodDAC_ClkIO] -max -add_delay [expr $t_setup_rising + $t_length_matching_err] [get_ports {dZmodDAC_Data[*]} -prop_thru_buffers]}
+
+close_ipfile $f_xdc

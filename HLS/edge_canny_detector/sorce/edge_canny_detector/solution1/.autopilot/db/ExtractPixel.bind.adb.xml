@@ -1,0 +1,183 @@
+<stg><name>ExtractPixel</name>
+
+
+<trans_list>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="2" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="2" bw="24" op_0_bw="24" op_1_bw="24">
+<![CDATA[
+:0 %src_V_read_1 = read i24 @_ssdm_op_Read.ap_auto.i24, i24 %src_V_read
+
+]]></Node>
+<StgValue><ssdm name="src_V_read_1"/></StgValue>
+</operation>
+
+<operation id="3" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="3" bw="8" op_0_bw="24">
+<![CDATA[
+:1 %trunc_ln674 = trunc i24 %src_V_read_1
+
+]]></Node>
+<StgValue><ssdm name="trunc_ln674"/></StgValue>
+</operation>
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="4" bw="8" op_0_bw="8" op_1_bw="24" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+:2 %src_value_1 = partselect i8 @_ssdm_op_PartSelect.i8.i24.i32.i32, i24 %src_V_read_1, i32 8, i32 15
+
+]]></Node>
+<StgValue><ssdm name="src_value_1"/></StgValue>
+</operation>
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="5" bw="8" op_0_bw="8" op_1_bw="24" op_2_bw="32" op_3_bw="32">
+<![CDATA[
+:3 %src_value_2 = partselect i8 @_ssdm_op_PartSelect.i8.i24.i32.i32, i24 %src_V_read_1, i32 16, i32 23
+
+]]></Node>
+<StgValue><ssdm name="src_value_2"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="6" bw="24" op_0_bw="24" op_1_bw="8">
+<![CDATA[
+:4 %mrv = insertvalue i24 <undef>, i8 %trunc_ln674
+
+]]></Node>
+<StgValue><ssdm name="mrv"/></StgValue>
+</operation>
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="7" bw="24" op_0_bw="24" op_1_bw="8">
+<![CDATA[
+:5 %mrv_1 = insertvalue i24 %mrv, i8 %src_value_1
+
+]]></Node>
+<StgValue><ssdm name="mrv_1"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="8" bw="24" op_0_bw="24" op_1_bw="8">
+<![CDATA[
+:6 %mrv_2 = insertvalue i24 %mrv_1, i8 %src_value_2
+
+]]></Node>
+<StgValue><ssdm name="mrv_2"/></StgValue>
+</operation>
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="9" bw="0" op_0_bw="24">
+<![CDATA[
+:7 %ret_ln13 = ret i24 %mrv_2
+
+]]></Node>
+<StgValue><ssdm name="ret_ln13"/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="11" name="src_V_read" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="src_V_read"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="13" from="_ssdm_op_Read.ap_auto.i24" to="src_V_read_1" fromId="12" toId="2">
+</dataflow>
+<dataflow id="14" from="src_V_read" to="src_V_read_1" fromId="11" toId="2">
+</dataflow>
+<dataflow id="15" from="src_V_read_1" to="trunc_ln674" fromId="2" toId="3">
+</dataflow>
+<dataflow id="17" from="_ssdm_op_PartSelect.i8.i24.i32.i32" to="src_value_1" fromId="16" toId="4">
+</dataflow>
+<dataflow id="18" from="src_V_read_1" to="src_value_1" fromId="2" toId="4">
+</dataflow>
+<dataflow id="20" from="StgValue_19" to="src_value_1" fromId="19" toId="4">
+</dataflow>
+<dataflow id="22" from="StgValue_21" to="src_value_1" fromId="21" toId="4">
+</dataflow>
+<dataflow id="23" from="_ssdm_op_PartSelect.i8.i24.i32.i32" to="src_value_2" fromId="16" toId="5">
+</dataflow>
+<dataflow id="24" from="src_V_read_1" to="src_value_2" fromId="2" toId="5">
+</dataflow>
+<dataflow id="26" from="StgValue_25" to="src_value_2" fromId="25" toId="5">
+</dataflow>
+<dataflow id="28" from="StgValue_27" to="src_value_2" fromId="27" toId="5">
+</dataflow>
+<dataflow id="30" from="StgValue_29" to="mrv" fromId="29" toId="6">
+</dataflow>
+<dataflow id="31" from="trunc_ln674" to="mrv" fromId="3" toId="6">
+</dataflow>
+<dataflow id="32" from="mrv" to="mrv_1" fromId="6" toId="7">
+</dataflow>
+<dataflow id="33" from="src_value_1" to="mrv_1" fromId="4" toId="7">
+</dataflow>
+<dataflow id="34" from="mrv_1" to="mrv_2" fromId="7" toId="8">
+</dataflow>
+<dataflow id="35" from="src_value_2" to="mrv_2" fromId="5" toId="8">
+</dataflow>
+<dataflow id="36" from="mrv_2" to="ret_ln13" fromId="8" toId="9">
+</dataflow>
+</dataflows>
+
+
+</stg>

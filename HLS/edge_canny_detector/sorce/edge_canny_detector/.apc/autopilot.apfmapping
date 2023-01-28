@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="edge_canny_detector.cpp" path="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector\source\edge_canny_detector.cpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

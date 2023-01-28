@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1674569121059">
+  <ports id="1" name="p_read1" type="PortType" originalName="v.V" coreId="2498167378" bitwidth="16">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="11" name="ap_return" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <edges id="7" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="8" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@ports.1"/>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="13" pipe_depth="1" RegionName="xfExtractPixels&lt;1, 5, 3>">
+    <basic_blocks id="4" name="xfExtractPixels&lt;1, 5, 3>" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="2" name="p_read" lineNumber="57" fileName="source/common/xf_utility.hpp" fileDirectory=".." coreId="0" contextFuncName="xfExtractPixels_1_5_3_s" bitwidth="16" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/common/xf_utility.hpp" linenumber="57" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfExtractPixels&amp;lt;1, 5, 3&amp;gt;"/>
+        <dataInputObjs>p_read1</dataInputObjs>
+        <dataOutputObjs>ret</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="3" name="_ln69" lineNumber="69" fileName="source/common/xf_utility.hpp" fileDirectory=".." coreId="1222638335" contextFuncName="xfExtractPixels_1_5_3_s" opcode="ret" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/common/xf_utility.hpp" linenumber="69" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfExtractPixels&amp;lt;1, 5, 3&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>ap_return</dataOutputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/common/xf_utility.hpp">
+        <validLinenumbers>57</validLinenumbers>
+        <validLinenumbers>69</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ioNodes realName="p_read_read_fu_4">
+    <nodeIds>2</nodeIds>
+  </ioNodes>
+  <ioPorts name="p_read1">
+    <contents name="read">
+      <nodeIds>2</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return">
+    <contents name="ret">
+      <nodeIds>3</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="2" stage="1" latency="1"/>
+      <operations id="3" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="xfExtractPixels_1_5_3_s" mII="1" mDepth="1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>4</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

@@ -1,0 +1,392 @@
+
+
+================================================================
+== Vitis HLS Report for 'xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_s'
+================================================================
+* Date:           Tue Jan 24 22:05:09 2023
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        edge_canny_detector
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.764 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   927923|   927923|  9.279 ms|  9.279 ms|  927923|  927923|     none|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Clear_Row_Loop  |     1280|     1280|         2|          1|          1|  1280|       yes|
+        |- Row_Loop        |   926640|   926640|      1287|          -|          -|   720|        no|
+        | + Col_Loop       |     1283|     1283|         5|          1|          1|  1280|       yes|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+  * Pipeline-1: initiation interval (II) = 1, depth = 5
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 12
+* Pipeline : 2
+  Pipeline-0 : II = 1, D = 2, States = { 2 3 }
+  Pipeline-1 : II = 1, D = 5, States = { 6 7 8 9 10 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 4 3 
+3 --> 2 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 11 10 
+10 --> 6 
+11 --> 12 
+12 --> 5 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.29>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gaussian_mat_4209, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gray_img_src_4207, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%buf_V_0 = alloca i64 1" [source/imgproc/xf_averagegaussianmask.hpp:189]   --->   Operation 15 'alloca' 'buf_V_0' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%buf_V_1 = alloca i64 1" [source/imgproc/xf_averagegaussianmask.hpp:189]   --->   Operation 16 'alloca' 'buf_V_1' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%buf_V_2 = alloca i64 1" [source/imgproc/xf_averagegaussianmask.hpp:189]   --->   Operation 17 'alloca' 'buf_V_2' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specmemcore_ln189 = specmemcore void @_ssdm_op_SpecMemCore, i8 %buf_V_0, i8 %buf_V_1, i8 %buf_V_2, i64 666, i64 25, i64 18446744073709551615" [source/imgproc/xf_averagegaussianmask.hpp:189]   --->   Operation 18 'specmemcore' 'specmemcore_ln189' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (1.29ns)   --->   "%br_ln197 = br void" [source/imgproc/xf_averagegaussianmask.hpp:197]   --->   Operation 19 'br' 'br_ln197' <Predicate = true> <Delay = 1.29>
+
+State 2 <SV = 1> <Delay = 4.65>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%col_V = phi i11 0, void %.lr.ph53, i11 %col_V_9, void %.split6"   --->   Operation 20 'phi' 'col_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (1.48ns)   --->   "%col_V_9 = add i11 %col_V, i11 1"   --->   Operation 21 'add' 'col_V_9' <Predicate = true> <Delay = 1.48> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (1.88ns)   --->   "%icmp_ln878 = icmp_eq  i11 %col_V, i11 1280"   --->   Operation 22 'icmp' 'icmp_ln878' <Predicate = true> <Delay = 1.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln197 = br i1 %icmp_ln878, void %.split6, void %.lr.ph48.preheader" [source/imgproc/xf_averagegaussianmask.hpp:197]   --->   Operation 23 'br' 'br_ln197' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln534 = zext i11 %col_V"   --->   Operation 24 'zext' 'zext_ln534' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%buf_V_0_addr = getelementptr i8 %buf_V_0, i64 0, i64 %zext_ln534" [source/imgproc/xf_averagegaussianmask.hpp:203]   --->   Operation 25 'getelementptr' 'buf_V_0_addr' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (2.77ns)   --->   "%store_ln203 = store i8 0, i11 %buf_V_0_addr" [source/imgproc/xf_averagegaussianmask.hpp:203]   --->   Operation 26 'store' 'store_ln203' <Predicate = (!icmp_ln878)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+
+State 3 <SV = 2> <Delay = 6.17>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%specpipeline_ln169 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_5" [source/imgproc/xf_averagegaussianmask.hpp:169]   --->   Operation 27 'specpipeline' 'specpipeline_ln169' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%speclooptripcount_ln169 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1280, i64 1280, i64 1280" [source/imgproc/xf_averagegaussianmask.hpp:169]   --->   Operation 28 'speclooptripcount' 'speclooptripcount_ln169' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%specloopname_ln169 = specloopname void @_ssdm_op_SpecLoopName, void @empty_2" [source/imgproc/xf_averagegaussianmask.hpp:169]   --->   Operation 29 'specloopname' 'specloopname_ln169' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (3.40ns)   --->   "%tmp_V = read i8 @_ssdm_op_Read.ap_fifo.volatile.i8P0A, i8 %gray_img_src_4207" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 30 'read' 'tmp_V' <Predicate = (!icmp_ln878)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%buf_V_1_addr = getelementptr i8 %buf_V_1, i64 0, i64 %zext_ln534" [source/imgproc/xf_averagegaussianmask.hpp:204]   --->   Operation 31 'getelementptr' 'buf_V_1_addr' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (2.77ns)   --->   "%store_ln204 = store i8 %tmp_V, i11 %buf_V_1_addr" [source/imgproc/xf_averagegaussianmask.hpp:204]   --->   Operation 32 'store' 'store_ln204' <Predicate = (!icmp_ln878)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 33 'br' 'br_ln0' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 1.29>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%tp = alloca i32 1"   --->   Operation 34 'alloca' 'tp' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 35 [1/1] (0.00ns)   --->   "%mid = alloca i32 1"   --->   Operation 35 'alloca' 'mid' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%bottom = alloca i32 1"   --->   Operation 36 'alloca' 'bottom' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (1.29ns)   --->   "%br_ln209 = br void %.lr.ph48" [source/imgproc/xf_averagegaussianmask.hpp:209]   --->   Operation 37 'br' 'br_ln209' <Predicate = true> <Delay = 1.29>
+
+State 5 <SV = 3> <Delay = 4.04>
+ST_5 : Operation 38 [1/1] (0.00ns)   --->   "%row_V = phi i10 %row_V_3, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit60, i10 1, void %.lr.ph48.preheader"   --->   Operation 38 'phi' 'row_V' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 39 [1/1] (0.00ns)   --->   "%row_ind_V = phi i13 %row_ind_V_4, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit60, i13 2, void %.lr.ph48.preheader"   --->   Operation 39 'phi' 'row_ind_V' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 40 [1/1] (1.94ns)   --->   "%icmp_ln209 = icmp_eq  i10 %row_V, i10 721" [source/imgproc/xf_averagegaussianmask.hpp:209]   --->   Operation 40 'icmp' 'icmp_ln209' <Predicate = true> <Delay = 1.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 41 [1/1] (0.00ns)   --->   "%br_ln209 = br i1 %icmp_ln209, void %.split3, void %._crit_edge" [source/imgproc/xf_averagegaussianmask.hpp:209]   --->   Operation 41 'br' 'br_ln209' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 42 [1/1] (0.00ns)   --->   "%speclooptripcount_ln165 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 720, i64 720, i64 720" [source/imgproc/xf_averagegaussianmask.hpp:165]   --->   Operation 42 'speclooptripcount' 'speclooptripcount_ln165' <Predicate = (!icmp_ln209)> <Delay = 0.00>
+ST_5 : Operation 43 [1/1] (0.00ns)   --->   "%specloopname_ln165 = specloopname void @_ssdm_op_SpecLoopName, void @empty_4" [source/imgproc/xf_averagegaussianmask.hpp:165]   --->   Operation 43 'specloopname' 'specloopname_ln165' <Predicate = (!icmp_ln209)> <Delay = 0.00>
+ST_5 : Operation 44 [1/1] (0.98ns)   --->   "%switch_ln213 = switch i13 %row_ind_V, void, i13 2, void %.split3..lr.ph31_crit_edge, i13 0, void %.fold.split" [source/imgproc/xf_averagegaussianmask.hpp:213]   --->   Operation 44 'switch' 'switch_ln213' <Predicate = (!icmp_ln209)> <Delay = 0.98>
+ST_5 : Operation 45 [1/1] (1.32ns)   --->   "%store_ln0 = store i2 0, i2 %bottom"   --->   Operation 45 'store' 'store_ln0' <Predicate = (!icmp_ln209 & row_ind_V == 0)> <Delay = 1.32>
+ST_5 : Operation 46 [1/1] (1.32ns)   --->   "%store_ln0 = store i2 2, i2 %mid"   --->   Operation 46 'store' 'store_ln0' <Predicate = (!icmp_ln209 & row_ind_V == 0)> <Delay = 1.32>
+ST_5 : Operation 47 [1/1] (1.32ns)   --->   "%store_ln0 = store i2 1, i2 %tp"   --->   Operation 47 'store' 'store_ln0' <Predicate = (!icmp_ln209 & row_ind_V == 0)> <Delay = 1.32>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.lr.ph31"   --->   Operation 48 'br' 'br_ln0' <Predicate = (!icmp_ln209 & row_ind_V == 0)> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (1.32ns)   --->   "%store_ln213 = store i2 2, i2 %bottom" [source/imgproc/xf_averagegaussianmask.hpp:213]   --->   Operation 49 'store' 'store_ln213' <Predicate = (!icmp_ln209 & row_ind_V == 2)> <Delay = 1.32>
+ST_5 : Operation 50 [1/1] (1.32ns)   --->   "%store_ln213 = store i2 1, i2 %mid" [source/imgproc/xf_averagegaussianmask.hpp:213]   --->   Operation 50 'store' 'store_ln213' <Predicate = (!icmp_ln209 & row_ind_V == 2)> <Delay = 1.32>
+ST_5 : Operation 51 [1/1] (1.32ns)   --->   "%store_ln213 = store i2 0, i2 %tp" [source/imgproc/xf_averagegaussianmask.hpp:213]   --->   Operation 51 'store' 'store_ln213' <Predicate = (!icmp_ln209 & row_ind_V == 2)> <Delay = 1.32>
+ST_5 : Operation 52 [1/1] (0.00ns)   --->   "%br_ln213 = br void %.lr.ph31" [source/imgproc/xf_averagegaussianmask.hpp:213]   --->   Operation 52 'br' 'br_ln213' <Predicate = (!icmp_ln209 & row_ind_V == 2)> <Delay = 0.00>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "%tp_load = load i2 %tp" [source/imgproc/xf_averagegaussianmask.hpp:221]   --->   Operation 53 'load' 'tp_load' <Predicate = (!icmp_ln209 & row_ind_V != 2 & row_ind_V != 0)> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%mid_load = load i2 %mid" [source/imgproc/xf_averagegaussianmask.hpp:221]   --->   Operation 54 'load' 'mid_load' <Predicate = (!icmp_ln209 & row_ind_V != 2 & row_ind_V != 0)> <Delay = 0.00>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%bottom_load = load i2 %bottom" [source/imgproc/xf_averagegaussianmask.hpp:221]   --->   Operation 55 'load' 'bottom_load' <Predicate = (!icmp_ln209 & row_ind_V != 2 & row_ind_V != 0)> <Delay = 0.00>
+ST_5 : Operation 56 [1/1] (1.90ns)   --->   "%icmp_ln870 = icmp_eq  i13 %row_ind_V, i13 1"   --->   Operation 56 'icmp' 'icmp_ln870' <Predicate = (!icmp_ln209 & row_ind_V != 2 & row_ind_V != 0)> <Delay = 1.90> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 57 [1/1] (0.81ns)   --->   "%tp_1 = select i1 %icmp_ln870, i2 2, i2 %tp_load" [source/imgproc/xf_averagegaussianmask.hpp:221]   --->   Operation 57 'select' 'tp_1' <Predicate = (!icmp_ln209 & row_ind_V != 2 & row_ind_V != 0)> <Delay = 0.81> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 58 [1/1] (0.81ns)   --->   "%mid_2 = select i1 %icmp_ln870, i2 0, i2 %mid_load" [source/imgproc/xf_averagegaussianmask.hpp:221]   --->   Operation 58 'select' 'mid_2' <Predicate = (!icmp_ln209 & row_ind_V != 2 & row_ind_V != 0)> <Delay = 0.81> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 59 [1/1] (0.81ns)   --->   "%bottom_2 = select i1 %icmp_ln870, i2 1, i2 %bottom_load" [source/imgproc/xf_averagegaussianmask.hpp:221]   --->   Operation 59 'select' 'bottom_2' <Predicate = (!icmp_ln209 & row_ind_V != 2 & row_ind_V != 0)> <Delay = 0.81> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 60 [1/1] (1.32ns)   --->   "%store_ln221 = store i2 %bottom_2, i2 %bottom" [source/imgproc/xf_averagegaussianmask.hpp:221]   --->   Operation 60 'store' 'store_ln221' <Predicate = (!icmp_ln209 & row_ind_V != 2 & row_ind_V != 0)> <Delay = 1.32>
+ST_5 : Operation 61 [1/1] (1.32ns)   --->   "%store_ln221 = store i2 %mid_2, i2 %mid" [source/imgproc/xf_averagegaussianmask.hpp:221]   --->   Operation 61 'store' 'store_ln221' <Predicate = (!icmp_ln209 & row_ind_V != 2 & row_ind_V != 0)> <Delay = 1.32>
+ST_5 : Operation 62 [1/1] (1.32ns)   --->   "%store_ln221 = store i2 %tp_1, i2 %tp" [source/imgproc/xf_averagegaussianmask.hpp:221]   --->   Operation 62 'store' 'store_ln221' <Predicate = (!icmp_ln209 & row_ind_V != 2 & row_ind_V != 0)> <Delay = 1.32>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.lr.ph31"   --->   Operation 63 'br' 'br_ln0' <Predicate = (!icmp_ln209 & row_ind_V != 2 & row_ind_V != 0)> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (1.94ns)   --->   "%cmp_i_i338_i = icmp_ult  i10 %row_V, i10 720"   --->   Operation 64 'icmp' 'cmp_i_i338_i' <Predicate = (!icmp_ln209)> <Delay = 1.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 65 [1/1] (1.29ns)   --->   "%br_ln107 = br void" [source/imgproc/xf_averagegaussianmask.hpp:107]   --->   Operation 65 'br' 'br_ln107' <Predicate = (!icmp_ln209)> <Delay = 1.29>
+ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%ret_ln259 = ret" [source/imgproc/xf_averagegaussianmask.hpp:259]   --->   Operation 66 'ret' 'ret_ln259' <Predicate = (icmp_ln209)> <Delay = 0.00>
+
+State 6 <SV = 4> <Delay = 1.88>
+ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%col_V_10 = phi i11 0, void %.lr.ph31, i11 %col_V_11, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit279.i"   --->   Operation 67 'phi' 'col_V_10' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 68 [1/1] (1.48ns)   --->   "%col_V_11 = add i11 %col_V_10, i11 1"   --->   Operation 68 'add' 'col_V_11' <Predicate = true> <Delay = 1.48> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 69 [1/1] (1.88ns)   --->   "%icmp_ln878_7 = icmp_eq  i11 %col_V_10, i11 1280"   --->   Operation 69 'icmp' 'icmp_ln878_7' <Predicate = true> <Delay = 1.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%br_ln107 = br i1 %icmp_ln878_7, void %.split, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit60" [source/imgproc/xf_averagegaussianmask.hpp:107]   --->   Operation 70 'br' 'br_ln107' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (0.00ns)   --->   "%specpipeline_ln107 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_5" [source/imgproc/xf_averagegaussianmask.hpp:107]   --->   Operation 71 'specpipeline' 'specpipeline_ln107' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_6 : Operation 72 [1/1] (0.00ns)   --->   "%speclooptripcount_ln107 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1280, i64 1280, i64 1280" [source/imgproc/xf_averagegaussianmask.hpp:107]   --->   Operation 72 'speclooptripcount' 'speclooptripcount_ln107' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%specloopname_ln107 = specloopname void @_ssdm_op_SpecLoopName, void @empty_9" [source/imgproc/xf_averagegaussianmask.hpp:107]   --->   Operation 73 'specloopname' 'specloopname_ln107' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_6 : Operation 74 [1/1] (0.00ns)   --->   "%bottom_load_2 = load i2 %bottom" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 74 'load' 'bottom_load_2' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_6 : Operation 75 [1/1] (0.00ns)   --->   "%br_ln112 = br i1 %cmp_i_i338_i, void, void" [source/imgproc/xf_averagegaussianmask.hpp:112]   --->   Operation 75 'br' 'br_ln112' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_6 : Operation 76 [1/1] (0.98ns)   --->   "%switch_ln115 = switch i2 %bottom_load_2, void %branch2, i2 0, void %branch0, i2 1, void %branch1" [source/imgproc/xf_averagegaussianmask.hpp:115]   --->   Operation 76 'switch' 'switch_ln115' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i)> <Delay = 0.98>
+ST_6 : Operation 77 [1/1] (1.29ns)   --->   "%br_ln0 = br void %_Z20xFAverageGaussian3x3ILi1ELi0EEvPN9PixelTypeIXT0_EE4nameES3_S3_S3_.exit.i56"   --->   Operation 77 'br' 'br_ln0' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i)> <Delay = 1.29>
+ST_6 : Operation 78 [1/1] (0.98ns)   --->   "%switch_ln113 = switch i2 %bottom_load_2, void %branch5, i2 0, void %branch3, i2 1, void %branch4" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 78 'switch' 'switch_ln113' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i)> <Delay = 0.98>
+
+State 7 <SV = 5> <Delay = 6.17>
+ST_7 : Operation 79 [1/1] (0.00ns)   --->   "%zext_ln534_6 = zext i11 %col_V_10"   --->   Operation 79 'zext' 'zext_ln534_6' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i)> <Delay = 0.00>
+ST_7 : Operation 80 [1/1] (0.00ns)   --->   "%buf_V_0_addr_6 = getelementptr i8 %buf_V_0, i64 0, i64 %zext_ln534_6" [source/imgproc/xf_averagegaussianmask.hpp:115]   --->   Operation 80 'getelementptr' 'buf_V_0_addr_6' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i)> <Delay = 0.00>
+ST_7 : Operation 81 [1/1] (0.00ns)   --->   "%buf_V_1_addr_5 = getelementptr i8 %buf_V_1, i64 0, i64 %zext_ln534_6" [source/imgproc/xf_averagegaussianmask.hpp:115]   --->   Operation 81 'getelementptr' 'buf_V_1_addr_5' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i)> <Delay = 0.00>
+ST_7 : Operation 82 [1/1] (0.00ns)   --->   "%buf_V_2_addr_3 = getelementptr i8 %buf_V_2, i64 0, i64 %zext_ln534_6" [source/imgproc/xf_averagegaussianmask.hpp:115]   --->   Operation 82 'getelementptr' 'buf_V_2_addr_3' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i)> <Delay = 0.00>
+ST_7 : Operation 83 [1/1] (2.77ns)   --->   "%store_ln115 = store i8 0, i11 %buf_V_1_addr_5" [source/imgproc/xf_averagegaussianmask.hpp:115]   --->   Operation 83 'store' 'store_ln115' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i & bottom_load_2 == 1)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_7 : Operation 84 [1/1] (0.00ns)   --->   "%br_ln115 = br void" [source/imgproc/xf_averagegaussianmask.hpp:115]   --->   Operation 84 'br' 'br_ln115' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i & bottom_load_2 == 1)> <Delay = 0.00>
+ST_7 : Operation 85 [1/1] (2.77ns)   --->   "%store_ln115 = store i8 0, i11 %buf_V_0_addr_6" [source/imgproc/xf_averagegaussianmask.hpp:115]   --->   Operation 85 'store' 'store_ln115' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i & bottom_load_2 == 0)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_7 : Operation 86 [1/1] (0.00ns)   --->   "%br_ln115 = br void" [source/imgproc/xf_averagegaussianmask.hpp:115]   --->   Operation 86 'br' 'br_ln115' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i & bottom_load_2 == 0)> <Delay = 0.00>
+ST_7 : Operation 87 [1/1] (2.77ns)   --->   "%store_ln115 = store i8 0, i11 %buf_V_2_addr_3" [source/imgproc/xf_averagegaussianmask.hpp:115]   --->   Operation 87 'store' 'store_ln115' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i & bottom_load_2 != 0 & bottom_load_2 != 1)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_7 : Operation 88 [1/1] (0.00ns)   --->   "%br_ln115 = br void" [source/imgproc/xf_averagegaussianmask.hpp:115]   --->   Operation 88 'br' 'br_ln115' <Predicate = (!icmp_ln878_7 & !cmp_i_i338_i & bottom_load_2 != 0 & bottom_load_2 != 1)> <Delay = 0.00>
+ST_7 : Operation 89 [1/1] (3.40ns)   --->   "%tmp_V_10 = read i8 @_ssdm_op_Read.ap_fifo.volatile.i8P0A, i8 %gray_img_src_4207" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 89 'read' 'tmp_V_10' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_7 : Operation 90 [1/1] (0.00ns)   --->   "%zext_ln534_5 = zext i11 %col_V_10"   --->   Operation 90 'zext' 'zext_ln534_5' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i)> <Delay = 0.00>
+ST_7 : Operation 91 [1/1] (0.00ns)   --->   "%buf_V_0_addr_5 = getelementptr i8 %buf_V_0, i64 0, i64 %zext_ln534_5" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 91 'getelementptr' 'buf_V_0_addr_5' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i)> <Delay = 0.00>
+ST_7 : Operation 92 [1/1] (0.00ns)   --->   "%buf_V_1_addr_4 = getelementptr i8 %buf_V_1, i64 0, i64 %zext_ln534_5" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 92 'getelementptr' 'buf_V_1_addr_4' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i)> <Delay = 0.00>
+ST_7 : Operation 93 [1/1] (0.00ns)   --->   "%buf_V_2_addr = getelementptr i8 %buf_V_2, i64 0, i64 %zext_ln534_5" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 93 'getelementptr' 'buf_V_2_addr' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i)> <Delay = 0.00>
+ST_7 : Operation 94 [1/1] (2.77ns)   --->   "%store_ln113 = store i8 %tmp_V_10, i11 %buf_V_1_addr_4" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 94 'store' 'store_ln113' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i & bottom_load_2 == 1)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_7 : Operation 95 [1/1] (0.00ns)   --->   "%br_ln113 = br void" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 95 'br' 'br_ln113' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i & bottom_load_2 == 1)> <Delay = 0.00>
+ST_7 : Operation 96 [1/1] (2.77ns)   --->   "%store_ln113 = store i8 %tmp_V_10, i11 %buf_V_0_addr_5" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 96 'store' 'store_ln113' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i & bottom_load_2 == 0)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_7 : Operation 97 [1/1] (0.00ns)   --->   "%br_ln113 = br void" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 97 'br' 'br_ln113' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i & bottom_load_2 == 0)> <Delay = 0.00>
+ST_7 : Operation 98 [1/1] (2.77ns)   --->   "%store_ln113 = store i8 %tmp_V_10, i11 %buf_V_2_addr" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 98 'store' 'store_ln113' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i & bottom_load_2 != 0 & bottom_load_2 != 1)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_7 : Operation 99 [1/1] (0.00ns)   --->   "%br_ln113 = br void" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 99 'br' 'br_ln113' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i & bottom_load_2 != 0 & bottom_load_2 != 1)> <Delay = 0.00>
+ST_7 : Operation 100 [1/1] (1.29ns)   --->   "%br_ln113 = br void %_Z20xFAverageGaussian3x3ILi1ELi0EEvPN9PixelTypeIXT0_EE4nameES3_S3_S3_.exit.i56" [source/imgproc/xf_averagegaussianmask.hpp:113]   --->   Operation 100 'br' 'br_ln113' <Predicate = (!icmp_ln878_7 & cmp_i_i338_i)> <Delay = 1.29>
+
+State 8 <SV = 6> <Delay = 2.77>
+ST_8 : Operation 101 [1/1] (0.00ns)   --->   "%zext_ln117 = zext i11 %col_V_10" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 101 'zext' 'zext_ln117' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_8 : Operation 102 [1/1] (0.00ns)   --->   "%buf_V_0_addr_7 = getelementptr i8 %buf_V_0, i64 0, i64 %zext_ln117" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 102 'getelementptr' 'buf_V_0_addr_7' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_8 : Operation 103 [2/2] (2.77ns)   --->   "%buf_V_0_load = load i11 %buf_V_0_addr_7" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 103 'load' 'buf_V_0_load' <Predicate = (!icmp_ln878_7)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_8 : Operation 104 [1/1] (0.00ns)   --->   "%buf_V_1_addr_6 = getelementptr i8 %buf_V_1, i64 0, i64 %zext_ln117" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 104 'getelementptr' 'buf_V_1_addr_6' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_8 : Operation 105 [2/2] (2.77ns)   --->   "%buf_V_1_load = load i11 %buf_V_1_addr_6" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 105 'load' 'buf_V_1_load' <Predicate = (!icmp_ln878_7)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_8 : Operation 106 [1/1] (0.00ns)   --->   "%buf_V_2_addr_5 = getelementptr i8 %buf_V_2, i64 0, i64 %zext_ln117" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 106 'getelementptr' 'buf_V_2_addr_5' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_8 : Operation 107 [2/2] (2.77ns)   --->   "%buf_V_2_load = load i11 %buf_V_2_addr_5" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 107 'load' 'buf_V_2_load' <Predicate = (!icmp_ln878_7)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_8 : Operation 108 [1/1] (1.88ns)   --->   "%icmp_ln870_9 = icmp_eq  i11 %col_V_10, i11 0"   --->   Operation 108 'icmp' 'icmp_ln870_9' <Predicate = (!icmp_ln878_7)> <Delay = 1.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 109 [1/1] (0.00ns)   --->   "%br_ln127 = br i1 %icmp_ln870_9, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit206.i57, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit279.i" [source/imgproc/xf_averagegaussianmask.hpp:127]   --->   Operation 109 'br' 'br_ln127' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+
+State 9 <SV = 7> <Delay = 6.76>
+ST_9 : Operation 110 [1/1] (0.00ns)   --->   "%b1_V = phi i8 0, void %.lr.ph31, i8 %b2_V, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit279.i"   --->   Operation 110 'phi' 'b1_V' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 111 [1/1] (0.00ns)   --->   "%b0_V = phi i8 0, void %.lr.ph31, i8 %b1_V, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit279.i"   --->   Operation 111 'phi' 'b0_V' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 112 [1/1] (0.00ns)   --->   "%m1_V = phi i8 0, void %.lr.ph31, i8 %src_buf2_V_2, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit279.i"   --->   Operation 112 'phi' 'm1_V' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 113 [1/1] (0.00ns)   --->   "%m0_V = phi i8 0, void %.lr.ph31, i8 %m1_V, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit279.i"   --->   Operation 113 'phi' 'm0_V' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 114 [1/1] (0.00ns)   --->   "%t1_V = phi i8 0, void %.lr.ph31, i8 %src_buf1_V_2, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit279.i"   --->   Operation 114 'phi' 't1_V' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 115 [1/1] (0.00ns)   --->   "%t0_V = phi i8 0, void %.lr.ph31, i8 %t1_V, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit279.i"   --->   Operation 115 'phi' 't0_V' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 116 [1/1] (0.00ns)   --->   "%A2 = phi i10 0, void %.lr.ph31, i10 %phitmp1, void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit279.i" [source/imgproc/xf_averagegaussianmask.hpp:51]   --->   Operation 116 'phi' 'A2' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 117 [1/1] (0.00ns)   --->   "%buf2_V = phi i8 %tmp_V_10, void, i8 0, void"   --->   Operation 117 'phi' 'buf2_V' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 118 [1/1] (0.00ns)   --->   "%tp_load_1 = load i2 %tp" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 118 'load' 'tp_load_1' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 119 [1/1] (0.00ns)   --->   "%mid_load_2 = load i2 %mid" [source/imgproc/xf_averagegaussianmask.hpp:118]   --->   Operation 119 'load' 'mid_load_2' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 120 [1/2] (2.77ns)   --->   "%buf_V_0_load = load i11 %buf_V_0_addr_7" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 120 'load' 'buf_V_0_load' <Predicate = (!icmp_ln878_7)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_9 : Operation 121 [1/2] (2.77ns)   --->   "%buf_V_1_load = load i11 %buf_V_1_addr_6" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 121 'load' 'buf_V_1_load' <Predicate = (!icmp_ln878_7)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_9 : Operation 122 [1/2] (2.77ns)   --->   "%buf_V_2_load = load i11 %buf_V_2_addr_5" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 122 'load' 'buf_V_2_load' <Predicate = (!icmp_ln878_7)> <Delay = 2.77> <CoreInst = "RAM_S2P_BRAM">   --->   Core 93 'RAM_S2P_BRAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1280> <RAM>
+ST_9 : Operation 123 [1/1] (1.32ns)   --->   "%buf0_V = mux i8 @_ssdm_op_Mux.ap_auto.3i8.i2, i8 %buf_V_0_load, i8 %buf_V_1_load, i8 %buf_V_2_load, i2 %tp_load_1" [source/imgproc/xf_averagegaussianmask.hpp:117]   --->   Operation 123 'mux' 'buf0_V' <Predicate = (!icmp_ln878_7)> <Delay = 1.32> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.32> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 124 [1/1] (1.32ns)   --->   "%buf1_V = mux i8 @_ssdm_op_Mux.ap_auto.3i8.i2, i8 %buf_V_0_load, i8 %buf_V_1_load, i8 %buf_V_2_load, i2 %mid_load_2" [source/imgproc/xf_averagegaussianmask.hpp:118]   --->   Operation 124 'mux' 'buf1_V' <Predicate = (!icmp_ln878_7)> <Delay = 1.32> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 1.32> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 125 [1/1] (0.00ns)   --->   "%src_buf1_V_2 = call i8 @xfExtractPixels<1, 1, 0>, i8 %buf0_V" [source/imgproc/xf_averagegaussianmask.hpp:121]   --->   Operation 125 'call' 'src_buf1_V_2' <Predicate = (!icmp_ln878_7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 126 [1/1] (0.00ns)   --->   "%src_buf2_V_2 = call i8 @xfExtractPixels<1, 1, 0>, i8 %buf1_V" [source/imgproc/xf_averagegaussianmask.hpp:122]   --->   Operation 126 'call' 'src_buf2_V_2' <Predicate = (!icmp_ln878_7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 127 [1/1] (0.00ns)   --->   "%b2_V = call i8 @xfExtractPixels<1, 1, 0>, i8 %buf2_V" [source/imgproc/xf_averagegaussianmask.hpp:123]   --->   Operation 127 'call' 'b2_V' <Predicate = (!icmp_ln878_7)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 128 [1/1] (0.00ns)   --->   "%zext_ln45 = zext i8 %t0_V" [source/imgproc/xf_averagegaussianmask.hpp:45]   --->   Operation 128 'zext' 'zext_ln45' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 129 [1/1] (0.00ns)   --->   "%zext_ln45_1 = zext i8 %src_buf1_V_2" [source/imgproc/xf_averagegaussianmask.hpp:45]   --->   Operation 129 'zext' 'zext_ln45_1' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 130 [1/1] (0.00ns)   --->   "%zext_ln46 = zext i8 %b0_V" [source/imgproc/xf_averagegaussianmask.hpp:46]   --->   Operation 130 'zext' 'zext_ln46' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 131 [1/1] (0.00ns)   --->   "%zext_ln1460_1 = zext i8 %b2_V"   --->   Operation 131 'zext' 'zext_ln1460_1' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 132 [1/1] (0.00ns)   --->   "%zext_ln1460_2 = zext i8 %src_buf2_V_2"   --->   Operation 132 'zext' 'zext_ln1460_2' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 133 [1/1] (1.30ns)   --->   "%A00 = add i9 %zext_ln45, i9 %zext_ln46" [source/imgproc/xf_averagegaussianmask.hpp:45]   --->   Operation 133 'add' 'A00' <Predicate = (!icmp_ln878_7)> <Delay = 1.30> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 134 [1/1] (0.00ns)   --->   "%zext_ln46_1 = zext i9 %A00" [source/imgproc/xf_averagegaussianmask.hpp:46]   --->   Operation 134 'zext' 'zext_ln46_1' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 135 [1/1] (1.30ns)   --->   "%add_ln49 = add i9 %zext_ln45_1, i9 %zext_ln1460_1" [source/imgproc/xf_averagegaussianmask.hpp:49]   --->   Operation 135 'add' 'add_ln49' <Predicate = (!icmp_ln878_7)> <Delay = 1.30> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 136 [1/1] (0.00ns)   --->   "%zext_ln49 = zext i9 %add_ln49" [source/imgproc/xf_averagegaussianmask.hpp:49]   --->   Operation 136 'zext' 'zext_ln49' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 137 [1/1] (1.36ns)   --->   "%A0_1 = add i10 %zext_ln49, i10 %zext_ln46_1" [source/imgproc/xf_averagegaussianmask.hpp:49]   --->   Operation 137 'add' 'A0_1' <Predicate = (!icmp_ln878_7)> <Delay = 1.36> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 138 [1/1] (0.00ns)   --->   "%zext_ln47 = zext i8 %b1_V" [source/imgproc/xf_averagegaussianmask.hpp:47]   --->   Operation 138 'zext' 'zext_ln47' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 139 [1/1] (0.00ns)   --->   "%zext_ln48 = zext i8 %m0_V" [source/imgproc/xf_averagegaussianmask.hpp:48]   --->   Operation 139 'zext' 'zext_ln48' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 140 [1/1] (0.00ns)   --->   "%zext_ln48_1 = zext i8 %t1_V" [source/imgproc/xf_averagegaussianmask.hpp:48]   --->   Operation 140 'zext' 'zext_ln48_1' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 141 [1/1] (1.30ns)   --->   "%add_ln48 = add i9 %zext_ln48, i9 %zext_ln47" [source/imgproc/xf_averagegaussianmask.hpp:48]   --->   Operation 141 'add' 'add_ln48' <Predicate = (!icmp_ln878_7)> <Delay = 1.30> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 142 [1/1] (0.00ns)   --->   "%zext_ln50_3 = zext i9 %add_ln48" [source/imgproc/xf_averagegaussianmask.hpp:50]   --->   Operation 142 'zext' 'zext_ln50_3' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 143 [1/1] (1.30ns)   --->   "%add_ln50_2 = add i9 %zext_ln48_1, i9 %zext_ln1460_2" [source/imgproc/xf_averagegaussianmask.hpp:50]   --->   Operation 143 'add' 'add_ln50_2' <Predicate = (!icmp_ln878_7)> <Delay = 1.30> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 144 [1/1] (0.00ns)   --->   "%zext_ln50_4 = zext i9 %add_ln50_2" [source/imgproc/xf_averagegaussianmask.hpp:50]   --->   Operation 144 'zext' 'zext_ln50_4' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 145 [1/1] (1.36ns)   --->   "%add_ln50_3 = add i10 %zext_ln50_4, i10 %zext_ln50_3" [source/imgproc/xf_averagegaussianmask.hpp:50]   --->   Operation 145 'add' 'add_ln50_3' <Predicate = (!icmp_ln878_7)> <Delay = 1.36> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 146 [1/1] (0.00ns)   --->   "%phitmp1 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i8.i2, i8 %src_buf2_V_2, i2 0" [source/imgproc/xf_averagegaussianmask.hpp:122]   --->   Operation 146 'bitconcatenate' 'phitmp1' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_9 : Operation 147 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 147 'br' 'br_ln0' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+
+State 10 <SV = 8> <Delay = 6.29>
+ST_10 : Operation 148 [1/1] (0.00ns)   --->   "%A1_1 = bitconcatenate i11 @_ssdm_op_BitConcatenate.i11.i10.i1, i10 %add_ln50_3, i1 0" [source/imgproc/xf_averagegaussianmask.hpp:50]   --->   Operation 148 'bitconcatenate' 'A1_1' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_10 : Operation 149 [1/1] (0.00ns)   --->   "%A2_1 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i8.i2, i8 %m1_V, i2 0" [source/imgproc/xf_averagegaussianmask.hpp:51]   --->   Operation 149 'bitconcatenate' 'A2_1' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_10 : Operation 150 [1/1] (0.00ns)   --->   "%zext_ln52_4 = zext i10 %A0_1" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 150 'zext' 'zext_ln52_4' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_10 : Operation 151 [1/1] (0.00ns)   --->   "%zext_ln52_5 = zext i11 %A1_1" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 151 'zext' 'zext_ln52_5' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_10 : Operation 152 [1/1] (0.00ns)   --->   "%zext_ln52_6 = zext i10 %A2_1" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 152 'zext' 'zext_ln52_6' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_10 : Operation 153 [1/1] (1.41ns)   --->   "%add_ln52_2 = add i11 %zext_ln52_6, i11 %zext_ln52_4" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 153 'add' 'add_ln52_2' <Predicate = (!icmp_ln878_7)> <Delay = 1.41> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 154 [1/1] (0.00ns)   --->   "%zext_ln52_7 = zext i11 %add_ln52_2" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 154 'zext' 'zext_ln52_7' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_10 : Operation 155 [1/1] (1.48ns)   --->   "%add_ln52_3 = add i12 %zext_ln52_7, i12 %zext_ln52_5" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 155 'add' 'add_ln52_3' <Predicate = (!icmp_ln878_7)> <Delay = 1.48> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 156 [1/1] (0.00ns)   --->   "%g_x_V = partselect i8 @_ssdm_op_PartSelect.i8.i12.i32.i32, i12 %add_ln52_3, i32 4, i32 11"   --->   Operation 156 'partselect' 'g_x_V' <Predicate = (!icmp_ln878_7)> <Delay = 0.00>
+ST_10 : Operation 157 [1/1] (3.40ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i8P0A, i8 %gaussian_mat_4209, i8 %g_x_V" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 157 'write' 'write_ln174' <Predicate = (!icmp_ln870_9)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_10 : Operation 158 [1/1] (0.00ns)   --->   "%br_ln0 = br void %_ZN2xf2cv12xfPackPixelsILi1ELi1ELi0EEEvPN9PixelTypeIXT1_EE4nameERN10StreamTypeIXT0_EE4nameEtsRt.exit279.i"   --->   Operation 158 'br' 'br_ln0' <Predicate = (!icmp_ln870_9)> <Delay = 0.00>
+
+State 11 <SV = 8> <Delay = 4.20>
+ST_11 : Operation 159 [1/1] (1.41ns)   --->   "%row_V_3 = add i10 %row_V, i10 1"   --->   Operation 159 'add' 'row_V_3' <Predicate = true> <Delay = 1.41> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 160 [1/1] (0.00ns)   --->   "%zext_ln878 = zext i8 %b1_V"   --->   Operation 160 'zext' 'zext_ln878' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 161 [1/1] (0.00ns)   --->   "%zext_ln878_1 = zext i8 %t0_V"   --->   Operation 161 'zext' 'zext_ln878_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 162 [1/1] (0.00ns)   --->   "%zext_ln1460 = zext i8 %b0_V"   --->   Operation 162 'zext' 'zext_ln1460' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 163 [1/1] (1.30ns)   --->   "%A0 = add i9 %zext_ln1460, i9 %zext_ln878_1" [source/imgproc/xf_averagegaussianmask.hpp:49]   --->   Operation 163 'add' 'A0' <Predicate = true> <Delay = 1.30> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 164 [1/1] (0.00ns)   --->   "%zext_ln50 = zext i8 %t1_V" [source/imgproc/xf_averagegaussianmask.hpp:50]   --->   Operation 164 'zext' 'zext_ln50' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 165 [1/1] (0.00ns)   --->   "%zext_ln50_1 = zext i8 %m0_V" [source/imgproc/xf_averagegaussianmask.hpp:50]   --->   Operation 165 'zext' 'zext_ln50_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 166 [1/1] (1.30ns)   --->   "%add_ln50 = add i9 %zext_ln50, i9 %zext_ln878" [source/imgproc/xf_averagegaussianmask.hpp:50]   --->   Operation 166 'add' 'add_ln50' <Predicate = true> <Delay = 1.30> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 167 [1/1] (0.00ns)   --->   "%zext_ln50_2 = zext i9 %add_ln50" [source/imgproc/xf_averagegaussianmask.hpp:50]   --->   Operation 167 'zext' 'zext_ln50_2' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 168 [1/1] (1.36ns)   --->   "%add_ln50_1 = add i10 %zext_ln50_2, i10 %zext_ln50_1" [source/imgproc/xf_averagegaussianmask.hpp:50]   --->   Operation 168 'add' 'add_ln50_1' <Predicate = true> <Delay = 1.36> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 169 [1/1] (0.00ns)   --->   "%A1 = bitconcatenate i11 @_ssdm_op_BitConcatenate.i11.i10.i1, i10 %add_ln50_1, i1 0" [source/imgproc/xf_averagegaussianmask.hpp:50]   --->   Operation 169 'bitconcatenate' 'A1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 170 [1/1] (0.00ns)   --->   "%zext_ln52 = zext i9 %A0" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 170 'zext' 'zext_ln52' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 171 [1/1] (0.00ns)   --->   "%zext_ln52_1 = zext i11 %A1" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 171 'zext' 'zext_ln52_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 172 [1/1] (0.00ns)   --->   "%zext_ln52_2 = zext i10 %A2" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 172 'zext' 'zext_ln52_2' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 173 [1/1] (1.41ns)   --->   "%add_ln52 = add i11 %zext_ln52_2, i11 %zext_ln52" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 173 'add' 'add_ln52' <Predicate = true> <Delay = 1.41> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 174 [1/1] (0.00ns)   --->   "%zext_ln52_3 = zext i11 %add_ln52" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 174 'zext' 'zext_ln52_3' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 175 [1/1] (1.48ns)   --->   "%add_ln52_1 = add i12 %zext_ln52_3, i12 %zext_ln52_1" [source/imgproc/xf_averagegaussianmask.hpp:52]   --->   Operation 175 'add' 'add_ln52_1' <Predicate = true> <Delay = 1.48> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 176 [1/1] (0.00ns)   --->   "%g_x_V_6 = partselect i8 @_ssdm_op_PartSelect.i8.i12.i32.i32, i12 %add_ln52_1, i32 4, i32 11"   --->   Operation 176 'partselect' 'g_x_V_6' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 177 [1/1] (1.53ns)   --->   "%row_ind_V_3 = add i13 %row_ind_V, i13 1"   --->   Operation 177 'add' 'row_ind_V_3' <Predicate = true> <Delay = 1.53> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.53> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 178 [1/1] (1.90ns)   --->   "%icmp_ln870_8 = icmp_eq  i13 %row_ind_V_3, i13 3"   --->   Operation 178 'icmp' 'icmp_ln870_8' <Predicate = true> <Delay = 1.90> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 179 [1/1] (0.58ns)   --->   "%row_ind_V_4 = select i1 %icmp_ln870_8, i13 0, i13 %row_ind_V_3" [source/imgproc/xf_averagegaussianmask.hpp:255]   --->   Operation 179 'select' 'row_ind_V_4' <Predicate = true> <Delay = 0.58> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 12 <SV = 9> <Delay = 3.40>
+ST_12 : Operation 180 [1/1] (3.40ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i8P0A, i8 %gaussian_mat_4209, i8 %g_x_V_6" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 180 'write' 'write_ln174' <Predicate = true> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_12 : Operation 181 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.lr.ph48"   --->   Operation 181 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('col.V') with incoming values : ('col.V') [11]  (1.3 ns)
+
+ <State 2>: 4.65ns
+The critical path consists of the following:
+	'phi' operation ('col.V') with incoming values : ('col.V') [11]  (0 ns)
+	'getelementptr' operation ('buf_V_0_addr', source/imgproc/xf_averagegaussianmask.hpp:203) [20]  (0 ns)
+	'store' operation ('store_ln203', source/imgproc/xf_averagegaussianmask.hpp:203) of constant 0 on array 'buf.V[0]', source/imgproc/xf_averagegaussianmask.hpp:189 [21]  (2.77 ns)
+	blocking operation 1.88 ns on control path)
+
+ <State 3>: 6.17ns
+The critical path consists of the following:
+	fifo read on port 'gray_img_src_4207' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145) [22]  (3.4 ns)
+	'store' operation ('store_ln204', source/imgproc/xf_averagegaussianmask.hpp:204) of variable 'tmp.V', C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145 on array 'buf.V[1]', source/imgproc/xf_averagegaussianmask.hpp:189 [24]  (2.77 ns)
+
+ <State 4>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('row.V') with incoming values : ('row.V') [32]  (1.3 ns)
+
+ <State 5>: 4.04ns
+The critical path consists of the following:
+	'phi' operation ('row_ind.V') with incoming values : ('row_ind.V', source/imgproc/xf_averagegaussianmask.hpp:255) [33]  (0 ns)
+	'icmp' operation ('icmp_ln870') [54]  (1.9 ns)
+	'select' operation ('bottom', source/imgproc/xf_averagegaussianmask.hpp:221) [57]  (0.813 ns)
+	'store' operation ('store_ln221', source/imgproc/xf_averagegaussianmask.hpp:221) of variable 'bottom', source/imgproc/xf_averagegaussianmask.hpp:221 on local variable 'bottom' [58]  (1.33 ns)
+
+ <State 6>: 1.88ns
+The critical path consists of the following:
+	'phi' operation ('col.V') with incoming values : ('col.V') [72]  (0 ns)
+	'icmp' operation ('icmp_ln878_7') [75]  (1.88 ns)
+
+ <State 7>: 6.17ns
+The critical path consists of the following:
+	fifo read on port 'gray_img_src_4207' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145) [101]  (3.4 ns)
+	'store' operation ('store_ln113', source/imgproc/xf_averagegaussianmask.hpp:113) of variable 'tmp.V', C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145 on array 'buf.V[0]', source/imgproc/xf_averagegaussianmask.hpp:189 [111]  (2.77 ns)
+
+ <State 8>: 2.77ns
+The critical path consists of the following:
+	'getelementptr' operation ('buf_V_0_addr_7', source/imgproc/xf_averagegaussianmask.hpp:117) [123]  (0 ns)
+	'load' operation ('buf_V_0_load', source/imgproc/xf_averagegaussianmask.hpp:117) on array 'buf.V[0]', source/imgproc/xf_averagegaussianmask.hpp:189 [124]  (2.77 ns)
+
+ <State 9>: 6.76ns
+The critical path consists of the following:
+	'load' operation ('buf_V_0_load', source/imgproc/xf_averagegaussianmask.hpp:117) on array 'buf.V[0]', source/imgproc/xf_averagegaussianmask.hpp:189 [124]  (2.77 ns)
+	'mux' operation ('buf0.V', source/imgproc/xf_averagegaussianmask.hpp:117) [129]  (1.33 ns)
+	'call' operation ('src_buf1.V[2]', source/imgproc/xf_averagegaussianmask.hpp:121) to 'xfExtractPixels<1, 1, 0>' [131]  (0 ns)
+	'add' operation ('add_ln49', source/imgproc/xf_averagegaussianmask.hpp:49) [141]  (1.31 ns)
+	'add' operation ('A0', source/imgproc/xf_averagegaussianmask.hpp:49) [143]  (1.36 ns)
+
+ <State 10>: 6.3ns
+The critical path consists of the following:
+	'add' operation ('add_ln52_2', source/imgproc/xf_averagegaussianmask.hpp:52) [157]  (1.42 ns)
+	'add' operation ('add_ln52_3', source/imgproc/xf_averagegaussianmask.hpp:52) [159]  (1.48 ns)
+	fifo write on port 'gaussian_mat_4209' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) [164]  (3.4 ns)
+
+ <State 11>: 4.2ns
+The critical path consists of the following:
+	'add' operation ('A0', source/imgproc/xf_averagegaussianmask.hpp:49) [174]  (1.31 ns)
+	'add' operation ('add_ln52', source/imgproc/xf_averagegaussianmask.hpp:52) [184]  (1.42 ns)
+	'add' operation ('add_ln52_1', source/imgproc/xf_averagegaussianmask.hpp:52) [186]  (1.48 ns)
+
+ <State 12>: 3.4ns
+The critical path consists of the following:
+	fifo write on port 'gaussian_mat_4209' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) [188]  (3.4 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

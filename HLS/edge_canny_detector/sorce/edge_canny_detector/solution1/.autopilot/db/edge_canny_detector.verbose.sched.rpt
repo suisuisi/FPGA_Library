@@ -1,0 +1,327 @@
+
+
+================================================================
+== Vitis HLS Report for 'edge_canny_detector'
+================================================================
+* Date:           Tue Jan 24 22:05:15 2023
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        edge_canny_detector
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.212 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+--------+--------+----------+
+    |  Latency (cycles) |   Latency (absolute)  |     Interval    | Pipeline |
+    |   min   |   max   |    min    |    max    |   min  |   max  |   Type   |
+    +---------+---------+-----------+-----------+--------+--------+----------+
+    |  1859948|  1859948|  18.599 ms|  18.599 ms|  932402|  932402|  dataflow|
+    +---------+---------+-----------+-----------+--------+--------+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 20
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 20, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%highthreshold_c = alloca i64 1"   --->   Operation 21 'alloca' 'highthreshold_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.28> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 7> <FIFO>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%lowthreshold_c = alloca i64 1"   --->   Operation 22 'alloca' 'lowthreshold_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.28> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 7> <FIFO>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%rgb_img_src_data = alloca i64 1" [source/edge_canny_detector.cpp:140]   --->   Operation 23 'alloca' 'rgb_img_src_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%gray_img_src_data = alloca i64 1" [source/edge_canny_detector.cpp:142]   --->   Operation 24 'alloca' 'gray_img_src_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%rgb_img_dst_data = alloca i64 1" [source/edge_canny_detector.cpp:146]   --->   Operation 25 'alloca' 'rgb_img_dst_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%gaussian_mat_data = alloca i64 1" [source/edge_canny_detector.cpp:151]   --->   Operation 26 'alloca' 'gaussian_mat_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%gradx_mat_data = alloca i64 1" [source/edge_canny_detector.cpp:153]   --->   Operation 27 'alloca' 'gradx_mat_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%gradx1_mat_data = alloca i64 1" [source/edge_canny_detector.cpp:155]   --->   Operation 28 'alloca' 'gradx1_mat_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%gradx2_mat_data = alloca i64 1" [source/edge_canny_detector.cpp:157]   --->   Operation 29 'alloca' 'gradx2_mat_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%grady_mat_data = alloca i64 1" [source/edge_canny_detector.cpp:159]   --->   Operation 30 'alloca' 'grady_mat_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%grady1_mat_data = alloca i64 1" [source/edge_canny_detector.cpp:161]   --->   Operation 31 'alloca' 'grady1_mat_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%grady2_mat_data = alloca i64 1" [source/edge_canny_detector.cpp:163]   --->   Operation 32 'alloca' 'grady2_mat_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%magnitude_mat_data = alloca i64 1" [source/edge_canny_detector.cpp:165]   --->   Operation 33 'alloca' 'magnitude_mat_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 3.41> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 3840> <FIFO>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%phase_mat_data = alloca i64 1" [source/edge_canny_detector.cpp:167]   --->   Operation 34 'alloca' 'phase_mat_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 3.41> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 3840> <FIFO>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%nms_mat_data = alloca i64 1" [source/edge_canny_detector.cpp:169]   --->   Operation 35 'alloca' 'nms_mat_data' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+
+State 2 <SV = 1> <Delay = 3.28>
+ST_2 : Operation 36 [2/2] (3.28ns)   --->   "%call_ln179 = call void @AXIvideo2xfMat<24, 9, 720, 1280, 1>16, i24 %rgb_img_src_data, i24 %src_V_data_V, i3 %src_V_keep_V, i3 %src_V_strb_V, i1 %src_V_user_V, i1 %src_V_last_V, i1 %src_V_id_V, i1 %src_V_dest_V, i8 %lowthreshold, i8 %highthreshold, i8 %lowthreshold_c, i8 %highthreshold_c" [source/edge_canny_detector.cpp:179]   --->   Operation 36 'call' 'call_ln179' <Predicate = true> <Delay = 3.28> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 37 [1/2] (0.00ns)   --->   "%call_ln179 = call void @AXIvideo2xfMat<24, 9, 720, 1280, 1>16, i24 %rgb_img_src_data, i24 %src_V_data_V, i3 %src_V_keep_V, i3 %src_V_strb_V, i1 %src_V_user_V, i1 %src_V_last_V, i1 %src_V_id_V, i1 %src_V_dest_V, i8 %lowthreshold, i8 %highthreshold, i8 %lowthreshold_c, i8 %highthreshold_c" [source/edge_canny_detector.cpp:179]   --->   Operation 37 'call' 'call_ln179' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 38 [2/2] (0.00ns)   --->   "%call_ln180 = call void @xfrgb2gray<720, 1280>, i24 %rgb_img_src_data, i8 %gray_img_src_data" [source/edge_canny_detector.cpp:180]   --->   Operation 38 'call' 'call_ln180' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 39 [1/2] (0.00ns)   --->   "%call_ln180 = call void @xfrgb2gray<720, 1280>, i24 %rgb_img_src_data, i8 %gray_img_src_data" [source/edge_canny_detector.cpp:180]   --->   Operation 39 'call' 'call_ln180' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 40 [2/2] (0.00ns)   --->   "%call_ln181 = call void @xFAverageGaussianMask3x3<0, 0, 720, 1280, 0, 1, 1, 1280>, i8 %gray_img_src_data, i8 %gaussian_mat_data" [source/edge_canny_detector.cpp:181]   --->   Operation 40 'call' 'call_ln181' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 41 [1/2] (0.00ns)   --->   "%call_ln181 = call void @xFAverageGaussianMask3x3<0, 0, 720, 1280, 0, 1, 1, 1280>, i8 %gray_img_src_data, i8 %gaussian_mat_data" [source/edge_canny_detector.cpp:181]   --->   Operation 41 'call' 'call_ln181' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 42 [2/2] (0.00ns)   --->   "%call_ln183 = call void @xFSobel<0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false>, i8 %gaussian_mat_data, i16 %gradx_mat_data, i16 %grady_mat_data" [source/edge_canny_detector.cpp:183]   --->   Operation 42 'call' 'call_ln183' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 43 [1/2] (0.00ns)   --->   "%call_ln183 = call void @xFSobel<0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false>, i8 %gaussian_mat_data, i16 %gradx_mat_data, i16 %grady_mat_data" [source/edge_canny_detector.cpp:183]   --->   Operation 43 'call' 'call_ln183' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 44 [2/2] (0.00ns)   --->   "%call_ln185 = call void @duplicate<720, 1280>, i16 %gradx_mat_data, i16 %grady_mat_data, i16 %gradx1_mat_data, i16 %gradx2_mat_data, i16 %grady1_mat_data, i16 %grady2_mat_data" [source/edge_canny_detector.cpp:185]   --->   Operation 44 'call' 'call_ln185' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 0.00>
+ST_11 : Operation 45 [1/2] (0.00ns)   --->   "%call_ln185 = call void @duplicate<720, 1280>, i16 %gradx_mat_data, i16 %grady_mat_data, i16 %gradx1_mat_data, i16 %gradx2_mat_data, i16 %grady1_mat_data, i16 %grady2_mat_data" [source/edge_canny_detector.cpp:185]   --->   Operation 45 'call' 'call_ln185' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 0.00>
+ST_12 : Operation 46 [2/2] (0.00ns)   --->   "%call_ln155 = call void @xFMagnitudeKernel<2, 2, 720, 1280, 3, 3, 1, 5, 5, 1280, 3840>, i16 %gradx1_mat_data, i16 %grady1_mat_data, i16 %magnitude_mat_data" [source/imgproc/xf_magnitude.hpp:155]   --->   Operation 46 'call' 'call_ln155' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_12 : Operation 47 [2/2] (0.00ns)   --->   "%call_ln510 = call void @xFAngleKernel<2, 0, 720, 1280, 3, 0, 1, 5, 1, 1280, 3840>, i16 %gradx2_mat_data, i16 %grady2_mat_data, i8 %phase_mat_data" [source/imgproc/xf_canny_utils.hpp:510]   --->   Operation 47 'call' 'call_ln510' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 0.00>
+ST_13 : Operation 48 [1/2] (0.00ns)   --->   "%call_ln155 = call void @xFMagnitudeKernel<2, 2, 720, 1280, 3, 3, 1, 5, 5, 1280, 3840>, i16 %gradx1_mat_data, i16 %grady1_mat_data, i16 %magnitude_mat_data" [source/imgproc/xf_magnitude.hpp:155]   --->   Operation 48 'call' 'call_ln155' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 49 [1/2] (0.00ns)   --->   "%call_ln510 = call void @xFAngleKernel<2, 0, 720, 1280, 3, 0, 1, 5, 1, 1280, 3840>, i16 %gradx2_mat_data, i16 %grady2_mat_data, i8 %phase_mat_data" [source/imgproc/xf_canny_utils.hpp:510]   --->   Operation 49 'call' 'call_ln510' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 0.00>
+ST_14 : Operation 50 [2/2] (0.00ns)   --->   "%call_ln189 = call void @xFSuppression3x3<2, 0, 0, 720, 1280, 3, 0, 0, 1, 5, 1, 1, 1280, 3840, 3840>, i16 %magnitude_mat_data, i8 %phase_mat_data, i8 %nms_mat_data, i8 %lowthreshold_c, i8 %highthreshold_c" [source/edge_canny_detector.cpp:189]   --->   Operation 50 'call' 'call_ln189' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 0.00>
+ST_15 : Operation 51 [1/2] (0.00ns)   --->   "%call_ln189 = call void @xFSuppression3x3<2, 0, 0, 720, 1280, 3, 0, 0, 1, 5, 1, 1, 1280, 3840, 3840>, i16 %magnitude_mat_data, i8 %phase_mat_data, i8 %nms_mat_data, i8 %lowthreshold_c, i8 %highthreshold_c" [source/edge_canny_detector.cpp:189]   --->   Operation 51 'call' 'call_ln189' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 0.00>
+ST_16 : Operation 52 [2/2] (0.00ns)   --->   "%call_ln195 = call void @xfgray2rgb<720, 1280>, i8 %nms_mat_data, i24 %rgb_img_dst_data" [source/edge_canny_detector.cpp:195]   --->   Operation 52 'call' 'call_ln195' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 0.00>
+ST_17 : Operation 53 [1/2] (0.00ns)   --->   "%call_ln195 = call void @xfgray2rgb<720, 1280>, i8 %nms_mat_data, i24 %rgb_img_dst_data" [source/edge_canny_detector.cpp:195]   --->   Operation 53 'call' 'call_ln195' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 0.00>
+ST_18 : Operation 54 [2/2] (0.00ns)   --->   "%call_ln196 = call void @xfMat2AXIvideo<24, 9, 720, 1280, 1>, i24 %rgb_img_dst_data, i24 %dst_V_data_V, i3 %dst_V_keep_V, i3 %dst_V_strb_V, i1 %dst_V_user_V, i1 %dst_V_last_V, i1 %dst_V_id_V, i1 %dst_V_dest_V" [source/edge_canny_detector.cpp:196]   --->   Operation 54 'call' 'call_ln196' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 0.00>
+ST_19 : Operation 55 [1/2] (0.00ns)   --->   "%call_ln196 = call void @xfMat2AXIvideo<24, 9, 720, 1280, 1>, i24 %rgb_img_dst_data, i24 %dst_V_data_V, i3 %dst_V_keep_V, i3 %dst_V_strb_V, i1 %dst_V_user_V, i1 %dst_V_last_V, i1 %dst_V_id_V, i1 %dst_V_dest_V" [source/edge_canny_detector.cpp:196]   --->   Operation 55 'call' 'call_ln196' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 20 <SV = 19> <Delay = 0.00>
+ST_20 : Operation 56 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln0 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_5"   --->   Operation 56 'specdataflowpipeline' 'specdataflowpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 57 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_21"   --->   Operation 57 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_14, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 58 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 59 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %src_V_data_V, i3 %src_V_keep_V, i3 %src_V_strb_V, i1 %src_V_user_V, i1 %src_V_last_V, i1 %src_V_id_V, i1 %src_V_dest_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 59 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 60 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i24 %src_V_data_V"   --->   Operation 60 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 61 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i3 %src_V_keep_V"   --->   Operation 61 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 62 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i3 %src_V_strb_V"   --->   Operation 62 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 63 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %src_V_user_V"   --->   Operation 63 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 64 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %src_V_last_V"   --->   Operation 64 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 65 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %src_V_id_V"   --->   Operation 65 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 66 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %src_V_dest_V"   --->   Operation 66 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 67 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %dst_V_data_V, i3 %dst_V_keep_V, i3 %dst_V_strb_V, i1 %dst_V_user_V, i1 %dst_V_last_V, i1 %dst_V_id_V, i1 %dst_V_dest_V, void @empty_23, i32 1, i32 1, void @empty_25, i32 0, i32 16, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 67 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 68 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i24 %dst_V_data_V"   --->   Operation 68 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 69 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i3 %dst_V_keep_V"   --->   Operation 69 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 70 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i3 %dst_V_strb_V"   --->   Operation 70 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 71 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %dst_V_user_V"   --->   Operation 71 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 72 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %dst_V_last_V"   --->   Operation 72 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 73 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %dst_V_id_V"   --->   Operation 73 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 74 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %dst_V_dest_V"   --->   Operation 74 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 75 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %lowthreshold"   --->   Operation 75 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 76 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %lowthreshold, void @empty_0, i32 1, i32 1, void @empty_25, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 76 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 77 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %highthreshold"   --->   Operation 77 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 78 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %highthreshold, void @empty_0, i32 1, i32 1, void @empty_25, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 78 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 79 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @rgb_img_src_OC_data_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i24 %rgb_img_src_data, i24 %rgb_img_src_data"   --->   Operation 79 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 80 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %rgb_img_src_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 80 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 81 [1/1] (0.00ns)   --->   "%empty_47 = specchannel i32 @_ssdm_op_SpecChannel, void @gray_img_src_OC_data_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i8 %gray_img_src_data, i8 %gray_img_src_data"   --->   Operation 81 'specchannel' 'empty_47' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 82 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gray_img_src_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 82 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 83 [1/1] (0.00ns)   --->   "%empty_48 = specchannel i32 @_ssdm_op_SpecChannel, void @rgb_img_dst_OC_data_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i24 %rgb_img_dst_data, i24 %rgb_img_dst_data"   --->   Operation 83 'specchannel' 'empty_48' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 84 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %rgb_img_dst_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 84 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 85 [1/1] (0.00ns)   --->   "%empty_49 = specchannel i32 @_ssdm_op_SpecChannel, void @gaussian_mat_OC_data_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i8 %gaussian_mat_data, i8 %gaussian_mat_data"   --->   Operation 85 'specchannel' 'empty_49' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 86 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gaussian_mat_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 86 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 87 [1/1] (0.00ns)   --->   "%empty_50 = specchannel i32 @_ssdm_op_SpecChannel, void @gradx_mat_OC_data_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i16 %gradx_mat_data, i16 %gradx_mat_data"   --->   Operation 87 'specchannel' 'empty_50' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 88 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gradx_mat_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 88 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 89 [1/1] (0.00ns)   --->   "%empty_51 = specchannel i32 @_ssdm_op_SpecChannel, void @gradx1_mat_OC_data_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i16 %gradx1_mat_data, i16 %gradx1_mat_data"   --->   Operation 89 'specchannel' 'empty_51' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 90 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gradx1_mat_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 90 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 91 [1/1] (0.00ns)   --->   "%empty_52 = specchannel i32 @_ssdm_op_SpecChannel, void @gradx2_mat_OC_data_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i16 %gradx2_mat_data, i16 %gradx2_mat_data"   --->   Operation 91 'specchannel' 'empty_52' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 92 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gradx2_mat_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 92 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 93 [1/1] (0.00ns)   --->   "%empty_53 = specchannel i32 @_ssdm_op_SpecChannel, void @grady_mat_OC_data_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i16 %grady_mat_data, i16 %grady_mat_data"   --->   Operation 93 'specchannel' 'empty_53' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 94 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %grady_mat_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 94 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 95 [1/1] (0.00ns)   --->   "%empty_54 = specchannel i32 @_ssdm_op_SpecChannel, void @grady1_mat_OC_data_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i16 %grady1_mat_data, i16 %grady1_mat_data"   --->   Operation 95 'specchannel' 'empty_54' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 96 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %grady1_mat_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 96 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 97 [1/1] (0.00ns)   --->   "%empty_55 = specchannel i32 @_ssdm_op_SpecChannel, void @grady2_mat_OC_data_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i16 %grady2_mat_data, i16 %grady2_mat_data"   --->   Operation 97 'specchannel' 'empty_55' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 98 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %grady2_mat_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 98 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 99 [1/1] (0.00ns)   --->   "%empty_56 = specchannel i32 @_ssdm_op_SpecChannel, void @magnitude_mat_OC_data_str, i32 1, void @p_str, void @p_str, i32 3840, i32 3840, i16 %magnitude_mat_data, i16 %magnitude_mat_data"   --->   Operation 99 'specchannel' 'empty_56' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 100 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %magnitude_mat_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 100 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 101 [1/1] (0.00ns)   --->   "%empty_57 = specchannel i32 @_ssdm_op_SpecChannel, void @phase_mat_OC_data_str, i32 1, void @p_str, void @p_str, i32 3840, i32 3840, i8 %phase_mat_data, i8 %phase_mat_data"   --->   Operation 101 'specchannel' 'empty_57' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 102 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %phase_mat_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 102 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 103 [1/1] (0.00ns)   --->   "%empty_58 = specchannel i32 @_ssdm_op_SpecChannel, void @nms_mat_OC_data_str, i32 1, void @p_str, void @p_str, i32 2, i32 2, i8 %nms_mat_data, i8 %nms_mat_data"   --->   Operation 103 'specchannel' 'empty_58' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 104 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %nms_mat_data, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 104 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 105 [1/1] (0.00ns)   --->   "%empty_59 = specchannel i32 @_ssdm_op_SpecChannel, void @lowthreshold_c_str, i32 1, void @p_str, void @p_str, i32 7, i32 0, i8 %lowthreshold_c, i8 %lowthreshold_c"   --->   Operation 105 'specchannel' 'empty_59' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 106 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %lowthreshold_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 106 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 107 [1/1] (0.00ns)   --->   "%empty_60 = specchannel i32 @_ssdm_op_SpecChannel, void @highthreshold_c_str, i32 1, void @p_str, void @p_str, i32 7, i32 0, i8 %highthreshold_c, i8 %highthreshold_c"   --->   Operation 107 'specchannel' 'empty_60' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 108 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %highthreshold_c, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @p_str"   --->   Operation 108 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 109 [1/1] (0.00ns)   --->   "%ret_ln197 = ret" [source/edge_canny_detector.cpp:197]   --->   Operation 109 'ret' 'ret_ln197' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 3.28ns
+The critical path consists of the following:
+	'call' operation ('call_ln179', source/edge_canny_detector.cpp:179) to 'AXIvideo2xfMat<24, 9, 720, 1280, 1>16' [85]  (3.28 ns)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 0ns
+The critical path consists of the following:
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+ <State 12>: 0ns
+The critical path consists of the following:
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+ <State 14>: 0ns
+The critical path consists of the following:
+
+ <State 15>: 0ns
+The critical path consists of the following:
+
+ <State 16>: 0ns
+The critical path consists of the following:
+
+ <State 17>: 0ns
+The critical path consists of the following:
+
+ <State 18>: 0ns
+The critical path consists of the following:
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+ <State 20>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

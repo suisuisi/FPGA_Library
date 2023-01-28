@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1674569124333">
+  <ports id="1" name="src_V_data_V" type="PortType" originalName="src" coreId="1481897920" bitwidth="24">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="2" name="src_V_keep_V" type="PortType" originalName="src" coreId="997223777" bitwidth="3">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="3" name="src_V_strb_V" type="PortType" originalName="src" coreId="741357618" bitwidth="3">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="4" name="src_V_user_V" type="PortType" originalName="src" coreId="808989233" bitwidth="1">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="5" name="src_V_last_V" type="PortType" originalName="src" coreId="1481905744" bitwidth="1">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="6" name="src_V_id_V" type="PortType" originalName="src" coreId="1701080931" bitwidth="1">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="7" name="src_V_dest_V" type="PortType" originalName="src" coreId="976905848" bitwidth="1">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="8" name="dst_V_data_V" type="PortType" originalName="dst" coreId="1431655765" bitwidth="24" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="9" name="dst_V_keep_V" type="PortType" originalName="dst" coreId="1606813200" bitwidth="3" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="10" name="dst_V_strb_V" type="PortType" originalName="dst" coreId="539437350" bitwidth="3" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="11" name="dst_V_user_V" type="PortType" originalName="dst" coreId="741351468" bitwidth="1" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="12" name="dst_V_last_V" type="PortType" originalName="dst" coreId="1853187616" bitwidth="1" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="13" name="dst_V_id_V" type="PortType" originalName="dst" coreId="1255048947" bitwidth="1" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="14" name="dst_V_dest_V" type="PortType" originalName="dst" coreId="543451503" bitwidth="1" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="15" name="lowthreshold" type="PortType" originalName="lowthreshold" coreId="1237156740" bitwidth="8">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="16" name="highthreshold" type="PortType" originalName="highthreshold" coreId="1735419438" bitwidth="8">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <edges id="115" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="116" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="117" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="118" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="119" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="120" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="121" source_obj="//@ports.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="122" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="123" source_obj="//@ports.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="124" source_obj="//@ports.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="125" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="126" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
+  <edges id="129" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="130" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="133" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.17"/>
+  <edges id="134" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.17"/>
+  <edges id="137" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="138" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="139" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="142" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="143" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="144" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="145" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="146" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="147" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="150" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
+  <edges id="151" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
+  <edges id="152" source_obj="//@regions.0/@basic_blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
+  <edges id="155" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
+  <edges id="156" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
+  <edges id="157" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
+  <edges id="160" source_obj="//@regions.0/@basic_blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="161" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="162" source_obj="//@regions.0/@basic_blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="163" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="164" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="167" source_obj="//@regions.0/@basic_blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.23"/>
+  <edges id="168" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.23"/>
+  <edges id="171" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.24"/>
+  <edges id="172" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@ports.7"/>
+  <edges id="173" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@ports.8"/>
+  <edges id="174" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@ports.9"/>
+  <edges id="175" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@ports.10"/>
+  <edges id="176" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@ports.11"/>
+  <edges id="177" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@ports.12"/>
+  <edges id="178" source_obj="//@regions.0/@basic_blocks.0/@node_objs.24" sink_obj="//@ports.13"/>
+  <edges id="762" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.24"/>
+  <edges id="763" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.23"/>
+  <edges id="764" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="765" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="766" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
+  <edges id="767" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
+  <edges id="768" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="769" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="770" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.17"/>
+  <edges id="771" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="772" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
+  <edges id="773" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.17"/>
+  <edges id="774" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
+  <edges id="775" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
+  <edges id="776" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
+  <edges id="777" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
+  <edges id="778" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.23"/>
+  <edges id="779" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.24"/>
+  <regions anchor_node="-1" region_type="16" typeName="Dataflow" id="419" RegionName="edge_canny_detector">
+    <basic_blocks id="96" name="edge_canny_detector" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="highthreshold_c" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="highthreshold_c_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="operator_long_long" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator long long"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="lowthreshold_c" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="lowthreshold_c_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="operator_long_long" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="operator long long"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="rgb_img_src_data" lineNumber="140" originalName="rgb_img_src.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="rgb_img_src_data_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="edge_canny_detector" bitwidth="24" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="140" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="gray_img_src_data" lineNumber="142" originalName="gray_img_src.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="gray_img_src_data_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="edge_canny_detector" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="142" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="rgb_img_dst_data" lineNumber="146" originalName="rgb_img_dst.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="rgb_img_dst_data_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="edge_canny_detector" bitwidth="24" opcode="alloca" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="146" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="gaussian_mat_data" lineNumber="151" originalName="gaussian_mat.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="gaussian_mat_data_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="edge_canny_detector" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="151" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="gradx_mat_data" lineNumber="153" originalName="gradx_mat.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="gradx_mat_data_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="edge_canny_detector" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="153" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="gradx1_mat_data" lineNumber="155" originalName="gradx1_mat.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="gradx1_mat_data_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="edge_canny_detector" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="155" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="gradx2_mat_data" lineNumber="157" originalName="gradx2_mat.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="gradx2_mat_data_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="edge_canny_detector" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="157" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="grady_mat_data" lineNumber="159" originalName="grady_mat.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="grady_mat_data_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="edge_canny_detector" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="159" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="grady1_mat_data" lineNumber="161" originalName="grady1_mat.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="grady1_mat_data_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="edge_canny_detector" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="161" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="grady2_mat_data" lineNumber="163" originalName="grady2_mat.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="grady2_mat_data_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="edge_canny_detector" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="163" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="magnitude_mat_data" lineNumber="165" originalName="magnitude_mat.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="magnitude_mat_data_U" coreName="FIFO" implIndex="memory" control="auto" opType="fifo" coreId="78" contextFuncName="edge_canny_detector" bitwidth="16" opcode="alloca" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="165" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="phase_mat_data" lineNumber="167" originalName="phase_mat.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="phase_mat_data_U" coreName="FIFO" implIndex="memory" control="auto" opType="fifo" coreId="78" contextFuncName="edge_canny_detector" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="167" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="nms_mat_data" lineNumber="169" originalName="nms_mat.data" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="nms_mat_data_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="edge_canny_detector" bitwidth="8" opcode="alloca" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="169" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="_ln179" lineNumber="179" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="AXIvideo2xfMat_24_9_720_1280_1_16_U0" coreId="15" contextFuncName="edge_canny_detector" opcode="call" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="3.28" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="179" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>src_V_data_V</dataInputObjs>
+        <dataInputObjs>src_V_keep_V</dataInputObjs>
+        <dataInputObjs>src_V_strb_V</dataInputObjs>
+        <dataInputObjs>src_V_user_V</dataInputObjs>
+        <dataInputObjs>src_V_last_V</dataInputObjs>
+        <dataInputObjs>src_V_id_V</dataInputObjs>
+        <dataInputObjs>src_V_dest_V</dataInputObjs>
+        <dataInputObjs>lowthreshold</dataInputObjs>
+        <dataInputObjs>highthreshold</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>AXIvideo2xfMat_24_9_720_1280_1_16</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="_ln180" lineNumber="180" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="xfrgb2gray_720_1280_U0" coreId="2147483647" contextFuncName="edge_canny_detector" opcode="call" nodeLabel="3.0" nodeLatency="1" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="180" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>xfrgb2gray_720_1280_s</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="87" name="_ln181" lineNumber="181" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_U0" coreId="15" contextFuncName="edge_canny_detector" opcode="call" nodeLabel="5.0" nodeLatency="1" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="181" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_s</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="_ln183" lineNumber="183" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="xFSobel_0_2_720_1280_0_3_1_1_5_3_false_U0" coreId="0" contextFuncName="edge_canny_detector" opcode="call" nodeLabel="7.0" nodeLatency="1" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="183" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>xFSobel_0_2_720_1280_0_3_1_1_5_3_false_s</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="_ln185" lineNumber="185" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="duplicate_720_1280_U0" coreId="1475630352" contextFuncName="edge_canny_detector" opcode="call" nodeLabel="9.0" nodeLatency="1" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="185" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>duplicate_720_1280_s</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="90" name="_ln155" lineNumber="155" fileName="source/imgproc/xf_magnitude.hpp" fileDirectory=".." rtlName="xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_U0" coreId="0" contextFuncName="magnitude_1_2_2_720_1280_1_3840_s" opcode="call" nodeLabel="11.0" nodeLatency="1" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_magnitude.hpp" linenumber="155" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="magnitude&amp;lt;1, 2, 2, 720, 1280, 1, 3840&amp;gt;"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_s</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="91" name="_ln510" lineNumber="510" fileName="source/imgproc/xf_canny_utils.hpp" fileDirectory=".." rtlName="xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_U0" coreId="1321745885" contextFuncName="xFAngle_2_0_720_1280_3_0_1_5_1_3840_s" opcode="call" nodeLabel="11.0" nodeLatency="1" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_canny_utils.hpp" linenumber="510" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xFAngle&amp;lt;2, 0, 720, 1280, 3, 0, 1, 5, 1, 3840&amp;gt;"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_s</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="92" name="_ln189" lineNumber="189" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_U0" coreId="1605478464" contextFuncName="edge_canny_detector" opcode="call" nodeLabel="13.0" nodeLatency="1" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="189" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_s</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="93" name="_ln195" lineNumber="195" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="xfgray2rgb_720_1280_U0" coreId="0" contextFuncName="edge_canny_detector" opcode="call" nodeLabel="15.0" nodeLatency="1" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="195" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>xfgray2rgb_720_1280_s</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="94" name="_ln196" lineNumber="196" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="xfMat2AXIvideo_24_9_720_1280_1_U0" coreId="97" contextFuncName="edge_canny_detector" opcode="call" nodeLabel="17.0" nodeLatency="1" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="196" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>dst_V_data_V</dataOutputObjs>
+        <dataOutputObjs>dst_V_keep_V</dataOutputObjs>
+        <dataOutputObjs>dst_V_strb_V</dataOutputObjs>
+        <dataOutputObjs>dst_V_user_V</dataOutputObjs>
+        <dataOutputObjs>dst_V_last_V</dataOutputObjs>
+        <dataOutputObjs>dst_V_id_V</dataOutputObjs>
+        <dataOutputObjs>dst_V_dest_V</dataOutputObjs>
+        <constName>xfMat2AXIvideo_24_9_720_1280_1_s</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="95" name="_ln197" lineNumber="197" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="edge_canny_detector" opcode="ret" nodeLabel="19.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="197" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="edge_canny_detector"/>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/imgproc/xf_canny_utils.hpp">
+        <validLinenumbers>510</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="source/edge_canny_detector.cpp">
+        <validLinenumbers>140</validLinenumbers>
+        <validLinenumbers>142</validLinenumbers>
+        <validLinenumbers>146</validLinenumbers>
+        <validLinenumbers>151</validLinenumbers>
+        <validLinenumbers>153</validLinenumbers>
+        <validLinenumbers>155</validLinenumbers>
+        <validLinenumbers>157</validLinenumbers>
+        <validLinenumbers>159</validLinenumbers>
+        <validLinenumbers>161</validLinenumbers>
+        <validLinenumbers>163</validLinenumbers>
+        <validLinenumbers>165</validLinenumbers>
+        <validLinenumbers>167</validLinenumbers>
+        <validLinenumbers>169</validLinenumbers>
+        <validLinenumbers>179</validLinenumbers>
+        <validLinenumbers>180</validLinenumbers>
+        <validLinenumbers>181</validLinenumbers>
+        <validLinenumbers>183</validLinenumbers>
+        <validLinenumbers>185</validLinenumbers>
+        <validLinenumbers>189</validLinenumbers>
+        <validLinenumbers>195</validLinenumbers>
+        <validLinenumbers>196</validLinenumbers>
+        <validLinenumbers>197</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="source/imgproc/xf_magnitude.hpp">
+        <validLinenumbers>155</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <ScheduleInfo time="11"/>
+  <ScheduleInfo time="12"/>
+  <ScheduleInfo time="13"/>
+  <ScheduleInfo time="14"/>
+  <ScheduleInfo time="15"/>
+  <ScheduleInfo time="16"/>
+  <ScheduleInfo time="17"/>
+  <ScheduleInfo time="18"/>
+  <ScheduleInfo time="19"/>
+  <regnodes realName="highthreshold_c_reg_288">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <regnodes realName="phase_mat_data_reg_366">
+    <nodeIds>75</nodeIds>
+  </regnodes>
+  <regnodes realName="rgb_img_dst_data_reg_312">
+    <nodeIds>48</nodeIds>
+  </regnodes>
+  <regnodes realName="magnitude_mat_data_reg_360">
+    <nodeIds>72</nodeIds>
+  </regnodes>
+  <regnodes realName="grady_mat_data_reg_342">
+    <nodeIds>63</nodeIds>
+  </regnodes>
+  <regnodes realName="grady2_mat_data_reg_354">
+    <nodeIds>69</nodeIds>
+  </regnodes>
+  <regnodes realName="gradx1_mat_data_reg_330">
+    <nodeIds>57</nodeIds>
+  </regnodes>
+  <regnodes realName="gradx_mat_data_reg_324">
+    <nodeIds>54</nodeIds>
+  </regnodes>
+  <regnodes realName="gaussian_mat_data_reg_318">
+    <nodeIds>51</nodeIds>
+  </regnodes>
+  <regnodes realName="gradx2_mat_data_reg_336">
+    <nodeIds>60</nodeIds>
+  </regnodes>
+  <regnodes realName="nms_mat_data_reg_372">
+    <nodeIds>78</nodeIds>
+  </regnodes>
+  <regnodes realName="rgb_img_src_data_reg_300">
+    <nodeIds>42</nodeIds>
+  </regnodes>
+  <regnodes realName="gray_img_src_data_reg_306">
+    <nodeIds>45</nodeIds>
+  </regnodes>
+  <regnodes realName="lowthreshold_c_reg_294">
+    <nodeIds>18</nodeIds>
+  </regnodes>
+  <regnodes realName="grady1_mat_data_reg_348">
+    <nodeIds>66</nodeIds>
+  </regnodes>
+  <expressionNodes realName="grady1_mat_data_fu_166">
+    <nodeIds>66</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="gaussian_mat_data_fu_146">
+    <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="lowthreshold_c_fu_130">
+    <nodeIds>18</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="grady2_mat_data_fu_170">
+    <nodeIds>69</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="rgb_img_src_data_fu_134">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="gradx1_mat_data_fu_154">
+    <nodeIds>57</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="grady_mat_data_fu_162">
+    <nodeIds>63</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="gray_img_src_data_fu_138">
+    <nodeIds>45</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="gradx2_mat_data_fu_158">
+    <nodeIds>60</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="phase_mat_data_fu_178">
+    <nodeIds>75</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="rgb_img_dst_data_fu_142">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="magnitude_mat_data_fu_174">
+    <nodeIds>72</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="nms_mat_data_fu_182">
+    <nodeIds>78</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="highthreshold_c_fu_126">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="gradx_mat_data_fu_150">
+    <nodeIds>54</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_duplicate_720_1280_s_fu_272">
+    <nodeIds>89</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_s_fu_215">
+    <nodeIds>91</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_s_fu_186">
+    <nodeIds>90</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_xfrgb2gray_720_1280_s_fu_247">
+    <nodeIds>86</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_s_fu_209">
+    <nodeIds>87</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_s_fu_193">
+    <nodeIds>92</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_xFSobel_0_2_720_1280_0_3_1_1_5_3_false_s_fu_202">
+    <nodeIds>88</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_AXIvideo2xfMat_24_9_720_1280_1_16_fu_222">
+    <nodeIds>85</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_xfMat2AXIvideo_24_9_720_1280_1_s_fu_253">
+    <nodeIds>94</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_xfgray2rgb_720_1280_s_fu_282">
+    <nodeIds>93</nodeIds>
+  </moduleNodes>
+  <ioPorts name="dst_V_data_V">
+    <contents name="call">
+      <nodeIds>94</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="dst_V_dest_V">
+    <contents name="call">
+      <nodeIds>94</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="dst_V_id_V">
+    <contents name="call">
+      <nodeIds>94</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="dst_V_keep_V">
+    <contents name="call">
+      <nodeIds>94</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="dst_V_last_V">
+    <contents name="call">
+      <nodeIds>94</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="dst_V_strb_V">
+    <contents name="call">
+      <nodeIds>94</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="dst_V_user_V">
+    <contents name="call">
+      <nodeIds>94</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="highthreshold">
+    <contents name="call">
+      <nodeIds>85</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="lowthreshold">
+    <contents name="call">
+      <nodeIds>85</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="src_V_data_V">
+    <contents name="call">
+      <nodeIds>85</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="src_V_dest_V">
+    <contents name="call">
+      <nodeIds>85</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="src_V_id_V">
+    <contents name="call">
+      <nodeIds>85</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="src_V_keep_V">
+    <contents name="call">
+      <nodeIds>85</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="src_V_last_V">
+    <contents name="call">
+      <nodeIds>85</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="src_V_strb_V">
+    <contents name="call">
+      <nodeIds>85</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="src_V_user_V">
+    <contents name="call">
+      <nodeIds>85</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+      <operations id="69" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="78" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="85" stage="2" latency="2"/>
+    </states>
+    <states id="3">
+      <operations id="85" stage="1" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="86" stage="2" latency="2"/>
+    </states>
+    <states id="5">
+      <operations id="86" stage="1" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="87" stage="2" latency="2"/>
+    </states>
+    <states id="7">
+      <operations id="87" stage="1" latency="2"/>
+    </states>
+    <states id="8">
+      <operations id="88" stage="2" latency="2"/>
+    </states>
+    <states id="9">
+      <operations id="88" stage="1" latency="2"/>
+    </states>
+    <states id="10">
+      <operations id="89" stage="2" latency="2"/>
+    </states>
+    <states id="11">
+      <operations id="89" stage="1" latency="2"/>
+    </states>
+    <states id="12">
+      <operations id="90" stage="2" latency="2"/>
+      <operations id="91" stage="2" latency="2"/>
+    </states>
+    <states id="13">
+      <operations id="90" stage="1" latency="2"/>
+      <operations id="91" stage="1" latency="2"/>
+    </states>
+    <states id="14">
+      <operations id="92" stage="2" latency="2"/>
+    </states>
+    <states id="15">
+      <operations id="92" stage="1" latency="2"/>
+    </states>
+    <states id="16">
+      <operations id="93" stage="2" latency="2"/>
+    </states>
+    <states id="17">
+      <operations id="93" stage="1" latency="2"/>
+    </states>
+    <states id="18">
+      <operations id="94" stage="2" latency="2"/>
+    </states>
+    <states id="19">
+      <operations id="94" stage="1" latency="2"/>
+    </states>
+    <states id="20">
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="64" stage="1" latency="1"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="67" stage="1" latency="1"/>
+      <operations id="68" stage="1" latency="1"/>
+      <operations id="70" stage="1" latency="1"/>
+      <operations id="71" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="1"/>
+      <operations id="74" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="77" stage="1" latency="1"/>
+      <operations id="79" stage="1" latency="1"/>
+      <operations id="80" stage="1" latency="1"/>
+      <operations id="81" stage="1" latency="1"/>
+      <operations id="82" stage="1" latency="1"/>
+      <operations id="83" stage="1" latency="1"/>
+      <operations id="84" stage="1" latency="1"/>
+      <operations id="95" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="11">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="11" outState="12">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="12" outState="13">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="13" outState="14">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="14" outState="15">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="15" outState="16">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="16" outState="17">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="17" outState="18">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="18" outState="19">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="19" outState="20">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="edge_canny_detector" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="1859948" mMaxLatency="1859948" mIsDfPipe="true">
+      <basicBlocks>96</basicBlocks>
+      <mDfPipe allPipePinInst="//@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.0/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.9/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@channel_list.0/@sink/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@channel_list.1/@sink/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@channel_list.3/@sink/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@channel_list.4/@sink/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@channel_list.5/@sink/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@channel_list.7/@sink/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@channel_list.8/@sink/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@channel_list.13/@sink/@inst">
+        <processe_list name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85">
+          <pins>
+            <port name="AXI_video_strm_V_data_V" type="SIOType" top_port_object_id="" top_port_object_id_reference="_146" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_keep_V" type="SIOType" top_port_object_id="" top_port_object_id_reference="_147" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_strb_V" type="SIOType" top_port_object_id="" top_port_object_id_reference="_148" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_user_V" type="SIOType" top_port_object_id="" top_port_object_id_reference="_149" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_last_V" type="SIOType" top_port_object_id="" top_port_object_id_reference="_150" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_id_V" type="SIOType" top_port_object_id="" top_port_object_id_reference="_151" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_dest_V" type="SIOType" top_port_object_id="" top_port_object_id_reference="_152" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </pins>
+          <pins>
+            <port name="lowthreshold" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_160" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </pins>
+          <pins>
+            <port name="highthreshold" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_161" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </pins>
+        </processe_list>
+        <processe_list name="xfrgb2gray_720_1280_U0" ssdmobj_id="86"/>
+        <processe_list name="xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_U0" ssdmobj_id="87"/>
+        <processe_list name="xFSobel_0_2_720_1280_0_3_1_1_5_3_false_U0" ssdmobj_id="88"/>
+        <processe_list name="duplicate_720_1280_U0" ssdmobj_id="89"/>
+        <processe_list name="xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_U0" ssdmobj_id="90"/>
+        <processe_list name="xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_U0" ssdmobj_id="91"/>
+        <processe_list name="xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_U0" ssdmobj_id="92"/>
+        <processe_list name="xfgray2rgb_720_1280_U0" ssdmobj_id="93"/>
+        <processe_list name="xfMat2AXIvideo_24_9_720_1280_1_U0" ssdmobj_id="94">
+          <pins>
+            <port name="AXI_video_strm_V_data_V" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="_153" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfMat2AXIvideo_24_9_720_1280_1_U0" ssdmobj_id="94" object_id="_193"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_keep_V" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="_154" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfMat2AXIvideo_24_9_720_1280_1_U0" ssdmobj_id="94" object_id="_193"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_strb_V" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="_155" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfMat2AXIvideo_24_9_720_1280_1_U0" ssdmobj_id="94" object_id="_193"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_user_V" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="_156" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfMat2AXIvideo_24_9_720_1280_1_U0" ssdmobj_id="94" object_id="_193"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_last_V" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="_157" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfMat2AXIvideo_24_9_720_1280_1_U0" ssdmobj_id="94" object_id="_193"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_id_V" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="_158" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfMat2AXIvideo_24_9_720_1280_1_U0" ssdmobj_id="94" object_id="_193"/>
+          </pins>
+          <pins>
+            <port name="AXI_video_strm_V_dest_V" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="_159" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfMat2AXIvideo_24_9_720_1280_1_U0" ssdmobj_id="94" object_id="_193"/>
+          </pins>
+        </processe_list>
+        <channel_list depth="2" bitwidth="24" suggested_type="0" suggested_depth="2" name="rgb_img_src_data" ssdmobj_id="42">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfrgb2gray_720_1280_U0" ssdmobj_id="86" object_id="_211"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="7" bitwidth="8" suggested_type="2" suggested_depth="7" name="lowthreshold_c" ssdmobj_id="18">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_U0" ssdmobj_id="92" object_id="_217"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="7" bitwidth="8" suggested_type="2" suggested_depth="7" name="highthreshold_c" ssdmobj_id="17">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="AXIvideo2xfMat_24_9_720_1280_1_16_U0" ssdmobj_id="85" object_id="_165"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_U0" ssdmobj_id="92" object_id="_217"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="8" suggested_type="0" suggested_depth="2" name="gray_img_src_data" ssdmobj_id="45">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfrgb2gray_720_1280_U0" ssdmobj_id="86" object_id="_211"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_U0" ssdmobj_id="87" object_id="_228"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="8" suggested_type="0" suggested_depth="2" name="gaussian_mat_data" ssdmobj_id="51">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFAverageGaussianMask3x3_0_0_720_1280_0_1_1_1280_U0" ssdmobj_id="87" object_id="_228"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFSobel_0_2_720_1280_0_3_1_1_5_3_false_U0" ssdmobj_id="88" object_id="_234"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="16" suggested_type="0" suggested_depth="2" name="gradx_mat_data" ssdmobj_id="54">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFSobel_0_2_720_1280_0_3_1_1_5_3_false_U0" ssdmobj_id="88" object_id="_234"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="duplicate_720_1280_U0" ssdmobj_id="89" object_id="_240"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="16" suggested_type="0" suggested_depth="2" name="grady_mat_data" ssdmobj_id="63">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFSobel_0_2_720_1280_0_3_1_1_5_3_false_U0" ssdmobj_id="88" object_id="_234"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="duplicate_720_1280_U0" ssdmobj_id="89" object_id="_240"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="16" suggested_type="0" suggested_depth="2" name="gradx1_mat_data" ssdmobj_id="57">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="duplicate_720_1280_U0" ssdmobj_id="89" object_id="_240"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_U0" ssdmobj_id="90" object_id="_251"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="16" suggested_type="0" suggested_depth="2" name="gradx2_mat_data" ssdmobj_id="60">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="duplicate_720_1280_U0" ssdmobj_id="89" object_id="_240"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_U0" ssdmobj_id="91" object_id="_257"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="16" suggested_type="0" suggested_depth="2" name="grady1_mat_data" ssdmobj_id="66">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="duplicate_720_1280_U0" ssdmobj_id="89" object_id="_240"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_U0" ssdmobj_id="90" object_id="_251"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="16" suggested_type="0" suggested_depth="2" name="grady2_mat_data" ssdmobj_id="69">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="duplicate_720_1280_U0" ssdmobj_id="89" object_id="_240"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_U0" ssdmobj_id="91" object_id="_257"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="3840" bitwidth="16" suggested_type="0" suggested_depth="3840" name="magnitude_mat_data" ssdmobj_id="72">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFMagnitudeKernel_2_2_720_1280_3_3_1_5_5_1280_3840_U0" ssdmobj_id="90" object_id="_251"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_U0" ssdmobj_id="92" object_id="_217"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="3840" bitwidth="8" suggested_type="0" suggested_depth="3840" name="phase_mat_data" ssdmobj_id="75">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_U0" ssdmobj_id="91" object_id="_257"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_U0" ssdmobj_id="92" object_id="_217"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="8" suggested_type="0" suggested_depth="2" name="nms_mat_data" ssdmobj_id="78">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xFSuppression3x3_2_0_0_720_1280_3_0_0_1_5_1_1_1280_3840_3840_U0" ssdmobj_id="92" object_id="_217"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfgray2rgb_720_1280_U0" ssdmobj_id="93" object_id="_283"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="24" suggested_type="0" suggested_depth="2" name="rgb_img_dst_data" ssdmobj_id="48">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfgray2rgb_720_1280_U0" ssdmobj_id="93" object_id="_283"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="xfMat2AXIvideo_24_9_720_1280_1_U0" ssdmobj_id="94" object_id="_193"/>
+          </sink>
+        </channel_list>
+      </mDfPipe>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

@@ -1,0 +1,132 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'xFSobel_0_2_720_1280_0_3_1_1_5_3_false_s'" level="0">
+<item name = "Date">Tue Jan 24 22:05:19 2023
+</item>
+<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)</item>
+<item name = "Project">edge_canny_detector</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.212 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">931779, 931779, 9.318 ms, 9.318 ms, 931779, 931779, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_xFSobel3x3_0_2_720_1280_0_3_1_1_5_1281_3_9_false_s_fu_16">xFSobel3x3_0_2_720_1280_0_3_1_1_5_1281_3_9_false_s, 931778, 931778, 9.318 ms, 9.318 ms, 931778, 931778, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 1, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">3, -, 522, 950, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 58, -</column>
+<column name="Register">-, -, 5, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">1, 0, ~0, 1, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_xFSobel3x3_0_2_720_1280_0_3_1_1_5_1281_3_9_false_s_fu_16">xFSobel3x3_0_2_720_1280_0_3_1_1_5_1281_3_9_false_s, 3, 0, 522, 950, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_block_state1">or, 0, 0, 1, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">13, 3, 1, 3</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="gaussian_mat_4209_read">9, 2, 1, 2</column>
+<column name="gradx_mat_4210_write">9, 2, 1, 2</column>
+<column name="grady_mat_4213_write">9, 2, 1, 2</column>
+<column name="real_start">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">2, 0, 2, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="grp_xFSobel3x3_0_2_720_1280_0_3_1_1_5_1281_3_9_false_s_fu_16_ap_start_reg">1, 0, 1, 0</column>
+<column name="start_once_reg">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, xFSobel&lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&gt;, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, xFSobel&lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&gt;, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, xFSobel&lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&gt;, return value</column>
+<column name="start_full_n">in, 1, ap_ctrl_hs, xFSobel&lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&gt;, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, xFSobel&lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&gt;, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, xFSobel&lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&gt;, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, xFSobel&lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&gt;, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, xFSobel&lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&gt;, return value</column>
+<column name="start_out">out, 1, ap_ctrl_hs, xFSobel&lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&gt;, return value</column>
+<column name="start_write">out, 1, ap_ctrl_hs, xFSobel&lt;0, 2, 720, 1280, 0, 3, 1, 1, 5, 3, false&gt;, return value</column>
+<column name="gaussian_mat_4209_dout">in, 8, ap_fifo, gaussian_mat_4209, pointer</column>
+<column name="gaussian_mat_4209_empty_n">in, 1, ap_fifo, gaussian_mat_4209, pointer</column>
+<column name="gaussian_mat_4209_read">out, 1, ap_fifo, gaussian_mat_4209, pointer</column>
+<column name="gradx_mat_4210_din">out, 16, ap_fifo, gradx_mat_4210, pointer</column>
+<column name="gradx_mat_4210_full_n">in, 1, ap_fifo, gradx_mat_4210, pointer</column>
+<column name="gradx_mat_4210_write">out, 1, ap_fifo, gradx_mat_4210, pointer</column>
+<column name="grady_mat_4213_din">out, 16, ap_fifo, grady_mat_4213, pointer</column>
+<column name="grady_mat_4213_full_n">in, 1, ap_fifo, grady_mat_4213, pointer</column>
+<column name="grady_mat_4213_write">out, 1, ap_fifo, grady_mat_4213, pointer</column>
+</table>
+</item>
+</section>
+</profile>

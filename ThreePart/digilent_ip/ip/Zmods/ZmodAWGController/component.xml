@@ -1,0 +1,2230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>digilent.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>ZmodAWGController</spirit:name>
+  <spirit:version>1.1</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>sZmodDAC_Reset</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>sZmodDAC_Reset</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>SysClk100</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>SysClk100</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.SYSCLK100.FREQ_HZ"/>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.SYSCLK100.ASSOCIATED_BUSIF">SPI_IAP_RX:SPI_IAP_TX</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>aRst_n</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>aRst_n</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ARST_N.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>SPI_IAP_RX</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>sCmdRxAxisTdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>sCmdRxAxisTvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>sCmdRxAxisTready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:vendorExtensions>
+        <xilinx:busInterfaceInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.SPI_IAP_RX" xilinx:dependency="$kExtCmdInterfaceEn = true">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:busInterfaceInfo>
+      </spirit:vendorExtensions>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>SPI_IAP_TX</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>sCmdTxAxisTdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>sCmdTxAxisTvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>sCmdTxAxisTready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.SPI_IAP_TX.NUM_READ_OUTSTANDING"/>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.SPI_IAP_TX.NUM_WRITE_OUTSTANDING"/>
+        </spirit:parameter>
+      </spirit:parameters>
+      <spirit:vendorExtensions>
+        <xilinx:busInterfaceInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.SPI_IAP_TX" xilinx:dependency="$kExtCmdInterfaceEn = true">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:busInterfaceInfo>
+      </spirit:vendorExtensions>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>ExtCh1Calib</spirit:name>
+      <spirit:busType spirit:vendor="digilent.com" spirit:library="user" spirit:name="ZmodAWG_Calibration" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="digilent.com" spirit:library="user" spirit:name="ZmodAWG_Calibration_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>LgCoefMult</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>cExtCh1LgMultCoef</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>LgCoefAdd</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>cExtCh1LgAddCoef</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>HgCoefMult</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>cExtCh1HgMultCoef</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>HgCoefAdd</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>cExtCh1HgAddCoef</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:vendorExtensions>
+        <xilinx:busInterfaceInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.ExtCh1Calib" xilinx:dependency="$kExtCalibEn = true">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:busInterfaceInfo>
+      </spirit:vendorExtensions>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>ExtCh2Calib</spirit:name>
+      <spirit:busType spirit:vendor="digilent.com" spirit:library="user" spirit:name="ZmodAWG_Calibration" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="digilent.com" spirit:library="user" spirit:name="ZmodAWG_Calibration_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>HgCoefMult</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>cExtCh2HgMultCoef</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>LgCoefMult</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>cExtCh2LgMultCoef</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>LgCoefAdd</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>cExtCh2LgAddCoef</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>HgCoefAdd</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>cExtCh2HgAddCoef</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.EXTCH2CALIB.NUM_READ_OUTSTANDING"/>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.EXTCH2CALIB.NUM_WRITE_OUTSTANDING"/>
+        </spirit:parameter>
+      </spirit:parameters>
+      <spirit:vendorExtensions>
+        <xilinx:busInterfaceInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.ExtCh2Calib" xilinx:dependency="$kExtCalibEn = true">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:busInterfaceInfo>
+      </spirit:vendorExtensions>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>DAC_Clk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>DAC_Clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>DAC_InIO_Clk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>DAC_InIO_Clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.DAC_INIO_CLK.ASSOCIATED_BUSIF">InputDataStream</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>ZmodDAC_Clkin</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>ZmodDAC_Clkin</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>ZmodDAC_ClkIO</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>ZmodDAC_ClkIO</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ZMODDAC_CLKIO.FREQ_HZ"/>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>InputDataStream</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>cDataAxisTdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>cDataAxisTvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>cDataAxisTready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>ZmodAWG_1411_Controller</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>b30c9ac1</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>ZmodAWG_1411_Controller</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>f3c34c3a</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>4d6408c0</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_productguide</spirit:name>
+        <spirit:displayName>Product Guide</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:docs.productguide</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_productguide_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>204d70bb</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_utilityxitfiles</spirit:name>
+        <spirit:displayName>Utility XIT/TTCL</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xit.util</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_utilityxitfiles_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>e00e52df</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_implementation</spirit:name>
+        <spirit:displayName>Implementation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:implementation</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_implementation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>e00e52df</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>SysClk100</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>DAC_InIO_Clk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>DAC_Clk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>aRst_n</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sTestMode</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sInitDoneDAC</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="bitString" spirit:bitStringLength="1">0x0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sConfigError</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="bitString" spirit:bitStringLength="1">0x0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cDataAxisTvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cDataAxisTready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cDataAxisTdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sDAC_EnIn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sExtCh1Scale</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.sExtCh1Scale" xilinx:dependency="$kExtScaleConfigEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sExtCh2Scale</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.sExtCh2Scale" xilinx:dependency="$kExtScaleConfigEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cExtCh1LgMultCoef</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">17</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cExtCh1LgMultCoef" xilinx:dependency="$kExtCalibEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cExtCh1LgAddCoef</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">17</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cExtCh1LgAddCoef" xilinx:dependency="$kExtCalibEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cExtCh1HgMultCoef</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">17</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cExtCh1HgMultCoef" xilinx:dependency="$kExtCalibEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cExtCh1HgAddCoef</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">17</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cExtCh1HgAddCoef" xilinx:dependency="$kExtCalibEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cExtCh2LgMultCoef</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">17</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cExtCh2LgMultCoef" xilinx:dependency="$kExtCalibEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cExtCh2LgAddCoef</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">17</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cExtCh2LgAddCoef" xilinx:dependency="$kExtCalibEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cExtCh2HgMultCoef</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">17</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cExtCh2HgMultCoef" xilinx:dependency="$kExtCalibEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cExtCh2HgAddCoef</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">17</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.cExtCh2HgAddCoef" xilinx:dependency="$kExtCalibEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sCmdTxAxisTvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.sCmdTxAxisTvalid" xilinx:dependency="$kExtCmdInterfaceEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sCmdTxAxisTready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="bitString" spirit:bitStringLength="1">0x0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.sCmdTxAxisTready" xilinx:dependency="$kExtCmdInterfaceEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sCmdTxAxisTdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.sCmdTxAxisTdata" xilinx:dependency="$kExtCmdInterfaceEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sCmdRxAxisTvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="bitString" spirit:bitStringLength="1">0x0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.sCmdRxAxisTvalid" xilinx:dependency="$kExtCmdInterfaceEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sCmdRxAxisTready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.sCmdRxAxisTready" xilinx:dependency="$kExtCmdInterfaceEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sCmdRxAxisTdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.sCmdRxAxisTdata" xilinx:dependency="$kExtCmdInterfaceEn = true">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sZmodDAC_CS</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sZmodDAC_SCLK</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sZmodDAC_SDIO</spirit:name>
+        <spirit:wire>
+          <spirit:direction>inout</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sZmodDAC_Reset</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ZmodDAC_ClkIO</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ZmodDAC_ClkIn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>dZmodDAC_Data</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">13</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sZmodDAC_SetFS1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="bitString" spirit:bitStringLength="1">0x0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sZmodDAC_SetFS2</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="bitString" spirit:bitStringLength="1">0x0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sZmodDAC_EnOut</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="bitString" spirit:bitStringLength="1">0x0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>kDAC_Width</spirit:name>
+        <spirit:displayName>Kdac Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kDAC_Width" spirit:minimum="10" spirit:maximum="16" spirit:rangeType="long">14</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="boolean">
+        <spirit:name>kExtCalibEn</spirit:name>
+        <spirit:displayName>Kextcaliben</spirit:displayName>
+        <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kExtCalibEn">false</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="boolean">
+        <spirit:name>kExtScaleConfigEn</spirit:name>
+        <spirit:displayName>Kextscaleconfigen</spirit:displayName>
+        <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kExtScaleConfigEn">false</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="boolean">
+        <spirit:name>kExtCmdInterfaceEn</spirit:name>
+        <spirit:displayName>Kextcmdinterfaceen</spirit:displayName>
+        <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kExtCmdInterfaceEn">false</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic_vector(17 downto 0)">
+        <spirit:name>kCh1LgMultCoefStatic</spirit:name>
+        <spirit:displayName>Kch1lgmultcoefstatic</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kCh1LgMultCoefStatic" spirit:bitStringLength="18">&quot;010000000000000000&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic_vector(17 downto 0)">
+        <spirit:name>kCh1LgAddCoefStatic</spirit:name>
+        <spirit:displayName>Kch1lgaddcoefstatic</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kCh1LgAddCoefStatic" spirit:bitStringLength="18">&quot;000000000000000000&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic_vector(17 downto 0)">
+        <spirit:name>kCh1HgMultCoefStatic</spirit:name>
+        <spirit:displayName>Kch1hgmultcoefstatic</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kCh1HgMultCoefStatic" spirit:bitStringLength="18">&quot;010000000000000000&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic_vector(17 downto 0)">
+        <spirit:name>kCh1HgAddCoefStatic</spirit:name>
+        <spirit:displayName>Kch1hgaddcoefstatic</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kCh1HgAddCoefStatic" spirit:bitStringLength="18">&quot;000000000000000000&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic_vector(17 downto 0)">
+        <spirit:name>kCh2LgMultCoefStatic</spirit:name>
+        <spirit:displayName>Kch2lgmultcoefstatic</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kCh2LgMultCoefStatic" spirit:bitStringLength="18">&quot;010000000000000000&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic_vector(17 downto 0)">
+        <spirit:name>kCh2LgAddCoefStatic</spirit:name>
+        <spirit:displayName>Kch2lgaddcoefstatic</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kCh2LgAddCoefStatic" spirit:bitStringLength="18">&quot;000000000000000000&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic_vector(17 downto 0)">
+        <spirit:name>kCh2HgMultCoefStatic</spirit:name>
+        <spirit:displayName>Kch2hgmultcoefstatic</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kCh2HgMultCoefStatic" spirit:bitStringLength="18">&quot;010000000000000000&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic_vector(17 downto 0)">
+        <spirit:name>kCh2HgAddCoefStatic</spirit:name>
+        <spirit:displayName>Kch2hgaddcoefstatic</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kCh2HgAddCoefStatic" spirit:bitStringLength="18">&quot;000000000000000000&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic">
+        <spirit:name>kCh1ScaleStatic</spirit:name>
+        <spirit:displayName>Kch1scalestatic</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kCh1ScaleStatic" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="std_logic">
+        <spirit:name>kCh2ScaleStatic</spirit:name>
+        <spirit:displayName>Kch2scalestatic</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kCh2ScaleStatic" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>kZmodID</spirit:name>
+        <spirit:displayName>Kzmodid</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.kZmodID" spirit:minimum="7" spirit:maximum="7" spirit:rangeType="long">7</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>constr/ConstrZmodDAC1411_ooc.xdc</spirit:name>
+        <spirit:userFileType>xdc</spirit:userFileType>
+        <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/PkgZmodDAC.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/ADI_SPI.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/ConfigDAC.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/GainOffsetCalib.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/SyncAsync.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/ResetBridge.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/SyncBase.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/ZmodAWG_1411_Controller.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_e6236ee0</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/PkgZmodDAC.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/ADI_SPI.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/ConfigDAC.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/GainOffsetCalib.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/SyncAsync.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/ResetBridge.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/SyncBase.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/ZmodAWG_1411_Controller.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/ZmodAWGController_v1_1.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_4d6408c0</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_productguide_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>docs/ZmodAWG1411_Controller.pdf</spirit:name>
+        <spirit:userFileType>pdf</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_utilityxitfiles_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>constr/generate_timing_xdc.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_implementation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>constr/generate_timing_xdc.xit</spirit:name>
+        <spirit:userFileType>xit</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>ZmodAWGController</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>kDAC_Width</spirit:name>
+      <spirit:displayName>Kdac Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.kDAC_Width" spirit:minimum="10" spirit:maximum="16" spirit:rangeType="long">14</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kExtCalibEn</spirit:name>
+      <spirit:displayName>Enable external calibration signals</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.kExtCalibEn">false</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kExtScaleConfigEn</spirit:name>
+      <spirit:displayName>Enable external gain configuration signals</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.kExtScaleConfigEn">false</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kExtCmdInterfaceEn</spirit:name>
+      <spirit:displayName>Enable SPI Indirect Access Port</spirit:displayName>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.kExtCmdInterfaceEn">false</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kCh1LgMultCoefStatic</spirit:name>
+      <spirit:displayName>Ch1LgMultCoefStatic</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.kCh1LgMultCoefStatic" spirit:bitStringLength="18">&quot;010000000000000000&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kCh1LgAddCoefStatic</spirit:name>
+      <spirit:displayName>Ch1LgAddCoefStatic</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.kCh1LgAddCoefStatic" spirit:bitStringLength="18">&quot;000000000000000000&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kCh1HgMultCoefStatic</spirit:name>
+      <spirit:displayName>Ch1HgMultCoefStatic</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.kCh1HgMultCoefStatic" spirit:bitStringLength="18">&quot;010000000000000000&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kCh1HgAddCoefStatic</spirit:name>
+      <spirit:displayName>Ch1HgAddCoefStatic</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.kCh1HgAddCoefStatic" spirit:bitStringLength="18">&quot;000000000000000000&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kCh2LgMultCoefStatic</spirit:name>
+      <spirit:displayName>Ch2LgMultCoefStatic</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.kCh2LgMultCoefStatic" spirit:bitStringLength="18">&quot;010000000000000000&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kCh2LgAddCoefStatic</spirit:name>
+      <spirit:displayName>Ch2LgAddCoefStatic</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.kCh2LgAddCoefStatic" spirit:bitStringLength="18">&quot;000000000000000000&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kCh2HgMultCoefStatic</spirit:name>
+      <spirit:displayName>Ch2HgMultCoefStatic</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.kCh2HgMultCoefStatic" spirit:bitStringLength="18">&quot;010000000000000000&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kCh2HgAddCoefStatic</spirit:name>
+      <spirit:displayName>Ch2HgAddCoefStatic</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.kCh2HgAddCoefStatic" spirit:bitStringLength="18">&quot;000000000000000000&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kCh1ScaleStatic</spirit:name>
+      <spirit:displayName>Ch1 Gain Static Configuration</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.kCh1ScaleStatic" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kCh2ScaleStatic</spirit:name>
+      <spirit:displayName>Ch2 Gain Static Configuration</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.kCh2ScaleStatic" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">ZmodDAC1411_Controller_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>kZmodID</spirit:name>
+      <spirit:displayName>Kzmodid</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.kZmodID" spirit:minimum="7" spirit:maximum="7" spirit:rangeType="long">7</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">virtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qvirtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">akintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qzynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">spartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aspartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynquplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexu</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>ZmodAWGController</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:upgrades>
+        <xilinx:canUpgradeFrom>natinst.com:user:ZmodDAC1411_Controller:1.0</xilinx:canUpgradeFrom>
+        <xilinx:canUpgradeFrom>natinst.com:user:ZmodAWG1411_Controller:1.0</xilinx:canUpgradeFrom>
+        <xilinx:canUpgradeFrom>natinst.com:user:ZmodAWG_1411_Controller:1.0</xilinx:canUpgradeFrom>
+        <xilinx:canUpgradeFrom>digilent.com:user:ZmodAWGController:1.0</xilinx:canUpgradeFrom>
+      </xilinx:upgrades>
+      <xilinx:coreCreationDateTime>2022-11-08T00:09:11Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1facf044_ARCHIVE_LOCATION">c:/vivado_projects/simzmoddac</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f0f2a10_ARCHIVE_LOCATION">c:/vivado_projects/simzmoddac</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2610dcb9_ARCHIVE_LOCATION">c:/vivado_projects/simzmoddac</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a1130f_ARCHIVE_LOCATION">c:/vivado_projects/simzmoddac</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72454508_ARCHIVE_LOCATION">c:/vivado_projects/simzmoddac</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ad40a30_ARCHIVE_LOCATION">c:/vivado_projects/simzmoddac</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57b20056_ARCHIVE_LOCATION">c:/vivado_projects/simzmoddac</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@410b0767_ARCHIVE_LOCATION">c:/vivado_projects/simzmoddac</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d1dd45c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43d31f9e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@782db325_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@185b86e0_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a586326_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c495639_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52a6f933_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5aec3879_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d24abce_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1be6d416_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5977d694_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@510ba87e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35a563de_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b443ee7_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fbc0f75_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4780581a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d5e72a8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@367dc9bd_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fd8a722_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@532c4ccd_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49de7be8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21c601a8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57fdcb42_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9394d3a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53009281_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cd543b7_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@638f331_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f400945_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10017ce2_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@702e1006_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fb5b23d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56cb3f0d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57582fb0_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5242617c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c346deb_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15f33fc8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dbcf178_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7969f367_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c90e20c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24e8e1e1_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45d9f463_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6425bb18_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e96f348_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64b9f275_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7543d4d6_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54f904c5_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c54d477_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1216c453_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d094167_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@254a9fb1_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15da924b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28b354a8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ecaedde_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54f7c151_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d3a57ef_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d1d0126_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68b719a5_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52ded155_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@680fcf79_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f7655c5_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@399da32f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15f8a6f4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cf75e20_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@709d142d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1da88f70_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34e817d7_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cdc4a37_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fa76d5c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f2e015f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22f45b44_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c4e1203_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@629f0f29_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f8a8de_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@563c0b02_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37a74346_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58464d28_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56140bd3_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64f8a9d8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@327511f6_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47bc4636_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cd8ed4c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@84b04d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c90583b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79e4cc79_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@366765a9_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3465045c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b2a44eb_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20a62c7d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f679746_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d691010_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@116a9722_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@245460e2_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19454f59_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36c7db7b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a958b4a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b1d4253_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57ba18fb_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9d70b4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f2cd3f3_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@598d6c04_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49245acd_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a03c8d7_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cd3aa0c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21656b1a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@101ef987_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68d73e3e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bc1e7fe_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e469e04_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bfdeda9_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@413f1060_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6da0740f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6866283b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47fe9166_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4448cfd6_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20afe390_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1889ca1b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fd16783_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@498436a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fae12f8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40ce3994_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38fd1838_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@393e07e2_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d820f88_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25181a60_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ecea0c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c4c7dfe_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65b58049_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dbb2c33_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@317a7c47_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cd03bf8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@390debd3_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ac5de7d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60e297b9_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fe5f823_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d5d529_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77e8f03d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f756071_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a2cbed5_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@177fea95_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4edd38bc_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1db8244e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22765a81_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a9959d8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3668245a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f44fb4e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d8e45bf_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@611495b1_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodDAC_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43cad4d1_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@215479c0_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23a7105_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34555dd8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7de78309_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a36bb54_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d15150e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@280966fb_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c8a9e0d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51fc6316_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@348d8dc8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1454ce7c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4351a61d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4756ead1_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34b2d0d9_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40384884_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d85fafa_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@516a354f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48799149_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3370eaf0_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5eec4d07_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@130a2b68_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38367e68_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@489d6e6d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@214c4c06_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23789589_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f1cdb4f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58eb7cee_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30d32dad_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3693af97_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b36499e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c4681fa_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16a29887_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57bbf71c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2df46448_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b5ee4bf_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@129c9e2f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3949c9e5_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46acb386_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@325a3ab0_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3761200f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c9879b5_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41658f9_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fab531e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6651541_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12f33f60_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5753e46c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e5fe8f0_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46c34813_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21e293bb_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f1c260_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41efd586_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d84aca4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ff5a603_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@586b2dca_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@188c2aee_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@97228d4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@478cade1_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d524cbf_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35b7cfde_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f59bbe4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ebcad62_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@383a5156_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f1527d8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a4fb154_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6659a85c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6668924d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26ba0f81_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23711daf_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@715b466d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40008c81_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bb22eb4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14722ce1_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52e4d566_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e45b23d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c80e980_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@724e4a6a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@543fe316_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3acd4799_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3aeac72e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5347d085_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b531ab2_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cbe1f20_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13317fac_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7134bdb_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4313d81a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1095fccd_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b0ab224_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2876d16b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6eefd59a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2968bb0b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3798212a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5194d304_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@711cdddd_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15355190_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@569ecd60_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13f03a5_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68a23b56_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@579d4cec_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60877e1b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@422643ed_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7381c00d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60cf6840_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24e4e1a0_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77e373cd_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1be6f0c2_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25043c09_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b66da8f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5534bec_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bdaba85_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dda22ec_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2db541c3_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@185f4102_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2db13cff_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79d746b3_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78499a23_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ada5a84_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@250ab503_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e7462ce_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ac239db_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7216bb91_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1631713f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ea21c4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4122e044_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@afff03f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4635e643_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d036d67_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42231537_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f40bfd8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ed702c0_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ec4c42d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b217621_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78ee4850_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13a607fa_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@225e84cc_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a5c544b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e3cce73_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ac91b67_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78c584b0_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f72947c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6110d4b8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b5c88b8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26a684c6_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b455eca_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c403992_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@724f2f2b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72633853_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e3265cd_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52ba347f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34518e19_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66a315fd_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f2ac72f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d49f9c4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d72840_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59fbd17a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1db6dfd4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71c7e023_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4526c21c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10b2aece_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3af9f099_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7835cd01_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@122e7ef4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6447ea7b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26a2c498_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1356cd58_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18dadec8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b743080_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1315960b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46e6ef2e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fb63c7f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8693f01_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56e69b32_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8839e1d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f503b26_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c316445_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71b71d1f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@304d7a68_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52331191_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39e571ca_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b570e6c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e02e025_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cf8318a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12b45174_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@670ca79d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@706b8c46_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a7a5327_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a7ac17d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b05f298_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4790de7b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bd4a2e4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ede26f6_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b797825_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2869ad04_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b8042c1_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7080fc82_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@337b76b8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@320dd14_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ad39376_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55ebf683_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19771e61_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d0e2c78_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15153a40_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61ab7af2_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4eda1994_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e02066e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@675284f5_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37edc9c9_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20f247f9_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34222c6e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2823f3de_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55125bd7_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41db8de2_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e8c3d2f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@de76e3b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18c5cdb1_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@514d857b_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@246ef0b2_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f6a2f69_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7897687d_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16ac8611_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11f373b4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68b0c238_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55e0edf5_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b79a990_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79b00834_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2616fb4_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d13fd98_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ce17287_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fba2d0c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@249da479_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35d62f8a_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16f73608_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30d1532e_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@689ec56f_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a62de17_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@614d9ba8_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61d3d04c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bba1fb2_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74625811_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2658307c_ARCHIVE_LOCATION">c:/Vivado_Projects/ZmodADC1410_Gitlab/repo/ZmodDAC1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66fc187b_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50290e5e_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59934692_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19a559d5_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@297c93b_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a473c_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e25ede5_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e68d711_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@665dd9bc_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d7a716b_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18bb82ae_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a84e155_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@81425e_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bf9923d_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61abe281_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f20940e_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b900b57_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3858c431_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14fefb9_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5aae2c0f_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c210f1b_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a37f2b5_ARCHIVE_LOCATION">d:/Github/vivado-library/ip/Zmods/ZmodAWG_1411_Controller</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2417f7c2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34a3fe93_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f3d9aa3_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35c83cc2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2488a252_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7a26cb37_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21d1e58_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65831e45_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58e1f652_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@76dcf81_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@275df7d9_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34698a56_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@681f5e19_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23c969f3_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23292217_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4816a1af_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@97c24be_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d9b9358_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a0f04db_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@cfe9a84_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5dd352be_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@48e1c398_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@296c33d7_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63e04042_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37cdd078_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@dc00187_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c5ed242_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7682418f_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@9d4e8e3_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35ce856b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a710b9c_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3504413f_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@119ad740_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@27944b68_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@575f7204_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@243d72f6_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c4eaa86_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ef6eea0_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e3e88b9_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37c5f57b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f1fdbf3_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34eba968_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4224c1b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@557df26e_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@76ee6a4a_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@747576b4_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2feff14b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@59ffc711_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@a10258a_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@fb20070_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@17e075b1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7856e7b5_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@eb22070_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a33b5af_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@577dc5e8_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@69ab041f_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2d2807a8_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ea81370_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4987464e_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3141d028_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2bf9d098_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f9914bc_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c05a3af_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ea365d4_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@779e404c_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1960d26f_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@393960bb_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@71b87466_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c8360d2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@51e889e2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@45c049d5_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f0d7a5c_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6aa16f02_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@159de1c_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@48baf360_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@15ae4964_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@27f9a630_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@da0f491_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@716e5090_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2d21ae46_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12660896_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@158f1db6_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3fd70a85_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58af94b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ba3b057_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68f6821_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c889d54_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4ff23acd_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f302496_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3cdf8569_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72393cd2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b73c1e3_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@84603cb_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@153608b2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@19231043_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60c1aae0_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@974ebfe_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5ffa3866_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@551ee4f9_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1fb64d38_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@533e71a2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@471d9b84_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22ba7c9b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7aee8268_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c28018_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f9500d0_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2043ebae_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3731d132_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@428d2b43_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37362629_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75e4f87a_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12f2002b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@687a0538_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@209932f2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f040a2b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6bbbe0be_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57814a00_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1cc9409e_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64daadaf_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5a789d89_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36631c28_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@419600f1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ab87f69_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66ae1aa8_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4fbec050_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1473cf90_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75532516_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@33899e96_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@631a25d2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1712eb32_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@38d90c11_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@77130356_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6de28248_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b7d47cd_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@48863ecb_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57188ee7_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10e444a1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d477da5_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1699d63d_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@193cd4fb_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55a7f65e_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66a8e0db_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@597f3bcd_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@496fa2e0_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5cc23255_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e5f6fe4_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f3a18f3_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55d07d2a_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6111ad03_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@140d422c_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@672ec086_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f701fa2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@71b342d8_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@629ed71b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@29d0ea6b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@76e018c1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75a466ae_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@79ed8326_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@249c8c9_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6ffeb34b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3eece4ce_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@734d2c75_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@373e379e_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f55b14b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@53d1fc1b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e28260e_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c0ddd3f_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e40e691_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@213ee486_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5fa2967b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5ee3d7cc_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63c5b912_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1086b62f_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e23f6a1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4defb92e_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@333a3ee9_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3fb8aef3_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1db23289_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2bbfc0a_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1078a7dc_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b9746a8_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f193114_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@facb442_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6173ddb4_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1de6e3aa_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c26dd6_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@307a8faa_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d8af257_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@710eddcc_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3af17160_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@555df3d5_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5580815c_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6defab6f_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@50875ea_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b5bb7ee_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2572b418_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b5632c9_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1bdab17f_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@61766402_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1acc777f_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@146e3018_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66e76191_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@46261bad_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3869eaf_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@755dd43b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4a562ff2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58b9984e_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4cd082a1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@302dd581_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@532ff650_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60cc2d67_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f5498af_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60d7ca88_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ebcda95_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1396868b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c4a729b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43d89b8d_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b6bb3f1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54e3abc1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@710c5c1d_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@8b6ae06_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@277361a1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55c18194_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d110d81_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62ab3247_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13542e31_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66a7084_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a359578_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e524bc8_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c57e183_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30807812_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35452086_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1881cf21_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@265b7093_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@154b835_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22291a64_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@a55a374_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7142c0aa_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@59431af4_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b8a5b8_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e093dad_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@42e2499c_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@658f9ae1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e51aa47_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43a7ed31_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10926075_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@76000c11_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7af92674_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7bbde5cd_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54281b31_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2d799f38_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36148951_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5660af41_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22288b9e_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@156dd9b8_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2177ae82_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68f3ffab_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7513cf16_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f7693e0_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d7f241a_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c6d45af_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43630f60_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@39a17208_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@314f86b2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@585f53c5_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@f2156f4_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e93c072_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3989189a_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b767d4d_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36772851_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@141f30b6_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@76472dfd_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@27114b3d_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3274da06_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35d6ef1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e64b85d_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5be69757_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@726df31f_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ed77353_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2c018ff2_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e88c812_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7fba1798_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43874d89_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5100b003_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54beb104_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2cefbc01_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47b7147f_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f8a48bf_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65bb65a1_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4fec6788_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c2abe28_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13a290ee_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ab3103b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b8c907b_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2539482a_ARCHIVE_LOCATION">d:/Ionut/Zmod_AWG/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1250209c_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c1300fc_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@633b9ced_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7cc4c41a_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5ae3e5bf_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5691abeb_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6ee76eba_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7cdf3b57_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ba0fa68_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@509ff40b_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6fa58db1_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b0f4e4c_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b192eb9_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43432fdf_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2072260c_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65e585ce_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b975249_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67834e0_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70045766_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21ce452f_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55389b2c_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d61dcc2_ARCHIVE_LOCATION">d:/Github/Eclypse-Review/ddr-streaming-awg-scope/hw/repo/vivado-library/ip/Zmods/ZmodAWGController</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2021.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="c40251ff"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a2627d63"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="a9a5fb8d"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="d4184007"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="15eb61f5"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

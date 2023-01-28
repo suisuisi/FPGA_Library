@@ -1,0 +1,231 @@
+
+
+================================================================
+== Vitis HLS Report for 'xFAngleKernel_2_0_720_1280_3_0_1_5_1_1280_3840_s'
+================================================================
+* Date:           Tue Jan 24 22:05:12 2023
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        edge_canny_detector
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.643 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   925921|   925921|  9.259 ms|  9.259 ms|  925921|  925921|     none|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+        |            |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- rowLoop   |   925920|   925920|      1286|          -|          -|   720|        no|
+        | + colLoop  |     1283|     1283|         5|          1|          1|  1280|       yes|
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 5
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 5, States = { 3 4 5 6 7 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 8 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 3 
+8 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.29>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %phase_mat_4217, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %grady2_mat_4215, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i16 %gradx2_mat_4212, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (1.29ns)   --->   "%br_ln424 = br void %.lr.ph" [source/imgproc/xf_canny_utils.hpp:424]   --->   Operation 12 'br' 'br_ln424' <Predicate = true> <Delay = 1.29>
+
+State 2 <SV = 1> <Delay = 1.94>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%i_V = phi i10 0, void %.lr.ph15, i10 %i_V_1, void %._crit_edge"   --->   Operation 13 'phi' 'i_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (1.41ns)   --->   "%i_V_1 = add i10 %i_V, i10 1"   --->   Operation 14 'add' 'i_V_1' <Predicate = true> <Delay = 1.41> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (1.94ns)   --->   "%icmp_ln878 = icmp_eq  i10 %i_V, i10 720"   --->   Operation 15 'icmp' 'icmp_ln878' <Predicate = true> <Delay = 1.94> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln424 = br i1 %icmp_ln878, void %.lr.ph.split, void %._crit_edge16" [source/imgproc/xf_canny_utils.hpp:424]   --->   Operation 16 'br' 'br_ln424' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%speclooptripcount_ln419 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 720, i64 720, i64 720" [source/imgproc/xf_canny_utils.hpp:419]   --->   Operation 17 'speclooptripcount' 'speclooptripcount_ln419' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specloopname_ln419 = specloopname void @_ssdm_op_SpecLoopName, void @empty_7" [source/imgproc/xf_canny_utils.hpp:419]   --->   Operation 18 'specloopname' 'specloopname_ln419' <Predicate = (!icmp_ln878)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (1.29ns)   --->   "%br_ln431 = br void" [source/imgproc/xf_canny_utils.hpp:431]   --->   Operation 19 'br' 'br_ln431' <Predicate = (!icmp_ln878)> <Delay = 1.29>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%ret_ln485 = ret" [source/imgproc/xf_canny_utils.hpp:485]   --->   Operation 20 'ret' 'ret_ln485' <Predicate = (icmp_ln878)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.88>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%j_V = phi i11 0, void %.lr.ph.split, i11 %j_V_1, void %0"   --->   Operation 21 'phi' 'j_V' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (1.48ns)   --->   "%j_V_1 = add i11 %j_V, i11 1"   --->   Operation 22 'add' 'j_V_1' <Predicate = true> <Delay = 1.48> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 23 [1/1] (1.88ns)   --->   "%icmp_ln878_8 = icmp_eq  i11 %j_V, i11 1280"   --->   Operation 23 'icmp' 'icmp_ln878_8' <Predicate = true> <Delay = 1.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln431 = br i1 %icmp_ln878_8, void %0, void %._crit_edge" [source/imgproc/xf_canny_utils.hpp:431]   --->   Operation 24 'br' 'br_ln431' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 3.40>
+ST_4 : Operation 25 [1/1] (3.40ns)   --->   "%tmp_V = read i16 @_ssdm_op_Read.ap_fifo.volatile.i16P0A, i16 %gradx2_mat_4212" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 25 'read' 'tmp_V' <Predicate = (!icmp_ln878_8)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_4 : Operation 26 [1/1] (3.40ns)   --->   "%tmp_V_11 = read i16 @_ssdm_op_Read.ap_fifo.volatile.i16P0A, i16 %grady2_mat_4215" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 26 'read' 'tmp_V_11' <Predicate = (!icmp_ln878_8)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 16> <Depth = 2> <FIFO>
+ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i16.i32, i16 %tmp_V, i32 15" [source/imgproc/xf_canny_utils.hpp:455]   --->   Operation 27 'bitselect' 'tmp' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_21 = bitselect i1 @_ssdm_op_BitSelect.i1.i16.i32, i16 %tmp_V_11, i32 15" [source/imgproc/xf_canny_utils.hpp:456]   --->   Operation 28 'bitselect' 'tmp_21' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 4.94>
+ST_5 : Operation 29 [1/1] (0.00ns)   --->   "%sext_ln455 = sext i16 %tmp_V" [source/imgproc/xf_canny_utils.hpp:455]   --->   Operation 29 'sext' 'sext_ln455' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_5 : Operation 30 [1/1] (1.54ns)   --->   "%sub_ln455 = sub i17 0, i17 %sext_ln455" [source/imgproc/xf_canny_utils.hpp:455]   --->   Operation 30 'sub' 'sub_ln455' <Predicate = (!icmp_ln878_8 & tmp)> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 31 [1/1] (0.62ns)   --->   "%xa = select i1 %tmp, i17 %sub_ln455, i17 %sext_ln455" [source/imgproc/xf_canny_utils.hpp:455]   --->   Operation 31 'select' 'xa' <Predicate = (!icmp_ln878_8)> <Delay = 0.62> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 32 [1/1] (0.00ns)   --->   "%sext_ln455_1 = sext i17 %xa" [source/imgproc/xf_canny_utils.hpp:455]   --->   Operation 32 'sext' 'sext_ln455_1' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_5 : Operation 33 [2/2] (2.78ns)   --->   "%tg22x = mul i32 %sext_ln455_1, i32 13573" [source/imgproc/xf_canny_utils.hpp:463]   --->   Operation 33 'mul' 'tg22x' <Predicate = (!icmp_ln878_8)> <Delay = 2.78> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 34 [1/1] (0.00ns)   --->   "%trunc_ln468 = trunc i17 %xa" [source/imgproc/xf_canny_utils.hpp:468]   --->   Operation 34 'trunc' 'trunc_ln468' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 6.64>
+ST_6 : Operation 35 [1/1] (0.00ns)   --->   "%sext_ln456 = sext i16 %tmp_V_11" [source/imgproc/xf_canny_utils.hpp:456]   --->   Operation 35 'sext' 'sext_ln456' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_6 : Operation 36 [1/1] (1.54ns)   --->   "%sub_ln456 = sub i17 0, i17 %sext_ln456" [source/imgproc/xf_canny_utils.hpp:456]   --->   Operation 36 'sub' 'sub_ln456' <Predicate = (!icmp_ln878_8 & tmp_21)> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 37 [1/1] (0.62ns)   --->   "%select_ln456 = select i1 %tmp_21, i17 %sub_ln456, i17 %sext_ln456" [source/imgproc/xf_canny_utils.hpp:456]   --->   Operation 37 'select' 'select_ln456' <Predicate = (!icmp_ln878_8)> <Delay = 0.62> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 38 [1/1] (0.00ns)   --->   "%ya = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i17.i15, i17 %select_ln456, i15 0" [source/imgproc/xf_canny_utils.hpp:456]   --->   Operation 38 'bitconcatenate' 'ya' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_6 : Operation 39 [1/2] (2.78ns)   --->   "%tg22x = mul i32 %sext_ln455_1, i32 13573" [source/imgproc/xf_canny_utils.hpp:463]   --->   Operation 39 'mul' 'tg22x' <Predicate = (!icmp_ln878_8)> <Delay = 2.78> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 2.78> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 40 [1/1] (0.00ns)   --->   "%specfucore_ln459 = specfucore void @_ssdm_op_SpecFUCore, i32 %tg22x, i64 12, i64 2, i64 18446744073709551615" [source/imgproc/xf_canny_utils.hpp:459]   --->   Operation 40 'specfucore' 'specfucore_ln459' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_6 : Operation 41 [1/1] (1.96ns)   --->   "%icmp_ln465 = icmp_slt  i32 %ya, i32 %tg22x" [source/imgproc/xf_canny_utils.hpp:465]   --->   Operation 41 'icmp' 'icmp_ln465' <Predicate = (!icmp_ln878_8)> <Delay = 1.96> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 42 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i16.i16, i16 %trunc_ln468, i16 0" [source/imgproc/xf_canny_utils.hpp:468]   --->   Operation 42 'bitconcatenate' 'shl_ln' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_6 : Operation 43 [1/1] (1.89ns)   --->   "%tg67x = add i32 %tg22x, i32 %shl_ln" [source/imgproc/xf_canny_utils.hpp:468]   --->   Operation 43 'add' 'tg67x' <Predicate = (!icmp_ln878_8)> <Delay = 1.89> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 44 [1/1] (1.96ns)   --->   "%icmp_ln469 = icmp_sgt  i32 %ya, i32 %tg67x" [source/imgproc/xf_canny_utils.hpp:469]   --->   Operation 44 'icmp' 'icmp_ln469' <Predicate = (!icmp_ln878_8)> <Delay = 1.96> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.94> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 5.05>
+ST_7 : Operation 45 [1/1] (0.00ns)   --->   "%specpipeline_ln419 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_5" [source/imgproc/xf_canny_utils.hpp:419]   --->   Operation 45 'specpipeline' 'specpipeline_ln419' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_7 : Operation 46 [1/1] (0.00ns)   --->   "%speclooptripcount_ln419 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1280, i64 1280, i64 1280" [source/imgproc/xf_canny_utils.hpp:419]   --->   Operation 46 'speclooptripcount' 'speclooptripcount_ln419' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_7 : Operation 47 [1/1] (0.00ns)   --->   "%specloopname_ln419 = specloopname void @_ssdm_op_SpecLoopName, void @empty_24" [source/imgproc/xf_canny_utils.hpp:419]   --->   Operation 47 'specloopname' 'specloopname_ln419' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_7 : Operation 48 [1/1] (0.00ns)   --->   "%rbegin = specregionbegin i32 @_ssdm_op_SpecRegionBegin, void @empty_16" [source/imgproc/xf_canny_utils.hpp:459]   --->   Operation 48 'specregionbegin' 'rbegin' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_7 : Operation 49 [1/1] (0.00ns)   --->   "%rend = specregionend i32 @_ssdm_op_SpecRegionEnd, void @empty_16, i32 %rbegin" [source/imgproc/xf_canny_utils.hpp:463]   --->   Operation 49 'specregionend' 'rend' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_7 : Operation 50 [1/1] (0.00ns) (grouped into LUT with out node angle_V)   --->   "%xor_ln472 = xor i16 %tmp_V_11, i16 %tmp_V" [source/imgproc/xf_canny_utils.hpp:472]   --->   Operation 50 'xor' 'xor_ln472' <Predicate = (!icmp_ln878_8)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 51 [1/1] (0.00ns) (grouped into LUT with out node angle_V)   --->   "%tmp_22 = bitselect i1 @_ssdm_op_BitSelect.i1.i16.i32, i16 %xor_ln472, i32 15" [source/imgproc/xf_canny_utils.hpp:473]   --->   Operation 51 'bitselect' 'tmp_22' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+ST_7 : Operation 52 [1/1] (0.00ns) (grouped into LUT with out node and_ln469)   --->   "%xor_ln465 = xor i1 %icmp_ln465, i1 1" [source/imgproc/xf_canny_utils.hpp:465]   --->   Operation 52 'xor' 'xor_ln465' <Predicate = (!icmp_ln878_8)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 53 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln469 = and i1 %icmp_ln469, i1 %xor_ln465" [source/imgproc/xf_canny_utils.hpp:469]   --->   Operation 53 'and' 'and_ln469' <Predicate = (!icmp_ln878_8)> <Delay = 0.80> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 54 [1/1] (0.00ns) (grouped into LUT with out node angle_V)   --->   "%select_ln469 = select i1 %and_ln469, i8 90, i8 0" [source/imgproc/xf_canny_utils.hpp:469]   --->   Operation 54 'select' 'select_ln469' <Predicate = (!icmp_ln878_8)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 55 [1/1] (0.00ns) (grouped into LUT with out node angle_V)   --->   "%or_ln469 = or i1 %and_ln469, i1 %icmp_ln465" [source/imgproc/xf_canny_utils.hpp:469]   --->   Operation 55 'or' 'or_ln469' <Predicate = (!icmp_ln878_8)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 56 [1/1] (0.00ns) (grouped into LUT with out node angle_V)   --->   "%select_ln469_1 = select i1 %tmp_22, i8 45, i8 135" [source/imgproc/xf_canny_utils.hpp:469]   --->   Operation 56 'select' 'select_ln469_1' <Predicate = (!icmp_ln878_8)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 57 [1/1] (0.83ns) (out node of the LUT)   --->   "%angle_V = select i1 %or_ln469, i8 %select_ln469, i8 %select_ln469_1" [source/imgproc/xf_canny_utils.hpp:469]   --->   Operation 57 'select' 'angle_V' <Predicate = (!icmp_ln878_8)> <Delay = 0.83> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 58 [1/1] (3.41ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i8P0A, i8 %phase_mat_4217, i8 %angle_V" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 58 'write' 'write_ln174' <Predicate = (!icmp_ln878_8)> <Delay = 3.41> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 3.41> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 3840> <FIFO>
+ST_7 : Operation 59 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 59 'br' 'br_ln0' <Predicate = (!icmp_ln878_8)> <Delay = 0.00>
+
+State 8 <SV = 3> <Delay = 0.00>
+ST_8 : Operation 60 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.lr.ph"   --->   Operation 60 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i.V') with incoming values : ('i.V') [9]  (1.3 ns)
+
+ <State 2>: 1.94ns
+The critical path consists of the following:
+	'phi' operation ('i.V') with incoming values : ('i.V') [9]  (0 ns)
+	'icmp' operation ('icmp_ln878') [11]  (1.94 ns)
+
+ <State 3>: 1.88ns
+The critical path consists of the following:
+	'phi' operation ('j.V') with incoming values : ('j.V') [18]  (0 ns)
+	'icmp' operation ('icmp_ln878_8') [20]  (1.88 ns)
+
+ <State 4>: 3.4ns
+The critical path consists of the following:
+	fifo read on port 'gradx2_mat_4212' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145) [26]  (3.4 ns)
+
+ <State 5>: 4.95ns
+The critical path consists of the following:
+	'sub' operation ('sub_ln455', source/imgproc/xf_canny_utils.hpp:455) [30]  (1.54 ns)
+	'select' operation ('xa', source/imgproc/xf_canny_utils.hpp:455) [31]  (0.622 ns)
+	'mul' operation ('tg22x', source/imgproc/xf_canny_utils.hpp:463) [39]  (2.78 ns)
+
+ <State 6>: 6.64ns
+The critical path consists of the following:
+	'mul' operation ('tg22x', source/imgproc/xf_canny_utils.hpp:463) [39]  (2.78 ns)
+	'add' operation ('tg67x', source/imgproc/xf_canny_utils.hpp:468) [45]  (1.9 ns)
+	'icmp' operation ('icmp_ln469', source/imgproc/xf_canny_utils.hpp:469) [46]  (1.97 ns)
+
+ <State 7>: 5.05ns
+The critical path consists of the following:
+	'xor' operation ('xor_ln465', source/imgproc/xf_canny_utils.hpp:465) [49]  (0 ns)
+	'and' operation ('and_ln469', source/imgproc/xf_canny_utils.hpp:469) [50]  (0.8 ns)
+	'select' operation ('select_ln469', source/imgproc/xf_canny_utils.hpp:469) [51]  (0 ns)
+	'select' operation ('angle.V', source/imgproc/xf_canny_utils.hpp:469) [54]  (0.834 ns)
+	fifo write on port 'phase_mat_4217' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) [55]  (3.42 ns)
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

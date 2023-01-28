@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1674569118314">
+  <ports id="1" name="rgb_img_src_4206" type="PortType" coreName="FIFO_SRL" coreId="1043545189" bitwidth="24" iftype="IfTypeRom">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="gray_img_src_4207" type="PortType" coreName="FIFO_SRL" coreId="2019650916" bitwidth="8" direction="DirOut" iftype="IfTypeRom">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <edges id="37" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="40" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="41" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="42" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="43" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="46" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="49" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="50" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="51" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="54" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="57" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="58" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="59" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="60" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="61" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="62" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="65" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="66" source_obj="//@regions.0/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="69" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="70" source_obj="//@regions.0/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
+  <edges id="73" source_obj="//@regions.0/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="74" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.12"/>
+  <edges id="75" source_obj="//@regions.0/@basic_blocks.1/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.12"/>
+  <edges id="76" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
+  <edges id="77" source_obj="//@regions.0/@basic_blocks.1/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.14"/>
+  <edges id="78" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.14"/>
+  <edges id="81" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.15"/>
+  <edges id="88" source_obj="//@regions.0/@basic_blocks.1/@node_objs.16" sink_obj="//@ports.1"/>
+  <edges id="89" source_obj="//@regions.0/@basic_blocks.1/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.16"/>
+  <edges id="90" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.17"/>
+  <edges id="154" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="155" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="156" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="157" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <blocks id="6" name="block_6" type="BlockType">
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_11</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="br_ln23" lineNumber="23" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="574108977" contextFuncName="xfrgb2gray_720_1280_s" opcode="br" m_display="0" m_delay="1.29" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="23" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfrgb2gray&amp;lt;720, 1280&amp;gt;"/>
+      <controlInputObjs>block_11</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="source/edge_canny_detector.cpp">
+      <validLinenumbers>23</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="36" name="block_36" type="BlockType">
+    <controlInputObjs>block_11</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="_ln35" lineNumber="35" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="xfrgb2gray_720_1280_s" opcode="ret" nodeLabel="8.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="35" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfrgb2gray&amp;lt;720, 1280&amp;gt;"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="source/edge_canny_detector.cpp">
+      <validLinenumbers>35</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="146" pipe_depth="7" RegionName="VITIS_LOOP_23_1_VITIS_LOOP_25_2">
+    <basic_blocks id="11" name="block_11" type="BlockType">
+      <controlInputObjs>block_6</controlInputObjs>
+      <controlInputObjs>.split2</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>block_36</controlOutputObjs>
+      <controlOutputObjs>.split2</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="7" name="indvar_flatten" lineNumber="23" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="xfrgb2gray_720_1280_s" bitwidth="20" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="23" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfrgb2gray&amp;lt;720, 1280&amp;gt;"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <controlInputObjs>block_6</controlInputObjs>
+        <controlInputObjs>.split2</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="8" name="add_ln23" lineNumber="23" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="add_ln23_fu_80_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="xfrgb2gray_720_1280_s" bitwidth="20" opcode="add" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="23" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfrgb2gray&amp;lt;720, 1280&amp;gt;"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="9" name="icmp_ln23" lineNumber="23" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="icmp_ln23_fu_86_p2" opType="icmp" coreId="1321737693" contextFuncName="xfrgb2gray_720_1280_s" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="2.02" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="23" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfrgb2gray&amp;lt;720, 1280&amp;gt;"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="10" name="br_ln23" lineNumber="23" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="1634493764" contextFuncName="xfrgb2gray_720_1280_s" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="23" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfrgb2gray&amp;lt;720, 1280&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>.split2</controlInputObjs>
+        <controlInputObjs>block_36</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/edge_canny_detector.cpp">
+        <validLinenumbers>23</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="34" name=".split2" type="BlockType">
+      <controlInputObjs>block_11</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>block_11</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="tmp_V" lineNumber="145" originalName="tmp.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="read" bitwidth="24" opcode="read" nodeLabel="2.0" m_display="0" m_delay="3.4" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" linenumber="145" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="read"/>
+        <dataInputObjs>rgb_img_src_4206</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="call_ret" lineNumber="29" fileName="source/edge_canny_detector.cpp" fileDirectory=".." rtlName="call_ret_ExtractPixel_fu_74" coreId="1970496882" contextFuncName="xfrgb2gray_720_1280_s" bitwidth="24" opcode="call" nodeLabel="2.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="29" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfrgb2gray&amp;lt;720, 1280&amp;gt;"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <constName>ExtractPixel</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="rgb_V_0" lineNumber="29" originalName="rgb.V[0]" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="1042429730" contextFuncName="xfrgb2gray_720_1280_s" bitwidth="8" opcode="extractvalue" nodeLabel="2.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="29" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfrgb2gray&amp;lt;720, 1280&amp;gt;"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="rgb_V_1" lineNumber="29" originalName="rgb.V[1]" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="544503152" contextFuncName="xfrgb2gray_720_1280_s" bitwidth="8" opcode="extractvalue" nodeLabel="2.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="29" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfrgb2gray&amp;lt;720, 1280&amp;gt;"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="rgb_V_2" lineNumber="29" originalName="rgb.V[2]" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="1451346819" contextFuncName="xfrgb2gray_720_1280_s" bitwidth="8" opcode="extractvalue" nodeLabel="2.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="29" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="xfrgb2gray&amp;lt;720, 1280&amp;gt;"/>
+        <dataInputObjs>call</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="zext_ln852" lineNumber="852" fileName="source/imgproc/xf_cvt_color_utils.hpp" fileDirectory=".." rtlName="grp_fu_127_p00" coreId="1451351043" contextFuncName="CalculateGRAY" bitwidth="22" opcode="zext" nodeLabel="2.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_cvt_color_utils.hpp" linenumber="852" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="CalculateGRAY"/>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="mul_ln852" lineNumber="852" fileName="source/imgproc/xf_cvt_color_utils.hpp" fileDirectory=".." rtlName="mul_mul_8ns_15ns_22_4_1_U21" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="CalculateGRAY" bitwidth="22" opcode="mul" nodeLabel="2.0" nodeLatency="3" m_display="0" m_delay="1.82" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_cvt_color_utils.hpp" linenumber="852" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="CalculateGRAY"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="23" name="zext_ln852_1" lineNumber="852" fileName="source/imgproc/xf_cvt_color_utils.hpp" fileDirectory=".." rtlName="grp_fu_142_p00" coreId="0" contextFuncName="CalculateGRAY" bitwidth="23" opcode="zext" nodeLabel="4.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_cvt_color_utils.hpp" linenumber="852" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="CalculateGRAY"/>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="mul_ln852_1" lineNumber="852" fileName="source/imgproc/xf_cvt_color_utils.hpp" fileDirectory=".." rtlName="mac_muladd_8ns_16ns_22ns_23_4_1_U23" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="CalculateGRAY" bitwidth="23" opcode="mul" nodeLabel="4.0" nodeLatency="2" m_display="0" m_delay="0.98" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_cvt_color_utils.hpp" linenumber="852" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="CalculateGRAY"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="zext_ln852_2" lineNumber="852" fileName="source/imgproc/xf_cvt_color_utils.hpp" fileDirectory=".." rtlName="grp_fu_133_p00" coreId="1477049072" contextFuncName="CalculateGRAY" bitwidth="20" opcode="zext" nodeLabel="3.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_cvt_color_utils.hpp" linenumber="852" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="CalculateGRAY"/>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="26" name="mul_ln852_2" lineNumber="852" fileName="source/imgproc/xf_cvt_color_utils.hpp" fileDirectory=".." rtlName="mac_muladd_8ns_13ns_22ns_22_4_1_U22" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="CalculateGRAY" bitwidth="20" opcode="mul" nodeLabel="3.0" nodeLatency="2" m_display="0" m_delay="0.98" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_cvt_color_utils.hpp" linenumber="852" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="CalculateGRAY"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="zext_ln852_3" lineNumber="852" fileName="source/imgproc/xf_cvt_color_utils.hpp" fileDirectory=".." rtlName="mac_muladd_8ns_13ns_22ns_22_4_1_U22" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="CalculateGRAY" bitwidth="22" opcode="zext" nodeLabel="5.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_cvt_color_utils.hpp" linenumber="852" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="CalculateGRAY"/>
+        <dataInputObjs>mul</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="add_ln852" lineNumber="852" fileName="source/imgproc/xf_cvt_color_utils.hpp" fileDirectory=".." rtlName="mac_muladd_8ns_13ns_22ns_22_4_1_U22" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="CalculateGRAY" bitwidth="22" opcode="add" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="1.76" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_cvt_color_utils.hpp" linenumber="852" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="CalculateGRAY"/>
+        <dataInputObjs>mul</dataInputObjs>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="zext_ln852_4" lineNumber="852" fileName="source/imgproc/xf_cvt_color_utils.hpp" fileDirectory=".." rtlName="grp_fu_142_p20" coreId="1451364243" contextFuncName="CalculateGRAY" bitwidth="23" opcode="zext" nodeLabel="6.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_cvt_color_utils.hpp" linenumber="852" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="CalculateGRAY"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="GRAY" lineNumber="852" originalName="GRAY" fileName="source/imgproc/xf_cvt_color_utils.hpp" fileDirectory=".." rtlName="mac_muladd_8ns_16ns_22ns_23_4_1_U23" coreName="DSP48" implIndex="dsp" control="auto" opType="add" coreId="119" contextFuncName="CalculateGRAY" bitwidth="23" opcode="add" nodeLabel="6.0" nodeLatency="1" m_display="0" m_delay="1.76" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_cvt_color_utils.hpp" linenumber="852" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="CalculateGRAY"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataInputObjs>mul</dataInputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="gray_packed_V" lineNumber="745" originalName="Value_uchar" fileName="source/imgproc/xf_cvt_color_utils.hpp" fileDirectory=".." rtlName="gray_img_src_4207_din" coreId="1451343123" contextFuncName="saturate_cast" bitwidth="8" opcode="partselect" nodeLabel="7.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/imgproc/xf_cvt_color_utils.hpp" linenumber="745" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="saturate_cast"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="gray_img_src_4207_write_ln174" lineNumber="174" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="write" opcode="write" nodeLabel="7.0" m_display="0" m_delay="3.4" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" linenumber="174" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="write"/>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>gray_img_src_4207</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="br_ln0" coreId="29" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <controlInputObjs>block_11</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/edge_canny_detector.cpp">
+        <validLinenumbers>29</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="source/imgproc/xf_cvt_color_utils.hpp">
+        <validLinenumbers>852</validLinenumbers>
+        <validLinenumbers>745</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h">
+        <validLinenumbers>145</validLinenumbers>
+        <validLinenumbers>174</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <regnodes realName="add_ln23_reg_151">
+    <nodeIds>8</nodeIds>
+  </regnodes>
+  <regnodes realName="zext_ln852_2_reg_175">
+    <nodeIds>25</nodeIds>
+  </regnodes>
+  <regnodes realName="rgb_V_2_reg_165">
+    <nodeIds>20</nodeIds>
+  </regnodes>
+  <regnodes realName="zext_ln852_1_reg_180">
+    <nodeIds>23</nodeIds>
+  </regnodes>
+  <regnodes realName="zext_ln852_4_reg_190">
+    <nodeIds>29</nodeIds>
+  </regnodes>
+  <regnodes realName="mul_ln852_reg_185">
+    <nodeIds>22</nodeIds>
+  </regnodes>
+  <regnodes realName="zext_ln852_reg_170">
+    <nodeIds>21</nodeIds>
+  </regnodes>
+  <regnodes realName="rgb_V_1_reg_160">
+    <nodeIds>19</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln23_reg_156">
+    <nodeIds>9</nodeIds>
+  </regnodes>
+  <regnodes realName="indvar_flatten_reg_63">
+    <nodeIds>7</nodeIds>
+  </regnodes>
+  <expressionNodes realName="zext_ln852_2_fu_108">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln23_fu_86">
+    <nodeIds>9</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="indvar_flatten_phi_fu_67">
+    <nodeIds>7</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="rgb_V_0_fu_92">
+    <nodeIds>18</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="rgb_V_2_fu_100">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="gray_packed_V_fu_117">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln852_1_fu_111">
+    <nodeIds>23</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln852_fu_104">
+    <nodeIds>21</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="rgb_V_1_fu_96">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln23_fu_80">
+    <nodeIds>8</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln852_4_fu_114">
+    <nodeIds>29</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_fu_127">
+    <nodeIds>22</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="call_ret_ExtractPixel_fu_74">
+    <nodeIds>17</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_142">
+    <nodeIds>24</nodeIds>
+    <nodeIds>30</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_133">
+    <nodeIds>26</nodeIds>
+    <nodeIds>27</nodeIds>
+    <nodeIds>28</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="write_ln174_write_fu_56">
+    <nodeIds>32</nodeIds>
+  </ioNodes>
+  <ioNodes realName="tmp_V_read_fu_50">
+    <nodeIds>16</nodeIds>
+  </ioNodes>
+  <ioPorts name="gray_img_src_4207">
+    <contents name="write">
+      <nodeIds>32</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="rgb_img_src_4206">
+    <contents name="read">
+      <nodeIds>16</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="4" latency="4"/>
+    </states>
+    <states id="4">
+      <operations id="22" stage="3" latency="4"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="3" latency="3"/>
+    </states>
+    <states id="5">
+      <operations id="22" stage="2" latency="4"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="3" latency="3"/>
+      <operations id="26" stage="2" latency="3"/>
+    </states>
+    <states id="6">
+      <operations id="22" stage="1" latency="4"/>
+      <operations id="24" stage="2" latency="3"/>
+      <operations id="26" stage="1" latency="3"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="2" latency="2"/>
+    </states>
+    <states id="7">
+      <operations id="24" stage="1" latency="3"/>
+      <operations id="28" stage="1" latency="2"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="2" latency="2"/>
+    </states>
+    <states id="8">
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="2"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+    </states>
+    <states id="9">
+      <operations id="35" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="xfrgb2gray_720_1280_s" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="921607" mMaxLatency="921607">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>6</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_23_1_VITIS_LOOP_25_2" mII="1" mDepth="7" mMinTripCount="921600" mMaxTripCount="921600" mMinLatency="921605" mMaxLatency="921605" mType="1">
+      <basicBlocks>11</basicBlocks>
+      <basicBlocks>34</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>36</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

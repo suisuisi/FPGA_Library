@@ -1,0 +1,154 @@
+
+
+================================================================
+== Vitis HLS Report for 'xfgray2rgb_720_1280_s'
+================================================================
+* Date:           Tue Jan 24 22:05:15 2023
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        edge_canny_detector
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.802 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   921602|   921602|  9.216 ms|  9.216 ms|  921602|  921602|     none|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |                                   |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip  |          |
+        |             Loop Name             |   min   |   max   |  Latency |  achieved |   target  |  Count | Pipelined|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+        |- VITIS_LOOP_95_1_VITIS_LOOP_97_2  |   921600|   921600|         2|          1|          1|  921600|       yes|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 4 3 
+3 --> 2 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.29>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %nms_mat_4218, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 5 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %rgb_img_dst_4208, void @empty_17, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.29ns)   --->   "%br_ln95 = br void" [source/edge_canny_detector.cpp:95]   --->   Operation 7 'br' 'br_ln95' <Predicate = true> <Delay = 1.29>
+
+State 2 <SV = 1> <Delay = 2.02>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i20 0, void, i20 %add_ln95, void %.split4" [source/edge_canny_detector.cpp:95]   --->   Operation 8 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (1.58ns)   --->   "%add_ln95 = add i20 %indvar_flatten, i20 1" [source/edge_canny_detector.cpp:95]   --->   Operation 9 'add' 'add_ln95' <Predicate = true> <Delay = 1.58> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.58> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (2.02ns)   --->   "%icmp_ln95 = icmp_eq  i20 %indvar_flatten, i20 921600" [source/edge_canny_detector.cpp:95]   --->   Operation 10 'icmp' 'icmp_ln95' <Predicate = true> <Delay = 2.02> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%br_ln95 = br i1 %icmp_ln95, void %.split4, void" [source/edge_canny_detector.cpp:95]   --->   Operation 11 'br' 'br_ln95' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 6.80>
+ST_3 : Operation 12 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_95_1_VITIS_LOOP_97_2_str"   --->   Operation 12 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln95)> <Delay = 0.00>
+ST_3 : Operation 13 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 921600, i64 921600, i64 921600"   --->   Operation 13 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = (!icmp_ln95)> <Delay = 0.00>
+ST_3 : Operation 14 [1/1] (0.00ns)   --->   "%specpipeline_ln90 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_5" [source/edge_canny_detector.cpp:90]   --->   Operation 14 'specpipeline' 'specpipeline_ln90' <Predicate = (!icmp_ln95)> <Delay = 0.00>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%specloopname_ln90 = specloopname void @_ssdm_op_SpecLoopName, void @empty_26" [source/edge_canny_detector.cpp:90]   --->   Operation 15 'specloopname' 'specloopname_ln90' <Predicate = (!icmp_ln95)> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (3.40ns)   --->   "%tmp_V = read i8 @_ssdm_op_Read.ap_fifo.volatile.i8P0A, i8 %nms_mat_4218" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 16 'read' 'tmp_V' <Predicate = (!icmp_ln95)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%rgb_packed_V = bitconcatenate i24 @_ssdm_op_BitConcatenate.i24.i8.i8.i8, i8 %tmp_V, i8 %tmp_V, i8 %tmp_V"   --->   Operation 17 'bitconcatenate' 'rgb_packed_V' <Predicate = (!icmp_ln95)> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (3.40ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i24P0A, i24 %rgb_img_dst_4208, i24 %rgb_packed_V" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 18 'write' 'write_ln174' <Predicate = (!icmp_ln95)> <Delay = 3.40> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 24> <Depth = 2> <FIFO>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 19 'br' 'br_ln0' <Predicate = (!icmp_ln95)> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 0.00>
+ST_4 : Operation 20 [1/1] (0.00ns)   --->   "%ret_ln108 = ret" [source/edge_canny_detector.cpp:108]   --->   Operation 20 'ret' 'ret_ln108' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.3ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten', source/edge_canny_detector.cpp:95) with incoming values : ('add_ln95', source/edge_canny_detector.cpp:95) [7]  (1.3 ns)
+
+ <State 2>: 2.03ns
+The critical path consists of the following:
+	'phi' operation ('indvar_flatten', source/edge_canny_detector.cpp:95) with incoming values : ('add_ln95', source/edge_canny_detector.cpp:95) [7]  (0 ns)
+	'icmp' operation ('icmp_ln95', source/edge_canny_detector.cpp:95) [9]  (2.03 ns)
+
+ <State 3>: 6.8ns
+The critical path consists of the following:
+	fifo read on port 'nms_mat_4218' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145) [16]  (3.4 ns)
+	fifo write on port 'rgb_img_dst_4208' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) [18]  (3.4 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

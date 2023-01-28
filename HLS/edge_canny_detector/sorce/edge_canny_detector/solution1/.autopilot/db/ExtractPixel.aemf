@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1674569118060">
+  <ports id="1" name="src_V_read" type="PortType" originalName="src.V" coreId="1818589289" bitwidth="24">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="11" name="ap_return_0" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <ports id="12" name="ap_return_1" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <ports id="13" name="ap_return_2" direction="DirOut">
+    <dataInputObjs>ret</dataInputObjs>
+  </ports>
+  <edges id="13" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="14" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="17" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="23" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="30" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="31" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="32" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="33" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="34" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="35" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.1"/>
+  <edges source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.2"/>
+  <edges source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.3"/>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="43" pipe_depth="1" RegionName="ExtractPixel">
+    <basic_blocks id="10" name="ExtractPixel" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="2" name="src_V_read_1" lineNumber="3" originalName="src.V" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="1451361075" contextFuncName="ExtractPixel" bitwidth="24" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="3" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="ExtractPixel"/>
+        <dataInputObjs>src_V_read</dataInputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+        <dataOutputObjs>partselect</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="3" name="trunc_ln674" lineNumber="674" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" fileDirectory=".." rtlName="trunc_ln674_fu_22_p1" coreId="1451353155" contextFuncName="get" bitwidth="8" opcode="trunc" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" linenumber="674" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="get"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>insertvalue</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="4" name="src_value_1" lineNumber="674" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" fileDirectory=".." rtlName="ap_return_1" coreId="741417086" contextFuncName="get" bitwidth="8" opcode="partselect" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" linenumber="674" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="get"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>insertvalue</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="5" name="src_value_2" lineNumber="674" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" fileDirectory=".." rtlName="ap_return_2" coreId="1451357379" contextFuncName="get" bitwidth="8" opcode="partselect" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" linenumber="674" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="get"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>insertvalue</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="6" name="mrv" lineNumber="13" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="1451354211" contextFuncName="ExtractPixel" bitwidth="24" opcode="insertvalue" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="13" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="ExtractPixel"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>insertvalue</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="7" name="mrv_1" lineNumber="13" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="1451347347" contextFuncName="ExtractPixel" bitwidth="24" opcode="insertvalue" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="13" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="ExtractPixel"/>
+        <dataInputObjs>insertvalue</dataInputObjs>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>insertvalue</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="8" name="mrv_2" lineNumber="13" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="1451336259" contextFuncName="ExtractPixel" bitwidth="24" opcode="insertvalue" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="13" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="ExtractPixel"/>
+        <dataInputObjs>insertvalue</dataInputObjs>
+        <dataInputObjs>partselect</dataInputObjs>
+        <dataOutputObjs>ret</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="9" name="_ln13" lineNumber="13" fileName="source/edge_canny_detector.cpp" fileDirectory=".." coreId="0" contextFuncName="ExtractPixel" opcode="ret" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/edge_canny_detector.cpp" linenumber="13" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="ExtractPixel"/>
+        <dataInputObjs>insertvalue</dataInputObjs>
+        <dataOutputObjs>ap_return_0</dataOutputObjs>
+        <dataOutputObjs>ap_return_1</dataOutputObjs>
+        <dataOutputObjs>ap_return_2</dataOutputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/edge_canny_detector.cpp">
+        <validLinenumbers>3</validLinenumbers>
+        <validLinenumbers>13</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h">
+        <validLinenumbers>674</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <expressionNodes realName="src_value_1_fu_26">
+    <nodeIds>4</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="mrv_1_fu_52">
+    <nodeIds>7</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln674_fu_22">
+    <nodeIds>3</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="mrv_fu_46">
+    <nodeIds>6</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="src_value_2_fu_36">
+    <nodeIds>5</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="mrv_2_fu_58">
+    <nodeIds>8</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="src_V_read_1_read_fu_16">
+    <nodeIds>2</nodeIds>
+  </ioNodes>
+  <ioPorts name="src_V_read">
+    <contents name="read">
+      <nodeIds>2</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return_0">
+    <contents name="ret">
+      <nodeIds>9</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return_1">
+    <contents name="ret">
+      <nodeIds>9</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ap_return_2">
+    <contents name="ret">
+      <nodeIds>9</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="2" stage="1" latency="1"/>
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="ExtractPixel" mII="1" mDepth="1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>10</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

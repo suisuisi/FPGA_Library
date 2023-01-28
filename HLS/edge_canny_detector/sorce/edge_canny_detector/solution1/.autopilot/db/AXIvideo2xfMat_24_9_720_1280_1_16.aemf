@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1674569117897">
+  <ports id="1" name="rgb_img_src_4206" type="PortType" coreName="FIFO_SRL" coreId="1472133632" bitwidth="24" direction="DirOut" iftype="IfTypeRom">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="2" name="AXI_video_strm_V_data_V" type="PortType" coreId="1473554464" bitwidth="24">
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="3" name="AXI_video_strm_V_keep_V" type="PortType" coreId="1" bitwidth="3">
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="4" name="AXI_video_strm_V_strb_V" type="PortType" coreId="0" bitwidth="3">
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="5" name="AXI_video_strm_V_user_V" type="PortType" coreId="1472135008" bitwidth="1">
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="6" name="AXI_video_strm_V_last_V" type="PortType" coreId="0" bitwidth="1">
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="7" name="AXI_video_strm_V_id_V" type="PortType" coreId="1472133600" bitwidth="1">
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="8" name="AXI_video_strm_V_dest_V" type="PortType" coreId="1664760422" bitwidth="1">
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="9" name="lowthreshold" type="PortType" coreId="1769239903" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="10" name="highthreshold" type="PortType" coreId="858849321" bitwidth="8">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="11" name="lowthreshold_out" type="PortType" coreName="FIFO_SRL" coreId="539780461" bitwidth="8" direction="DirOut" iftype="IfTypeRom">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="12" name="highthreshold_out" type="PortType" coreName="FIFO_SRL" coreId="1853187616" bitwidth="8" direction="DirOut" iftype="IfTypeRom">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <edges id="162" source_obj="//@ports.8" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="165" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@ports.10"/>
+  <edges id="166" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="168" source_obj="//@ports.9" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="170" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@ports.11"/>
+  <edges id="171" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="172" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="173" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="174" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="177" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="178" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1" is_back_edge="1"/>
+  <edges id="179" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1" is_back_edge="1"/>
+  <edges id="182" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="183" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2" is_back_edge="1"/>
+  <edges id="184" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2" is_back_edge="1"/>
+  <edges id="187" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="188" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="189" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="190" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="191" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="194" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="195" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="196" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="197" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="198" source_obj="//@ports.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="199" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="200" source_obj="//@ports.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="201" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="202" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="203" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="204" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="205" source_obj="//@blocks.2/@node_objs.4" sink_obj="//@blocks.2/@node_objs.0" is_back_edge="1"/>
+  <edges id="206" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.2/@node_objs.0" is_back_edge="1"/>
+  <edges id="209" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="211" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.2/@node_objs.1" is_back_edge="1"/>
+  <edges id="214" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2/@node_objs.1"/>
+  <edges id="215" source_obj="//@regions.2/@basic_blocks.0/@node_objs.1" sink_obj="//@blocks.2/@node_objs.2" is_back_edge="1"/>
+  <edges id="216" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.2/@node_objs.2" is_back_edge="1"/>
+  <edges id="217" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@blocks.2/@node_objs.2"/>
+  <edges id="218" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2/@node_objs.2"/>
+  <edges id="220" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.2/@node_objs.3" is_back_edge="1"/>
+  <edges id="221" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@blocks.2/@node_objs.3"/>
+  <edges id="222" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2/@node_objs.3"/>
+  <edges id="223" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@blocks.2/@node_objs.4"/>
+  <edges id="226" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@blocks.2/@node_objs.5"/>
+  <edges id="229" source_obj="//@blocks.2/@node_objs.5" sink_obj="//@blocks.2/@node_objs.6"/>
+  <edges id="230" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.2/@node_objs.6"/>
+  <edges id="231" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.2/@node_objs.6"/>
+  <edges id="232" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="233" source_obj="//@regions.1/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="234" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="237" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.0"/>
+  <edges id="238" source_obj="//@regions.1/@basic_blocks.3/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.1" is_back_edge="1"/>
+  <edges id="239" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.1" is_back_edge="1"/>
+  <edges id="241" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.1"/>
+  <edges id="243" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.2" is_back_edge="1"/>
+  <edges id="244" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.2"/>
+  <edges id="245" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.2"/>
+  <edges id="246" source_obj="//@regions.1/@basic_blocks.3/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3" is_back_edge="1"/>
+  <edges id="247" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3" is_back_edge="1"/>
+  <edges id="248" source_obj="//@blocks.2/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3"/>
+  <edges id="249" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.3"/>
+  <edges id="250" source_obj="//@regions.1/@basic_blocks.3/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.4" is_back_edge="1"/>
+  <edges id="251" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.4" is_back_edge="1"/>
+  <edges id="252" source_obj="//@blocks.2/@node_objs.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.4"/>
+  <edges id="253" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.4"/>
+  <edges id="254" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.5"/>
+  <edges id="257" source_obj="//@regions.1/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.6"/>
+  <edges id="260" source_obj="//@regions.1/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.7"/>
+  <edges id="261" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.7"/>
+  <edges id="262" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@regions.1/@basic_blocks.0/@node_objs.7"/>
+  <edges id="263" edge_type="CtrlEdge" source_obj="//@regions.2/@basic_blocks.0" sink_obj="//@blocks.4/@node_objs.0"/>
+  <edges id="264" source_obj="//@regions.1/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.0"/>
+  <edges id="265" source_obj="//@regions.1/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.0"/>
+  <edges id="266" source_obj="//@regions.1/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.1"/>
+  <edges id="267" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.2" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.1"/>
+  <edges id="268" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.3" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.1"/>
+  <edges id="270" source_obj="//@ports.1" sink_obj="//@regions.1/@basic_blocks.2/@node_objs.0"/>
+  <edges id="271" source_obj="//@ports.2" sink_obj="//@regions.1/@basic_blocks.2/@node_objs.0"/>
+  <edges id="272" source_obj="//@ports.3" sink_obj="//@regions.1/@basic_blocks.2/@node_objs.0"/>
+  <edges id="273" source_obj="//@ports.4" sink_obj="//@regions.1/@basic_blocks.2/@node_objs.0"/>
+  <edges id="274" source_obj="//@ports.5" sink_obj="//@regions.1/@basic_blocks.2/@node_objs.0"/>
+  <edges id="275" source_obj="//@ports.6" sink_obj="//@regions.1/@basic_blocks.2/@node_objs.0"/>
+  <edges id="276" source_obj="//@ports.7" sink_obj="//@regions.1/@basic_blocks.2/@node_objs.0"/>
+  <edges id="277" source_obj="//@regions.1/@basic_blocks.2/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.2/@node_objs.1"/>
+  <edges id="278" source_obj="//@regions.1/@basic_blocks.2/@node_objs.0" sink_obj="//@regions.1/@basic_blocks.2/@node_objs.2"/>
+  <edges id="279" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.3" sink_obj="//@regions.1/@basic_blocks.2/@node_objs.3"/>
+  <edges id="280" source_obj="//@regions.1/@basic_blocks.2/@node_objs.2" sink_obj="//@regions.1/@basic_blocks.3/@node_objs.0"/>
+  <edges id="281" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.2" sink_obj="//@regions.1/@basic_blocks.3/@node_objs.0"/>
+  <edges id="282" source_obj="//@regions.1/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.1/@basic_blocks.3/@node_objs.0"/>
+  <edges id="283" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.3/@node_objs.0"/>
+  <edges id="284" source_obj="//@regions.1/@basic_blocks.2/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.3/@node_objs.1"/>
+  <edges id="285" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.2" sink_obj="//@regions.1/@basic_blocks.3/@node_objs.1"/>
+  <edges id="286" source_obj="//@regions.1/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.1/@basic_blocks.3/@node_objs.1"/>
+  <edges id="287" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.3/@node_objs.1"/>
+  <edges id="290" source_obj="//@regions.1/@basic_blocks.3/@node_objs.2" sink_obj="//@ports.0"/>
+  <edges id="291" source_obj="//@regions.1/@basic_blocks.3/@node_objs.1" sink_obj="//@regions.1/@basic_blocks.3/@node_objs.2"/>
+  <edges id="292" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@regions.1/@basic_blocks.3/@node_objs.3"/>
+  <edges id="293" source_obj="//@regions.2/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="294" edge_type="CtrlEdge" source_obj="//@regions.2/@basic_blocks.1" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="295" source_obj="//@regions.1/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.0"/>
+  <edges id="296" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.0"/>
+  <edges id="297" source_obj="//@regions.2/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.1" is_back_edge="1"/>
+  <edges id="298" edge_type="CtrlEdge" source_obj="//@regions.2/@basic_blocks.1" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.1" is_back_edge="1"/>
+  <edges id="299" source_obj="//@regions.1/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.1"/>
+  <edges id="300" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.1"/>
+  <edges id="301" source_obj="//@regions.2/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.2"/>
+  <edges id="302" edge_type="CtrlEdge" source_obj="//@regions.2/@basic_blocks.1" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.2"/>
+  <edges id="303" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.2"/>
+  <edges id="305" source_obj="//@ports.1" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.0"/>
+  <edges id="306" source_obj="//@ports.2" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.0"/>
+  <edges id="307" source_obj="//@ports.3" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.0"/>
+  <edges id="308" source_obj="//@ports.4" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.0"/>
+  <edges id="309" source_obj="//@ports.5" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.0"/>
+  <edges id="310" source_obj="//@ports.6" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.0"/>
+  <edges id="311" source_obj="//@ports.7" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.0"/>
+  <edges id="312" source_obj="//@regions.2/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.1"/>
+  <edges id="313" source_obj="//@regions.2/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.2"/>
+  <edges id="314" edge_type="CtrlEdge" source_obj="//@regions.2/@basic_blocks.0" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.3"/>
+  <edges id="315" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.5/@node_objs.0"/>
+  <edges id="1964" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="1965" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="1966" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="1967" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="1968" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
+  <edges id="1969" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.6"/>
+  <edges id="1970" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3"/>
+  <edges id="1971" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@regions.1/@basic_blocks.0"/>
+  <edges id="1972" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@blocks.4"/>
+  <edges id="1973" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@regions.1/@basic_blocks.1"/>
+  <edges id="1974" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.3"/>
+  <edges id="1975" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.1" sink_obj="//@regions.1/@basic_blocks.2"/>
+  <edges id="1976" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.2" sink_obj="//@regions.1/@basic_blocks.3"/>
+  <edges id="1977" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.3" sink_obj="//@regions.1/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="1978" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@regions.2/@basic_blocks.0"/>
+  <edges id="1979" edge_type="CtrlEdge" source_obj="//@regions.2/@basic_blocks.0" sink_obj="//@blocks.5"/>
+  <edges id="1980" edge_type="CtrlEdge" source_obj="//@regions.2/@basic_blocks.0" sink_obj="//@regions.2/@basic_blocks.1"/>
+  <edges id="1981" edge_type="CtrlEdge" source_obj="//@regions.2/@basic_blocks.1" sink_obj="//@regions.2/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="1982" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.2" is_back_edge="1"/>
+  <blocks id="88" name="entry" type="BlockType">
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>._crit_edge2.i.i</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="71" name="lowthreshold_read" coreId="1410099616" bitwidth="8" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataInputObjs>lowthreshold</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="73" name="lowthreshold_out_write_ln0" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" opcode="write" m_display="0" m_delay="3.28" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>lowthreshold_out</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="74" name="highthreshold_read" coreId="1451372163" bitwidth="8" opcode="read" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <dataInputObjs>highthreshold</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="76" name="highthreshold_out_write_ln0" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" opcode="write" m_display="0" m_delay="3.28" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>highthreshold_out</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="87" name="br_ln101" lineNumber="101" fileName="source/common/xf_infra.hpp" fileDirectory=".." coreId="1410099616" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" opcode="br" m_display="0" m_delay="1.29" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="101" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+      <controlInputObjs>._crit_edge2.i.i</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="source/common/xf_infra.hpp">
+      <validLinenumbers>101</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="104" name=".lr.ph64.i.i.preheader" type="BlockType">
+    <controlInputObjs>._crit_edge2.i.i</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>.lr.ph64.i.i</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="103" name="br_ln128" lineNumber="128" fileName="source/common/xf_infra.hpp" fileDirectory=".." coreId="4294967295" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.29" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="128" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+      <controlInputObjs>.lr.ph64.i.i</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="source/common/xf_infra.hpp">
+      <validLinenumbers>128</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="113" name=".lr.ph64.i.i" type="BlockType">
+    <controlInputObjs>.lr.ph64.i.i.preheader</controlInputObjs>
+    <controlInputObjs>block_157</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>.exit</controlOutputObjs>
+    <controlOutputObjs>.split2.i.i</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="105" name="i" originalName="i" coreId="1410099616" bitwidth="10" opcode="phi" nodeLabel="3.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <controlInputObjs>block_157</controlInputObjs>
+      <controlInputObjs>.lr.ph64.i.i.preheader</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="106" name="start_2" originalName="start" coreId="1410099616" bitwidth="1" opcode="phi" nodeLabel="3.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <dataOutputObjs>phi</dataOutputObjs>
+      <controlInputObjs>block_157</controlInputObjs>
+      <controlInputObjs>.lr.ph64.i.i.preheader</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="107" name="axi_data_V_2" originalName="axi.data.V" coreId="1451397507" bitwidth="24" opcode="phi" nodeLabel="3.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <dataInputObjs>phi</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <controlInputObjs>block_157</controlInputObjs>
+      <controlInputObjs>.lr.ph64.i.i.preheader</controlInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="108" name="axi_last_V_2" originalName="axi.last.V" coreId="1410099616" bitwidth="1" opcode="phi" nodeLabel="3.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <controlInputObjs>block_157</controlInputObjs>
+      <controlInputObjs>.lr.ph64.i.i.preheader</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="109" name="i_3" lineNumber="128" originalName="i" fileName="source/common/xf_infra.hpp" fileDirectory=".." rtlName="i_3_fu_358_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" bitwidth="10" opcode="add" nodeLabel="3.0" m_display="0" m_delay="1.41" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="128" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="110" name="icmp_ln128" lineNumber="128" fileName="source/common/xf_infra.hpp" fileDirectory=".." rtlName="icmp_ln128_fu_364_p2" opType="icmp" coreId="1410099616" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" bitwidth="1" opcode="icmp" nodeLabel="3.0" m_display="0" m_delay="1.94" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="128" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="112" name="br_ln128" lineNumber="128" fileName="source/common/xf_infra.hpp" fileDirectory=".." coreId="1410099616" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" opcode="br" nodeLabel="3.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="128" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>.split2.i.i</controlInputObjs>
+      <controlInputObjs>.exit</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="source/common/xf_infra.hpp">
+      <validLinenumbers>128</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="116" name=".split2.i.i" type="BlockType">
+    <controlInputObjs>.lr.ph64.i.i</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>.lr.ph.i.i</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="115" name="br_ln132" lineNumber="132" fileName="source/common/xf_infra.hpp" fileDirectory=".." coreId="2147483647" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" opcode="br" nodeLabel="3.0" m_display="0" m_delay="1.29" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="132" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+      <controlInputObjs>.lr.ph.i.i</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="source/common/xf_infra.hpp">
+      <validLinenumbers>132</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="143" name="._crit_edge.i.i.preheader" type="BlockType">
+    <controlInputObjs>.lr.ph.i.i</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>._crit_edge.i.i</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="142" name="br_ln158" lineNumber="158" fileName="source/common/xf_infra.hpp" fileDirectory=".." coreId="1451367939" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" opcode="br" nodeLabel="6.0" m_display="0" m_delay="1.29" m_topoIndex="43" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="158" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+      <controlInputObjs>._crit_edge.i.i</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="source/common/xf_infra.hpp">
+      <validLinenumbers>158</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="157" name="block_157" type="BlockType">
+    <controlInputObjs>._crit_edge.i.i</controlInputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>.lr.ph64.i.i</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="156" name="br_ln0" coreId="1451354739" opcode="br" nodeLabel="8.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
+      <controlInputObjs>.lr.ph64.i.i</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="159" name=".exit" type="BlockType">
+    <controlInputObjs>.lr.ph64.i.i</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="158" name="_ln0" coreId="1451336787" opcode="ret" nodeLabel="3.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="408" pipe_depth="1" RegionName="loop_start_hunt">
+    <basic_blocks id="93" name="._crit_edge2.i.i" type="BlockType">
+      <controlInputObjs>entry</controlInputObjs>
+      <controlInputObjs>block_102</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.lr.ph64.i.i.preheader</controlOutputObjs>
+      <controlOutputObjs>block_102</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="axi_last_V" originalName="axi.last.V" coreId="101" bitwidth="1" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <controlInputObjs>block_102</controlInputObjs>
+        <controlInputObjs>entry</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="90" name="axi_data_V" originalName="axi.data.V" coreId="1410099616" bitwidth="24" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <controlInputObjs>block_102</controlInputObjs>
+        <controlInputObjs>entry</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="91" name="start" originalName="axi.user.V" coreId="1451391171" bitwidth="1" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <controlInputObjs>block_102</controlInputObjs>
+        <controlInputObjs>entry</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="92" name="br_ln117" lineNumber="117" fileName="source/common/xf_infra.hpp" fileDirectory=".." coreId="1410099616" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="117" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <controlInputObjs>block_102</controlInputObjs>
+        <controlInputObjs>.lr.ph64.i.i.preheader</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/common/xf_infra.hpp">
+        <validLinenumbers>117</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="102" name="block_102" type="BlockType">
+      <controlInputObjs>._crit_edge2.i.i</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>._crit_edge2.i.i</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="97" name="empty" lineNumber="283" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="auto" opType="adapter" coreId="115" contextFuncName="read" bitwidth="34" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="read"/>
+        <dataInputObjs>AXI_video_strm_V_data_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_keep_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_strb_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_user_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_last_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_id_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_dest_V</dataInputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="98" name="axi_data_V_1" lineNumber="283" originalName="axi.data.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="1451389587" contextFuncName="read" bitwidth="24" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="read"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="99" name="axi_user_V" lineNumber="283" originalName="axi.user.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="1451396451" contextFuncName="read" bitwidth="1" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="read"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="100" name="axi_last_V_1" lineNumber="283" originalName="axi.last.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="4294967295" contextFuncName="read" bitwidth="1" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="read"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="101" name="br_ln117" lineNumber="117" fileName="source/common/xf_infra.hpp" fileDirectory=".." coreId="4294967295" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="117" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+        <controlInputObjs>._crit_edge2.i.i</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/common/xf_infra.hpp">
+        <validLinenumbers>117</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h">
+        <validLinenumbers>283</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="409" pipe_depth="2" RegionName="loop_col_zxi2mat">
+    <basic_blocks id="126" name=".lr.ph.i.i" type="BlockType">
+      <controlInputObjs>.split2.i.i</controlInputObjs>
+      <controlInputObjs>.split._crit_edge.i.i</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>._crit_edge.i.i.preheader</controlOutputObjs>
+      <controlOutputObjs>.split.i.i</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="117" name="j" originalName="j" coreId="1410099616" bitwidth="11" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <controlInputObjs>.split._crit_edge.i.i</controlInputObjs>
+        <controlInputObjs>.split2.i.i</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="118" name="last" originalName="axi.last.V" coreId="1451398035" bitwidth="1" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <controlInputObjs>.split._crit_edge.i.i</controlInputObjs>
+        <controlInputObjs>.split2.i.i</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="119" name="start_3" originalName="start" coreId="1410099616" bitwidth="1" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <controlInputObjs>.split._crit_edge.i.i</controlInputObjs>
+        <controlInputObjs>.split2.i.i</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="120" name="axi_data_V_3" originalName="axi.data.V" coreId="1451395923" bitwidth="24" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <dataInputObjs>phi</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <controlInputObjs>.split._crit_edge.i.i</controlInputObjs>
+        <controlInputObjs>.split2.i.i</controlInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="121" name="axi_last_V_3" originalName="axi.last.V" coreId="0" bitwidth="1" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+        <dataInputObjs>phi</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <controlInputObjs>.split._crit_edge.i.i</controlInputObjs>
+        <controlInputObjs>.split2.i.i</controlInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="122" name="j_3" lineNumber="132" originalName="j" fileName="source/common/xf_infra.hpp" fileDirectory=".." rtlName="j_3_fu_370_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" bitwidth="11" opcode="add" nodeLabel="4.0" m_display="0" m_delay="1.48" m_topoIndex="30" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="132" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="123" name="icmp_ln132" lineNumber="132" fileName="source/common/xf_infra.hpp" fileDirectory=".." rtlName="icmp_ln132_fu_376_p2" opType="icmp" coreId="1410099616" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" bitwidth="1" opcode="icmp" nodeLabel="4.0" m_display="0" m_delay="1.88" m_topoIndex="31" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="132" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="125" name="br_ln132" lineNumber="132" fileName="source/common/xf_infra.hpp" fileDirectory=".." coreId="1410099616" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" opcode="br" nodeLabel="4.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="132" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>.split.i.i</controlInputObjs>
+        <controlInputObjs>._crit_edge.i.i.preheader</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/common/xf_infra.hpp">
+        <validLinenumbers>132</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="131" name=".split.i.i" type="BlockType">
+      <controlInputObjs>.lr.ph.i.i</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>.split._crit_edge.i.i</controlOutputObjs>
+      <controlOutputObjs>block_136</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="129" name="or_ln138" lineNumber="138" fileName="source/common/xf_infra.hpp" fileDirectory=".." rtlName="or_ln138_fu_382_p2" opType="or" coreId="1451398563" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" bitwidth="1" opcode="or" nodeLabel="4.0" m_display="0" m_delay="0.8" m_topoIndex="33" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="138" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="130" name="br_ln138" lineNumber="138" fileName="source/common/xf_infra.hpp" fileDirectory=".." coreId="1410099616" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" opcode="br" nodeLabel="4.0" m_display="0" m_delay="1.29" m_topoIndex="34" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="138" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+        <dataInputObjs>or</dataInputObjs>
+        <controlInputObjs>block_136</controlInputObjs>
+        <controlInputObjs>.split._crit_edge.i.i</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/common/xf_infra.hpp">
+        <validLinenumbers>138</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="136" name="block_136" type="BlockType">
+      <controlInputObjs>.split.i.i</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>.split._crit_edge.i.i</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="132" name="empty_743" lineNumber="283" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="auto" opType="adapter" coreId="115" contextFuncName="read" bitwidth="34" opcode="read" nodeLabel="4.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="read"/>
+        <dataInputObjs>AXI_video_strm_V_data_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_keep_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_strb_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_user_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_last_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_id_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_dest_V</dataInputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="133" name="axi_data_V_5" lineNumber="283" originalName="axi.data.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="1451380611" contextFuncName="read" bitwidth="24" opcode="extractvalue" nodeLabel="4.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="read"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="134" name="axi_last_V_4" lineNumber="283" originalName="axi.last.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="1451368995" contextFuncName="read" bitwidth="1" opcode="extractvalue" nodeLabel="4.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="read"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="135" name="br_ln0" coreId="1451366355" opcode="br" nodeLabel="4.0" m_display="0" m_delay="1.29" m_topoIndex="38" m_clusterGroupNumber="-1">
+        <controlInputObjs>.split._crit_edge.i.i</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h">
+        <validLinenumbers>283</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="141" name=".split._crit_edge.i.i" type="BlockType">
+      <controlInputObjs>.split.i.i</controlInputObjs>
+      <controlInputObjs>block_136</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.lr.ph.i.i</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="137" name="axi_last_V_8" originalName="axi.last.V" coreId="1451357907" bitwidth="1" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <controlInputObjs>block_136</controlInputObjs>
+        <controlInputObjs>.split.i.i</controlInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="138" name="p_Val2_s" originalName="axi.data.V" coreId="1451360019" bitwidth="24" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <controlInputObjs>block_136</controlInputObjs>
+        <controlInputObjs>.split.i.i</controlInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="139" name="rgb_img_src_4206_write_ln174" lineNumber="174" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" fileDirectory=".." coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="write" opcode="write" nodeLabel="5.0" m_display="0" m_delay="3.4" m_topoIndex="42" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" linenumber="174" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="write"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>rgb_img_src_4206</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="140" name="br_ln0" coreId="1451349987" opcode="br" nodeLabel="4.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
+        <controlInputObjs>.lr.ph.i.i</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h">
+        <validLinenumbers>174</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="410" pipe_depth="1" RegionName="loop_last_hunt">
+    <basic_blocks id="147" name="._crit_edge.i.i" type="BlockType">
+      <controlInputObjs>._crit_edge.i.i.preheader</controlInputObjs>
+      <controlInputObjs>block_155</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>block_157</controlOutputObjs>
+      <controlOutputObjs>block_155</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="144" name="axi_last_V_9" originalName="axi.last.V" coreId="1451345235" bitwidth="1" opcode="phi" nodeLabel="7.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <controlInputObjs>block_155</controlInputObjs>
+        <controlInputObjs>._crit_edge.i.i.preheader</controlInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="145" name="axi_data_V_4" originalName="axi.data.V" coreId="1451353683" bitwidth="24" opcode="phi" nodeLabel="7.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <controlInputObjs>block_155</controlInputObjs>
+        <controlInputObjs>._crit_edge.i.i.preheader</controlInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="146" name="br_ln158" lineNumber="158" fileName="source/common/xf_infra.hpp" fileDirectory=".." coreId="1451362659" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="158" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <controlInputObjs>block_155</controlInputObjs>
+        <controlInputObjs>block_157</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/common/xf_infra.hpp">
+        <validLinenumbers>158</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="155" name="block_155" type="BlockType">
+      <controlInputObjs>._crit_edge.i.i</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>._crit_edge.i.i</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="151" name="empty_744" lineNumber="283" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="auto" opType="adapter" coreId="115" contextFuncName="read" bitwidth="34" opcode="read" nodeLabel="7.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="read"/>
+        <dataInputObjs>AXI_video_strm_V_data_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_keep_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_strb_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_user_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_last_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_id_V</dataInputObjs>
+        <dataInputObjs>AXI_video_strm_V_dest_V</dataInputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+        <dataOutputObjs>extractvalue</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="152" name="axi_data_V_6" lineNumber="283" originalName="axi.data.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="1451355267" contextFuncName="read" bitwidth="24" opcode="extractvalue" nodeLabel="7.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="read"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="153" name="axi_last_V_10" lineNumber="283" originalName="axi.last.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="1451344707" contextFuncName="read" bitwidth="1" opcode="extractvalue" nodeLabel="7.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="read"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="154" name="br_ln158" lineNumber="158" fileName="source/common/xf_infra.hpp" fileDirectory=".." coreId="2147483647" contextFuncName="AXIvideo2xfMat_24_9_720_1280_1_s" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="source/common/xf_infra.hpp" linenumber="158" fileDirectory="C:\Users\suisuisi\Desktop\OpenZYNQ_K\example\Vivado_ip\myip\edge_canny_detector\edge_canny_detector" functionName="AXIvideo2xfMat&amp;lt;24, 9, 720, 1280, 1&amp;gt;"/>
+        <controlInputObjs>._crit_edge.i.i</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="source/common/xf_infra.hpp">
+        <validLinenumbers>158</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h">
+        <validLinenumbers>283</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <regnodes realName="last_reg_246">
+    <nodeIds>118</nodeIds>
+  </regnodes>
+  <regnodes realName="p_Val2_s_reg_303">
+    <nodeIds>138</nodeIds>
+  </regnodes>
+  <regnodes realName="start_reg_175">
+    <nodeIds>91</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_last_V_3_reg_280">
+    <nodeIds>121</nodeIds>
+  </regnodes>
+  <regnodes realName="j_reg_235">
+    <nodeIds>117</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_data_V_reg_163">
+    <nodeIds>90</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_last_V_reg_151">
+    <nodeIds>89</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_data_V_4_reg_326">
+    <nodeIds>145</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_last_V_1_reg_393">
+    <nodeIds>100</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_last_V_2_reg_222">
+    <nodeIds>108</nodeIds>
+  </regnodes>
+  <regnodes realName="start_3_reg_258">
+    <nodeIds>119</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_data_V_2_reg_211">
+    <nodeIds>107</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln132_reg_412">
+    <nodeIds>123</nodeIds>
+  </regnodes>
+  <regnodes realName="or_ln138_reg_416">
+    <nodeIds>129</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_last_V_9_reg_316">
+    <nodeIds>144</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_last_V_10_reg_420">
+    <nodeIds>153</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln128_reg_403">
+    <nodeIds>110</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_user_V_reg_388">
+    <nodeIds>99</nodeIds>
+  </regnodes>
+  <regnodes realName="start_2_reg_197">
+    <nodeIds>106</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_last_V_8_reg_290">
+    <nodeIds>137</nodeIds>
+  </regnodes>
+  <regnodes realName="axi_data_V_3_reg_269">
+    <nodeIds>120</nodeIds>
+  </regnodes>
+  <regnodes realName="i_3_reg_398">
+    <nodeIds>109</nodeIds>
+  </regnodes>
+  <regnodes realName="j_3_reg_407">
+    <nodeIds>122</nodeIds>
+  </regnodes>
+  <regnodes realName="i_reg_186">
+    <nodeIds>105</nodeIds>
+  </regnodes>
+  <regnodes realName="reg_348">
+    <nodeIds>98</nodeIds>
+    <nodeIds>152</nodeIds>
+  </regnodes>
+  <expressionNodes realName="axi_data_V_3_phi_fu_272">
+    <nodeIds>120</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln128_fu_364">
+    <nodeIds>110</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="grp_fu_338">
+    <nodeIds>98</nodeIds>
+    <nodeIds>133</nodeIds>
+    <nodeIds>152</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="axi_data_V_2_phi_fu_214">
+    <nodeIds>107</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="last_phi_fu_250">
+    <nodeIds>118</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln138_fu_382">
+    <nodeIds>129</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln132_fu_376">
+    <nodeIds>123</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="axi_last_V_phi_fu_155">
+    <nodeIds>89</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Val2_s_phi_fu_308">
+    <nodeIds>138</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_3_fu_358">
+    <nodeIds>109</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="start_2_phi_fu_202">
+    <nodeIds>106</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="axi_data_V_4_phi_fu_330">
+    <nodeIds>145</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="axi_last_V_3_phi_fu_283">
+    <nodeIds>121</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="start_3_phi_fu_261">
+    <nodeIds>119</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="axi_last_V_9_phi_fu_319">
+    <nodeIds>144</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="grp_fu_343">
+    <nodeIds>100</nodeIds>
+    <nodeIds>134</nodeIds>
+    <nodeIds>153</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="j_3_fu_370">
+    <nodeIds>122</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="start_phi_fu_179">
+    <nodeIds>91</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="axi_last_V_8_phi_fu_295">
+    <nodeIds>137</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="j_phi_fu_239">
+    <nodeIds>117</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_phi_fu_190">
+    <nodeIds>105</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="axi_data_V_phi_fu_167">
+    <nodeIds>90</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="axi_last_V_2_phi_fu_226">
+    <nodeIds>108</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="axi_user_V_fu_354">
+    <nodeIds>99</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="write_ln0_write_fu_118">
+    <nodeIds>76</nodeIds>
+  </ioNodes>
+  <ioNodes realName="highthreshold_read_read_fu_112">
+    <nodeIds>74</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln174_write_fu_144">
+    <nodeIds>139</nodeIds>
+  </ioNodes>
+  <ioNodes realName="grp_read_fu_126">
+    <nodeIds>97</nodeIds>
+    <nodeIds>132</nodeIds>
+    <nodeIds>151</nodeIds>
+  </ioNodes>
+  <ioNodes realName="lowthreshold_read_read_fu_98">
+    <nodeIds>71</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln0_write_fu_104">
+    <nodeIds>73</nodeIds>
+  </ioNodes>
+  <ioPorts name="AXI_video_strm_V_data_V">
+    <contents name="read">
+      <nodeIds>97</nodeIds>
+      <nodeIds>132</nodeIds>
+      <nodeIds>151</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="AXI_video_strm_V_dest_V">
+    <contents name="read">
+      <nodeIds>97</nodeIds>
+      <nodeIds>132</nodeIds>
+      <nodeIds>151</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="AXI_video_strm_V_id_V">
+    <contents name="read">
+      <nodeIds>97</nodeIds>
+      <nodeIds>132</nodeIds>
+      <nodeIds>151</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="AXI_video_strm_V_keep_V">
+    <contents name="read">
+      <nodeIds>97</nodeIds>
+      <nodeIds>132</nodeIds>
+      <nodeIds>151</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="AXI_video_strm_V_last_V">
+    <contents name="read">
+      <nodeIds>97</nodeIds>
+      <nodeIds>132</nodeIds>
+      <nodeIds>151</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="AXI_video_strm_V_strb_V">
+    <contents name="read">
+      <nodeIds>97</nodeIds>
+      <nodeIds>132</nodeIds>
+      <nodeIds>151</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="AXI_video_strm_V_user_V">
+    <contents name="read">
+      <nodeIds>97</nodeIds>
+      <nodeIds>132</nodeIds>
+      <nodeIds>151</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="highthreshold">
+    <contents name="read">
+      <nodeIds>74</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="highthreshold_out">
+    <contents name="write">
+      <nodeIds>76</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="lowthreshold">
+    <contents name="read">
+      <nodeIds>71</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="lowthreshold_out">
+    <contents name="write">
+      <nodeIds>73</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="rgb_img_src_4206">
+    <contents name="write">
+      <nodeIds>139</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="64" stage="1" latency="1"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+      <operations id="67" stage="1" latency="1"/>
+      <operations id="68" stage="1" latency="1"/>
+      <operations id="69" stage="1" latency="1"/>
+      <operations id="70" stage="1" latency="1"/>
+      <operations id="71" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="1"/>
+      <operations id="74" stage="1" latency="1"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="77" stage="1" latency="1"/>
+      <operations id="78" stage="1" latency="1"/>
+      <operations id="79" stage="1" latency="1"/>
+      <operations id="80" stage="1" latency="1"/>
+      <operations id="81" stage="1" latency="1"/>
+      <operations id="82" stage="1" latency="1"/>
+      <operations id="83" stage="1" latency="1"/>
+      <operations id="84" stage="1" latency="1"/>
+      <operations id="85" stage="1" latency="1"/>
+      <operations id="86" stage="1" latency="1"/>
+      <operations id="87" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="89" stage="1" latency="1"/>
+      <operations id="90" stage="1" latency="1"/>
+      <operations id="91" stage="1" latency="1"/>
+      <operations id="92" stage="1" latency="1"/>
+      <operations id="94" stage="1" latency="1"/>
+      <operations id="95" stage="1" latency="1"/>
+      <operations id="96" stage="1" latency="1"/>
+      <operations id="97" stage="1" latency="1"/>
+      <operations id="98" stage="1" latency="1"/>
+      <operations id="99" stage="1" latency="1"/>
+      <operations id="100" stage="1" latency="1"/>
+      <operations id="101" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="103" stage="1" latency="1"/>
+    </states>
+    <states id="4">
+      <operations id="105" stage="1" latency="1"/>
+      <operations id="106" stage="1" latency="1"/>
+      <operations id="107" stage="1" latency="1"/>
+      <operations id="108" stage="1" latency="1"/>
+      <operations id="109" stage="1" latency="1"/>
+      <operations id="110" stage="1" latency="1"/>
+      <operations id="111" stage="1" latency="1"/>
+      <operations id="112" stage="1" latency="1"/>
+      <operations id="114" stage="1" latency="1"/>
+      <operations id="115" stage="1" latency="1"/>
+      <operations id="158" stage="1" latency="1"/>
+    </states>
+    <states id="5">
+      <operations id="117" stage="1" latency="1"/>
+      <operations id="118" stage="1" latency="1"/>
+      <operations id="119" stage="1" latency="1"/>
+      <operations id="120" stage="1" latency="1"/>
+      <operations id="121" stage="1" latency="1"/>
+      <operations id="122" stage="1" latency="1"/>
+      <operations id="123" stage="1" latency="1"/>
+      <operations id="124" stage="1" latency="1"/>
+      <operations id="125" stage="1" latency="1"/>
+      <operations id="127" stage="1" latency="1"/>
+      <operations id="128" stage="1" latency="1"/>
+      <operations id="129" stage="1" latency="1"/>
+      <operations id="130" stage="1" latency="1"/>
+      <operations id="132" stage="1" latency="1"/>
+      <operations id="133" stage="1" latency="1"/>
+      <operations id="134" stage="1" latency="1"/>
+      <operations id="135" stage="1" latency="1"/>
+      <operations id="137" stage="1" latency="1"/>
+      <operations id="138" stage="1" latency="1"/>
+      <operations id="140" stage="1" latency="1"/>
+    </states>
+    <states id="6">
+      <operations id="139" stage="1" latency="1"/>
+    </states>
+    <states id="7">
+      <operations id="142" stage="1" latency="1"/>
+    </states>
+    <states id="8">
+      <operations id="144" stage="1" latency="1"/>
+      <operations id="145" stage="1" latency="1"/>
+      <operations id="146" stage="1" latency="1"/>
+      <operations id="148" stage="1" latency="1"/>
+      <operations id="149" stage="1" latency="1"/>
+      <operations id="150" stage="1" latency="1"/>
+      <operations id="151" stage="1" latency="1"/>
+      <operations id="152" stage="1" latency="1"/>
+      <operations id="153" stage="1" latency="1"/>
+      <operations id="154" stage="1" latency="1"/>
+    </states>
+    <states id="9">
+      <operations id="156" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="8">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="AXIvideo2xfMat_24_9_720_1280_1_16" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="925203" mMaxLatency="925924">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <subRegions>5</subRegions>
+      <subRegions>11</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>88</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="loop_start_hunt" mII="1" mDepth="1" mMaxTripCount="1" mMaxLatency="1" mType="1">
+      <basicBlocks>93</basicBlocks>
+      <basicBlocks>102</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Region 1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>104</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="5" mTag="loop_row_axi2mat" mII="-1" mDepth="-1" mMinTripCount="720" mMaxTripCount="720" mMinLatency="925200" mMaxLatency="925920" mType="1">
+      <subRegions>6</subRegions>
+      <subRegions>7</subRegions>
+      <subRegions>8</subRegions>
+      <subRegions>9</subRegions>
+      <subRegions>10</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="6" mTag="Region 2" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>113</basicBlocks>
+      <basicBlocks>116</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="7" mTag="loop_col_zxi2mat" mII="1" mDepth="2" mMinTripCount="1280" mMaxTripCount="1280" mMinLatency="1280" mMaxLatency="1280" mType="1">
+      <basicBlocks>126</basicBlocks>
+      <basicBlocks>131</basicBlocks>
+      <basicBlocks>136</basicBlocks>
+      <basicBlocks>141</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="8" mTag="Region 3" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>143</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="9" mTag="loop_last_hunt" mII="1" mDepth="1" mMaxTripCount="1" mMaxLatency="1" mType="1">
+      <basicBlocks>147</basicBlocks>
+      <basicBlocks>155</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="10" mTag="Region 4" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>157</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="11" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>159</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>
