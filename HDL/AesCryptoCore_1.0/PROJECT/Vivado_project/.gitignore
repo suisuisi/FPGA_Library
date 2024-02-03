@@ -1,0 +1,68 @@
+*.jou
+*.log
+*.str
+*.xpr
+*.Xil
+*.cache
+*.data
+*.runs
+*.hw
+*.zip
+*.html
+*.bit
+*.elf
+*.bin
+*config_settings
+*example_designs
+*.debug
+*~
+
+# sdk exclusions
+sdk/.metadata
+sdk/**/*RemoteSystemsTempFiles
+sdk/**/*Debug
+sdk/**/*Release
+sdk/**/.metadata
+sdk/**/*webtalk
+sdk/.sdk
+sdk/.temp
+Packages/
+
+# ignore everything in the hw_platform
+sdk/*hw_platform*/*
+# except
+!sdk/*hw_platform*/*.hdf
+!sdk/*hw_platform*/*.bit
+!sdk/*hw_platform*/.*project
+
+# ignore everything in the BSP
+sdk/*_bsp*/*
+# except
+!sdk/*_bsp*/system.mss
+!sdk/*_bsp*/Makefile
+!sdk/*_bsp*/.*project
+
+# Make sure we keep only xci files in repo ip src subfolder
+repo/*/ip/*/src/*/*
+# Ignore 'generated_ip' directory inside repo/ip
+repo/*/ip/*/generated_ip
+!repo/*/ip/*/src/*/
+!repo/*/ip/*/src/*/*.xci
+!repo/*/ip/*/src/*/*.patch
+!repo/*/ip/*/src/*/*.tcl
+
+# Make sure we keep only xci files in ip src subfolder
+src/ip/*
+!src/ip/*/
+!src/ip/*/*.xci
+!src/ip/*/*.prj
+
+# Do not ignore anything in src/others
+!src/others/*
+
+# ignore everything in project folder
+proj/*
+# except this file and project generators
+!proj/create_project.tcl
+!proj/cleanup.cmd
+!proj/cleanup.sh
