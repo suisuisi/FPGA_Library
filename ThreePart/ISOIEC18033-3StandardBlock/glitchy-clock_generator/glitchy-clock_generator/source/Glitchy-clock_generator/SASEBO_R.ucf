@@ -1,0 +1,140 @@
+#-------------------------------------------------------------------------
+# Pin assignment for SASEBO-R
+# 
+# File name   : SASEBO_R.ucf
+# Version     : Version 1.0
+# Created     : MAR/06/2008
+# Last update : MAY/06/2011
+# Desgined by : Toshihiro Katashita
+# Modified by : Sho Endo 
+# 
+#-----------------------------------------------------------------
+# Copyright (C) 2008 - 2011  Tohoku University and AIST.
+# 
+# By using this code, you agree to the following terms and conditions.
+# 
+# This code is copyrighted by Tohoku University and AIST ("us").
+# 
+# Permission is hereby granted to copy, reproduce, redistribute or
+# otherwise use this code as long as: there is no monetary profit gained
+# specifically from the use or reproduction of this code, it is not sold,
+# rented, traded or otherwise marketed, and this copyright notice is
+# included prominently in any copy made.
+# 
+# We shall not be liable for any damages, including without limitation
+# direct, indirect, incidental, special or consequential damages arising
+# from the use of this code.
+# 
+# When you publish any results arising from the use of this code, we will
+# appreciate it if you can cite our webpage
+# (http://www.aoki.ecei.tohoku.ac.jp/crypto/).
+#
+#-------------------------------------------------------------------------
+
+#================================================ Timing constraint
+NET clk TNM_NET = clk_grp ;
+TIMESPEC TS_clk = PERIOD : clk_grp : 40.0;
+
+#================================================ Pin assignment
+#------------------------------------------------ Clock, reset, LED,
+#and SW.
+
+NET "oscx"        LOC = "N3"  | IOSTANDARD = LVCMOS33 | DRIVE = 10 ; # Clock output
+NET "hrstn"       LOC = "T1"  | IOSTANDARD = LVCMOS33 | DRIVE = 6  ; # Reset output
+NET "clkin"       LOC = "B13" | IOSTANDARD = LVCMOS33              ; # Clock input (X2)
+NET "rstnin"      LOC = "Y9"  | IOSTANDARD = LVCMOS33              ; # Reset input
+NET "exec_in"     LOC = "F7"  | IOSTANDARD = LVCMOS33              ; # CN6-1
+NET "start_enc"   LOC = "E6"  | IOSTANDARD = LVCMOS33              ; # CN6-2
+NET "clkshift"    LOC = "E5"  | IOSTANDARD = LVCMOS33              ; # CN6-3
+NET "clk_dcm_sw"  LOC = "D6"  | IOSTANDARD = LVCMOS33              ; # CN6-4
+
+NET "led<0>"  LOC = "F24" | IOSTANDARD = LVCMOS33 | DRIVE = 6  ; # LED (D7)
+NET "led<1>"  LOC = "J22" | IOSTANDARD = LVCMOS33 | DRIVE = 6  ; # LED (D8)
+NET "led<2>"  LOC = "J24" | IOSTANDARD = LVCMOS33 | DRIVE = 6  ; # LED (D9)
+NET "led<3>"  LOC = "J23" | IOSTANDARD = LVCMOS33 | DRIVE = 6  ; # LED (D10)
+
+NET "if_sel"  LOC = "K24" | IOSTANDARD = LVCMOS33 ; # SW6-1
+
+#------------------------------------------------ Interface
+NET "rs232_tx"  LOC = "AB14" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; #RS-232 TX
+NET "rs232_rx"  LOC = "AC15" | IOSTANDARD = LVCMOS33 ; # RS-232 RX
+
+NET "*usb_d<0>" LOC="AB16" | IOSTANDARD="LVCMOS33" | DRIVE=6; # USB d<0>
+NET "*usb_d<1>" LOC="AA16" | IOSTANDARD="LVCMOS33" | DRIVE=6; # USB d<1>
+NET "*usb_d<2>" LOC="AB17" | IOSTANDARD="LVCMOS33" | DRIVE=6; # USB d<2>
+NET "*usb_d<3>" LOC="AE14" | IOSTANDARD="LVCMOS33" | DRIVE=6; # USB d<3>
+NET "*usb_d<4>" LOC="AC17" | IOSTANDARD="LVCMOS33" | DRIVE=6; # USB d<4>
+NET "*usb_d<5>" LOC="AC14" | IOSTANDARD="LVCMOS33" | DRIVE=6; # USB d<5>
+NET "*usb_d<6>" LOC="AD14" | IOSTANDARD="LVCMOS33" | DRIVE=6; # USB d<6>
+NET "*usb_d<7>" LOC="AB20" | IOSTANDARD="LVCMOS33" | DRIVE=6; # USB d<7>
+
+NET "usb_rxfn"  LOC = "AD20" | IOSTANDARD = LVCMOS33             ; # USB RXFn
+NET "usb_txen"  LOC = "AE19" | IOSTANDARD = LVCMOS33             ; # USB TXEn
+NET "usb_pwen"  LOC = "AD15" | IOSTANDARD = LVCMOS33 | PULLDOWN  ; # USB PWREN
+NET "usb_rdn"   LOC = "AD17" | IOSTANDARD = LVCMOS33 | DRIVE = 6 ; # USB RDn
+NET "usb_wr"    LOC = "AF19" | IOSTANDARD = LVCMOS33 | DRIVE = 6 ; # USB WR
+
+#------------------------------------------------ Local bus
+
+NET "lbus_a<0>"  LOC = "T2"  | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<0>
+NET "lbus_a<1>"  LOC = "U1"  | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<1>
+NET "lbus_a<2>"  LOC = "U2"  | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<2>
+NET "lbus_a<3>"  LOC = "V1"  | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<3>
+NET "lbus_a<4>"  LOC = "V2"  | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<4>
+NET "lbus_a<5>"  LOC = "W1"  | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<5>
+NET "lbus_a<6>"  LOC = "W2"  | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<6>
+NET "lbus_a<7>"  LOC = "Y1"  | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<7>
+NET "lbus_a<8>"  LOC = "Y2"  | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<8>
+NET "lbus_a<9>"  LOC = "AA1" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<9>
+NET "lbus_a<10>" LOC = "AA2" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<10>
+NET "lbus_a<11>" LOC = "AB1" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<11>
+NET "lbus_a<12>" LOC = "AB2" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<12>
+NET "lbus_a<13>" LOC = "AC1" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<13>
+NET "lbus_a<14>" LOC = "AC2" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<14>
+NET "lbus_a<15>" LOC = "AD1" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS a<15>
+
+NET "lbus_dw<0>"   LOC = "F1" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<0>
+NET "lbus_dw<1>"   LOC = "F2" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<1>
+NET "lbus_dw<2>"   LOC = "E1" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<2>
+NET "lbus_dw<3>"   LOC = "E2" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<3>
+NET "lbus_dw<4>"   LOC = "D1" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<4>
+NET "lbus_dw<5>"   LOC = "D2" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<5>
+NET "lbus_dw<6>"   LOC = "C1" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<6>
+NET "lbus_dw<7>"   LOC = "C2" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<7>
+NET "lbus_dw<8>"   LOC = "K5" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<8>
+NET "lbus_dw<9>"   LOC = "J4" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<9>
+NET "lbus_dw<10>"  LOC = "J3" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<10>
+NET "lbus_dw<11>"  LOC = "K4" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<11>
+NET "lbus_dw<12>"  LOC = "K3" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<12>
+NET "lbus_dw<13>"  LOC = "L5" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<13>
+NET "lbus_dw<14>"  LOC = "L3" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<14>
+NET "lbus_dw<15>"  LOC = "M4" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; # LBUS di<15>
+
+NET "lbus_dr<0>"   LOC = "G2" | IOSTANDARD = LVCMOS33 ; # LBUS do<0>
+NET "lbus_dr<1>"   LOC = "G1" | IOSTANDARD = LVCMOS33 ; # LBUS do<1>
+NET "lbus_dr<2>"   LOC = "H2" | IOSTANDARD = LVCMOS33 ; # LBUS do<2>
+NET "lbus_dr<3>"   LOC = "H1" | IOSTANDARD = LVCMOS33 ; # LBUS do<3>
+NET "lbus_dr<4>"   LOC = "J2" | IOSTANDARD = LVCMOS33 ; # LBUS do<4>
+NET "lbus_dr<5>"   LOC = "J1" | IOSTANDARD = LVCMOS33 ; # LBUS do<5>
+NET "lbus_dr<6>"   LOC = "K2" | IOSTANDARD = LVCMOS33 ; # LBUS do<6>
+NET "lbus_dr<7>"   LOC = "K1" | IOSTANDARD = LVCMOS33 ; # LBUS do<7>
+NET "lbus_dr<8>"   LOC = "N5" | IOSTANDARD = LVCMOS33 ; # LBUS do<8>
+NET "lbus_dr<9>"   LOC = "N4" | IOSTANDARD = LVCMOS33 ; # LBUS do<9>
+NET "lbus_dr<10>"  LOC = "L2" | IOSTANDARD = LVCMOS33 ; # LBUS do<10>
+NET "lbus_dr<11>"  LOC = "L1" | IOSTANDARD = LVCMOS33 ; # LBUS do<11>
+NET "lbus_dr<12>"  LOC = "M2" | IOSTANDARD = LVCMOS33 ; # LBUS do<12>
+NET "lbus_dr<13>"  LOC = "M1" | IOSTANDARD = LVCMOS33 ; # LBUS do<13>
+NET "lbus_dr<14>"  LOC = "N2" | IOSTANDARD = LVCMOS33 ; # LBUS do<14>
+NET "lbus_dr<15>"  LOC = "N6" | IOSTANDARD = LVCMOS33 ; # LBUS do<15>
+
+NET "lbus_rd"  LOC = "R1" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; #LBUS rd
+NET "lbus_wr"  LOC = "R2" | IOSTANDARD = LVCMOS33  | DRIVE = 6 ; #LBUS wr
+
+#NET "pushsw"  LOC = "G22" | IOSTANDARD = LVCMOS33 ; 
+#NET "rs232_cts" LOC="AB15"; # RS-232 CTS
+#NET "rs232_rts" LOC="AA15"; # RS-232 RTS
+#NET "sel"  LOC = "H16" | IOSTANDARD = LVCMOS33 ; 
+#NET "sw6<0>"  LOC = "H22" | IOSTANDARD = LVCMOS33 ; 
+#NET "sw6<1>"  LOC = "K22" | IOSTANDARD = LVCMOS33 ; 
+#NET "sw6<2>"  LOC = "K23" | IOSTANDARD = LVCMOS33 ; 
+
